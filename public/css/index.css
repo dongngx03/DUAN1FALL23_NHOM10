@@ -15,7 +15,75 @@
 
 
 /* HEADER */
+.h-logo img{
+    width: 90px;
+    margin-left: 80px;
+}
+.h-nav{
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+}
+.h-nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+.h-nav ul li{
+    padding: 20px;
+    list-style: none;
+}
+.h-nav ul li a:hover{
+    border-bottom: 2px solid;
+}
+.h-nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: larger;
+    padding: 5px;
+}
+.h-box-right{
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
 
+}
+.h-box-right .h-btn-search{
+    padding-right: 30px;
+}
+.h-btn-search{
+    display: inline-block;
+    background-color: #f5f5f5;
+    padding-top: 10px;
+    padding: 0px 16px;
+    border-radius: 40px;
+    border: none;
+}
+.h-search{
+    margin-right: 20px;
+}
+.h-search .h-ip-search{
+    border: none;
+    background-color: #f5f5f5;
+    outline: none;
+    padding: 8px;
+    width: 115px;
+}
+.h-box-right .h-btn-user,
+.h-box-right .h-btn-cart{
+    font-size: 24px;
+    padding: 15px;
+    text-decoration: none;
+    color: black;
+}
+.ti-search:hover,
+.h-logo img:hover,
+.h-box-right .h-btn-user:hover,
+.h-box-right .h-btn-cart:hover{
+    opacity: calc(0.2);
+
+}
 /* END HEADER */
 
 
