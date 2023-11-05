@@ -20,9 +20,5 @@
 
  include_once'./views/components/footer.php';
  
-    echo "xinchap";
-    echo "dông test";
-    echo "long test";
-    echo "long test";
-    echo "quoc test";
+   
  ?>
