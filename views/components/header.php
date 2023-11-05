@@ -11,6 +11,9 @@
     <!-- gg font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@icon/themify-icons@1.0.1-alpha.3/themify-icons.min.css">
     
 
     <title>Document</title>
@@ -21,12 +24,12 @@
 <body>
     <header>
         <div class="h-nav">
-            <a href="#" class="h-logo"><img src="../project1/public/img/z4844949212064_22784bb3069c4437be7f342ef459ea24.jpg" alt="" ></a>
+            <a href="#" class="h-logo"><img src="" alt="" ></a>
             <ul>
-                <li><a href="#">Giày sneaker</a></li>
-                <li><a href="#">Dép</a></li>
-                <li><a href="#">Khuyến mãi</a></li>
-                <li><a href="#">Bản tin</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Deal Hot</a></li>
+                <li><a href="#">News</a></li>
             </ul>    
             <div class="h-box-right">
                 <div class="h-search">
