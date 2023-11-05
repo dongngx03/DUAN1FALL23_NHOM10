@@ -21,6 +21,9 @@ if (isset($_GET['act'])) {
         case 'user':
             include_once './views/user/user.php';
             break;
+        case 'product':
+            include_once './views/product/product.php';
+            break;
 
     }
 } else {
