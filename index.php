@@ -20,5 +20,5 @@
 
  include_once'./views/components/footer.php';
  
-
+    echo "xinchap";
  ?>
