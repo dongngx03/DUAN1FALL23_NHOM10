@@ -1,21 +1,8 @@
 <!-- code -->
-<h1>quên mật khaaure </h1>
-
 <style>
     <?php include_once'public/css/login/quenmk.css' ?>
 </style>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="quenmk.css">
-</head>
-
-<body>
     <div class="nav">
         <div class="h-nav">
             <div class="logo">
@@ -36,10 +23,7 @@
             </form>
             <button>Tiếp theo</button><br>
             <div class="back">
-                <a href="/dangnhap.html">Quay lại</a>
+                <a href="#">Quay lại</a>
             </div>
         </div>
     </div>
-</body>
-
-</html>

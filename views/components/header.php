@@ -26,7 +26,7 @@
         <div class="h-nav">
             <a href="#" class="h-logo"><img src="" alt="" ></a>
             <ul>
-                <li><a href="#">Products</a></li>
+                <li><a href="?act=product">Products</a></li>
                 <li><a href="#">Contact</a></li>
                 <li><a href="#">Deal Hot</a></li>
                 <li><a href="#">News</a></li>
