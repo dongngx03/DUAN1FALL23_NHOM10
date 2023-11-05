@@ -12,6 +12,10 @@
             case 'quenmk':
                 include_once'./views/login/quenmk.php';
                 break;
+            case 'user':
+                include_once'./views/user/user.php';
+                break;
+            
                 
         }
     }else{
