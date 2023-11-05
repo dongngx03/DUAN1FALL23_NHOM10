@@ -1,0 +1,92 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+   
+}
+
+#banner1{
+    width: 95%;
+    height: auto;
+}
+#title-top{
+    background-color: #F5F5F5;
+    height: 58px;
+}
+#title-top span{
+    line-height: 58px;
+    font-size: 15px;
+    font-weight: 700;
+}
+#title-1{
+    font-size: 60px;
+    font-weight: bold;
+    padding-top: 47px;
+   
+
+}
+#title-2{
+    padding-top: 35px;
+    font-size: 20px;
+}
+#home-btn{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding-top: 30px;
+}
+#home-btn button{
+    border-radius: 30px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffff;
+    font-weight: 500;
+   
+}
+.home-btn-2 button i{
+    font-size: 25px;
+    
+}
+.home-btn-2 button{
+    border-radius: 50%;
+    
+}
+#home-product img{
+    width: 414px;
+    height: auto;
+}
+#section2::-webkit-scrollbar{
+   width: 10px;
+}
+#home-product{
+    transition: 0.5s all;
+   
+}
+#section2{
+    width: 95%;
+    margin: auto;
+    
+}
+#section1{
+    width: 95%;
+    margin: auto;
+}
+#section3{
+    width: 95%;
+    margin: auto;
+}
+.banner-2{
+    width: 95%;
+}
+#section4-1 img,
+#secttion4-2 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#section4{
+    width: 95%;
+    margin: auto;
+}
+#product-2{
+    width: 95%;
+    margin: auto;
+}
