@@ -113,3 +113,12 @@
     .info-user{
         padding-bottom: 10px;
     }
+
+    .div span{
+        font-size: 0.8rem;
+        color: red;
+    }
+    .div input::placeholder{
+        font-size: 0.9rem;
+        padding-left: 0.5rem;
+    }
