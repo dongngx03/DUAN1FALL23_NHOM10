@@ -29,28 +29,28 @@
             <h2 class="u-prof-user">Hồ Sơ Của Tôi</h2>
             <div class="info-user">Quản lý thông tin hồ sơ để bảo mật tài khoản</div>
             <hr>
-            <form class="u-form-user">
+            <form class="u-form-user" method="post">
                 <div class="u-ip-info">
                     <div class="u-ip-left">
                         <div class="div">
                             <label for="">Tên đăng nhập</label>
-                            <input type="text">
+                            <input type="text" name="user">
                         </div>
                         <div class="div">
                             <label for="">Mật khẩu</label>
-                            <input type="text">
+                            <input type="text" name="pass">
                         </div>
                         <div class="div">
                             <label for="">Email</label>
-                            <input type="text">
+                            <input type="text" name="email">
                         </div>
                         <div class="div">
                             <label for="">Số Điện Thoại</label>
-                            <input type="text">
+                            <input type="text" name="sdt">
                         </div>
                         <div class="div">
                             <label for="">Ảnh</label>
-                            <input type="file">
+                            <input type="file" name="img">
                         </div>
                     </div>
                     <div class="u-ip-right">
@@ -76,8 +76,11 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit">Cập Nhật</button>
+                <button name="btnSubmit" type="submit">Cập Nhật</button>
             </form>
+            <div class="mess">
+
+            </div>
         </div>
     </div>
 

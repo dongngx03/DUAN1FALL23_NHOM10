@@ -30,6 +30,12 @@
     .u-profile,
     .user{
         display: flex;
+        padding-bottom: 20px;
+    }
+    .user{
+        background-color: #f6f6f6;
+        justify-content: center;
+        gap: 50px;
     }
     .user,
     .u-fuc{
@@ -59,7 +65,11 @@
         color: chocolate;
     }
     .u-prof{
-        padding-left: 100px;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        border-radius: 0.5rem ;
+
     }
     .u-ip-info{
         display: grid;
@@ -82,7 +92,6 @@
         border: none;
         cursor: pointer;
         width: 100%;
-        margin-bottom: 50px;
     }
     .u-ip-info input{
         width: 100%;
@@ -100,10 +109,6 @@
     .u-ip-info .describe{
         width: 100%;
         padding-bottom: 60px;
-    }
-    .sidebar{
-        padding-right: 20px;
-        border-right: 1px solid rgb(154, 149, 149);
     }
     .info-user{
         padding-bottom: 10px;
