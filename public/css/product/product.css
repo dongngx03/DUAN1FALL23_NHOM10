@@ -12,7 +12,7 @@
 }
 .p-navrow li{
    list-style: none;
-    transition: 0.5s all;
+   transition: 0.5s all;
    height: 70%;
    width: auto;
    line-height: 3rem;
@@ -50,9 +50,10 @@ input[type="checkbox"] {
     height: 1.4rem;
     outline: 0,5px solid #666666;
 }
+
 .p-gender-item ul li label{
-   font-size: 19px;
-   font-weight: 600;
+   font-size: 17px;
+   font-weight: 300;
 }
 .p-gender-item ul{
     border-bottom: 1px solid #F1F1F1;
