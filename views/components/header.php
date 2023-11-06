@@ -36,7 +36,7 @@
                     <button class="h-btn-search"><i class="ti-search"></i>
                     <input class="h-ip-search" type="search" placeholder="search"></button>
                 </div>
-                <a href="#" class="h-btn-user"><i class="ti-user"></i></a>
+                <a href="?act=dangky" class="h-btn-user"><i class="ti-user"></i></a>
                 <a href="#" class="h-btn-cart"><i class="ti-shopping-cart"></i></a> 
             </div>
         </div>

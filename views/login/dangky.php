@@ -4,32 +4,64 @@
     <?php include_once'public/css/login/dangky.css' ?>
 </style>
 
-    <div class="nav">
-        <div class="h-nav">
-            <div class="logo">
-            <img src="/img/38c78da69bf34dad14e2.jpg" alt="">
-            <h1 class="Dangnhap">Đăng kí</h1>
-        </div>
-            <div class="help">
-                <a href="#">Bạn cần giúp đỡ?</a>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="l-navtop bg-light">
+                <a href="#" class="text-decoration-none text-dark">Shop /</a>
+                <span>Đăng ký</span>
             </div>
         </div>
-        <div class="banner-user">
-            <img src="/img/banner-sale-dich062021.jpg" alt="">
-            <div class="user">
-                <h4>Đăng kí</h4>
-                <form action="">
-                    <input type="text" placeholder="Tên đăng kí"><br>
-                    <input type="email" placeholder="Email đăng kí"><br>
-                    <input type="password" placeholder="Mật khẩu">
-                </form>
-                <button>Đăng nhập</button><br>
-                <p>Bằng việc đăng kí, bạn đã đồng ý với DLQ SHOSE về<br> <a href="#">Điều khoản dịch vụ</a> & <a href="#">Chính sách bảo mật</a></p>
-                <div class="f-user">
-                   <h5>Bạn đã có tài khoản?</h5>
-                    <label for="">Đăng nhập</label>
+
+        <div id="login-form" class="row mt-3">
+            <div class="col-md-12">
+                <div class="main">
+                    <div class="login-banner py-5">
+                        <img src="public/imgs/login/banner1.png" alt="">
+                    </div>
+                    <div class="login-main py-5">
+                        <form class="login-main-form" action="" method="post">
+                            <div class="title px-4 pt-4">
+                                <span class="h4">Đăng ký</span>
+                            </div>
+                            <div class="form-ip px-4">
+                                <input type="text" placeholder="Tên của bạn">
+                                <span class="error"></span>
+                            </div>
+                            <div class="form-ip px-4">
+                                <input type="email" placeholder="Email">
+                                <span class="error"> </span>
+                            </div>
+                            <div class="form-ip px-4">
+                                <input type="password" placeholder="Mật khẩu">
+                                <span class="error"> </span>
+                            </div>
+                            <div class="form-ip px-4">
+                                <input type="password" placeholder="Nhập lại mật khẩu">
+                                <span class="error"> </span>
+                            </div>
+
+                            <div class="form-ip px-4">
+                                <button class="btn btn-dark">Đăng ký </button>
+                            </div>
+                            <div class="form-ip px-4">
+                                <a class="text-decoration-none" href="#"> Bạn quên mật khẩu ?</a>
+                            </div>
+                            <div class="mid-item px-4 d-flex justify-content-center">
+                                <p>----------  H</p>
+                                <p>oặ</p> 
+                                <p>c  ----------</p>
+                            </div>
+
+                            <div class="last-item px-4 d-flex justify-content-center">
+                                <p>Bạn đã có tài khoản?</p>
+                                <a class="" href="#">Đăng Nhập</a>
+                            </div>
+
+                            
+                        </form>
+                    </div>
                 </div>
             </div>
-
+           
         </div>
     </div>
