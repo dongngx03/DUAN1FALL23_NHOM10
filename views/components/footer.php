@@ -23,10 +23,10 @@
             </div>
         </div>
         <div class="f-col2">
-                <a class="f-twt"><i class="ti-twitter"></i></a>
-                <a class="f-fb"><i class="ti-facebook"></i></a>
-                <a class="f-ytb"><i class="ti-youtube"></i></a>
-                <a class="f-ig"><i class="ti-instagram"></i></a>
+                <a class="f-twt"><i class="fa-brands fa-twitter"></i></a>
+                <a class="f-fb"><i class="fa-brands fa-facebook"></i></a>
+                <a class="f-ytb"><i class="fa-brands fa-youtube"></i></a>
+                <a class="f-ig"><i class="fa-brands fa-instagram"></i></a>
         </div>
     </div>
 </footer>

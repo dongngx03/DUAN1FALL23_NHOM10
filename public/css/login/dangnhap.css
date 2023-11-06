@@ -1,93 +1,107 @@
 
-*{
-    padding: 0;
-    margin: 0;
-}
-body{
-    font-family: Arial, sans-serif;
-}
-.nav{
-    width: 1200px;
-    height: 1000px;
-}
-.he-nav{
-    padding-left: 50px;
-    width:100% ;
-    display: flex;
-    height: 100px;
-    justify-content: space-between;
-    align-items: center;
-}
-.logo{
-    display: flex;
-    gap: 30px;
-}
-.logo img{
-    object-fit: contain;
-    width: 100px;
-    bottom: 100px;
-}
-.logo h1{
-    height:140px ;
-    line-height: 140px;
-}
-.help {
-    padding-right: 100px;
-}
-.banner-user{
+.l-navtop{
     width: 100%;
-
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 16px;
 }
-.banner-user img{
-    position: relative;
-    width: 1200px;
-    height: 600px;
-    object-fit: cover;
+.l-navtop span{
+    color: #666666;
+}
+.l-navtop a{
+    padding-left: 3rem;
+    font-size: 19.2px;
+}
+.login-main{
+    width: 50%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
    
 }
-.user{
-    text-align: center;
-    background-color: white;
-    position: absolute;
-    width: 400px;
-    height: 300px;
-    bottom:3% ;
-    left: 60%;
-    border-radius: 3px;
-}
-.user h4{
-    padding-top: 20px;
-}
-.q-password{
-    
-   padding: 13px;
-}
-.q-password a{
-    color: blue;
-    font-size: 15px;
-    text-decoration: none;
-   padding: 50px;
-}
-.f-user{
+
+.login-banner{
+    width: 50%;
+    height: auto;
     display: flex;
-    gap: 10px;
+    align-items: center;
     justify-content: center;
 }
-.f-user h5{
-    opacity: 0.5;
+.login-banner img{
+    width: 50%;
+    height: auto;
+    object-fit: cover;
 }
-.f-user label{
-    color: #0ad0e6;
+
+.main{
+    width: 100%;
+    height: auto;
+    display: flex;
+    background-color: #F6F6F6;
+    
 }
-button{
-    width: 167px;
-    height: 30px;
-    background-color: #0ad0e6;
-    color: white;
-    border: none;
+
+.login-main-form{
+    width: 70%;
+    height: auto;
+    border-radius: 0.5rem ;
+    display: flex;
+    flex-direction: column;
+    background: #ffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    gap: 1rem;
+
 }
-form input{
-    width: 167px;
-    height: 18px;
-    margin: 10px;
+.form-ip{
+    display: flex;
+    flex-direction: column;
 }
+.form-ip input{
+    width: 100%;
+    height: 2.5rem;
+    border: 0.5px solid #DBDBDB;
+    border-radius: 0.2rem;
+    
+}
+.form-ip input:hover{
+    border: 0.5px solid rgb(11, 187, 11);
+}
+.form-ip input:focus{
+    outline: 0.1px solid rgb(11, 187, 11);
+    
+    
+}
+.form-ip input[type="text"],
+.form-ip input[type="password"],
+.form-ip input[type="email"]{
+    font-size: 14px;
+    font-weight: 100;
+    padding-left: 1rem;
+}
+.form-ip span{
+    font-size: 12px;
+    color: red;
+    padding-left: 0.5rem;
+}
+.form-ip button{
+    border-radius: 0.2rem;
+    font-size: 17px;
+}
+.form-ip a{
+    font-size: 14px;
+    font-weight: 500;
+    color: #666666;
+}
+.mid-item p{
+    font-size: 14px;
+    color: #666666;
+}
+.last-item{
+    color: #666666;
+}
+
+>>>>>>> dbaca3b930d08e129cb9ca66502718e2659ca3e7

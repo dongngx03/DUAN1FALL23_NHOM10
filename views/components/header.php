@@ -24,7 +24,7 @@
 <body>
     <header>
         <div class="h-nav">
-            <a href="#" class="h-logo"><img src="" alt="" ></a>
+            <a href="#" class="h-logo"><img src="public/imgs/user/logo.jpg" alt="" ></a>
             <ul>
                 <li><a href="?act=product">Products</a></li>
                 <li><a href="#">Contact</a></li>
@@ -33,11 +33,10 @@
             </ul>    
             <div class="h-box-right">
                 <div class="h-search">
-                    <button class="h-btn-search"><i class="ti-search"></i>
+                    <button class="h-btn-search"><i class="fa-brands fa-sistrix"></i>
                     <input class="h-ip-search" type="search" placeholder="search"></button>
                 </div>
-                <a href="?act=dangky" class="h-btn-user"><i class="ti-user"></i></a>
-                <a href="#" class="h-btn-cart"><i class="ti-shopping-cart"></i></a> 
+                <a href="?act=dangky" class="h-btn-user"><i class="fa-solid fa-user"></i></a>
             </div>
         </div>
            

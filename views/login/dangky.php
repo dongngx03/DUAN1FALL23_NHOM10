@@ -44,7 +44,7 @@
                                 <button class="btn btn-dark">Đăng ký </button>
                             </div>
                             <div class="form-ip px-4">
-                                <a class="text-decoration-none" href="#"> Bạn quên mật khẩu ?</a>
+                                <a class="text-decoration-none" href="?act=quenmk"> Bạn quên mật khẩu ?</a>
                             </div>
                             <div class="mid-item px-4 d-flex justify-content-center">
                                 <p>----------  H</p>
@@ -54,7 +54,7 @@
 
                             <div class="last-item px-4 d-flex justify-content-center">
                                 <p>Bạn đã có tài khoản?</p>
-                                <a class="" href="#">Đăng Nhập</a>
+                                <a class="" href="?act=dangnhap">Đăng Nhập</a>
                             </div>
 
                             

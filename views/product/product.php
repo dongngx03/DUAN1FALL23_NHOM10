@@ -1,17 +1,16 @@
 <div class="container-fluid">   
     <!-- navbar top -->
        <div class="row mb-1">
-            <div id="p-menu" class="bg-light">
+            <div id="p-menu" class="bg-light d-flex justify-content-center">
                 <ul class="p-navrow">
-                    <li><a href="#">Giày Sneaker</a></li>
+                    <li><a href="#"><i class="fa-solid fa-shoe-prints"></i> Giày</a></li>
                     <li><a href="#">Dép</a></li>
-                    <li><a href="#">Deal Tốt </a></li>
-                    <li><a href="#">Nike </a></li>
-                    <li><a href="#">Adidas </a></li>
-                    <li><a href="#">Puma </a></li>
-                    <li><a href="#">Mlb </a></li>
+                    <li><a href="#">Giá tốt </a></li>
                     <li><a href="#">Khác.. </a></li>
+                    <li><a href="#"><i class="fa-solid fa-cart-shopping"></i> Giỏ hàng </a></li>
                 </ul>
+
+                
             </div>
        </div>
         <!-- mid -->
@@ -23,7 +22,7 @@
                 </div>
 
                 <div class="p-mid-2">
-                    <a href="#" class="text-decoration-none text-dark">
+                    <a href="#" id="full-btn" class="text-decoration-none text-dark">
                         <span>Full <i class="fa-solid fa-sliders"></i> </span>
                     </a>
                 </div>
@@ -163,7 +162,7 @@
 
                     </a>
                     <a class="product-item text-decoration-none" href="#">
-                        <img src="public/imgs/product/product7.png" alt="">
+                        <img src="public/imgs/product/product6.png" alt="">
                         <div class="infor d-grid py-3">
                             <span><strong>Nike Air Force 1'07</strong></span>
                             <span>Men's Shose</span>
@@ -171,11 +170,54 @@
                         </div>
 
                         <div class="product-btn">
-                            <a href="#" class="btn btn-outline-dark text-center"><i class="fa-solid fa-cart-shopping"></i> ADD</a>
-                            <a href="#" class="btn btn-outline-light"><i class="fa-solid fa-circle-info"></i> BUY</a>
+                            <button class="btn btn-outline-dark text-center"><i class="fa-solid fa-cart-shopping"></i> ADD</button>
+                            <button class="btn btn-outline-light"><i class="fa-solid fa-circle-info"></i> BUY</button>
                         </div>
 
                     </a>
+                    <a class="product-item text-decoration-none" href="#">
+                        <img src="public/imgs/product/product6.png" alt="">
+                        <div class="infor d-grid py-3">
+                            <span><strong>Nike Air Force 1'07</strong></span>
+                            <span>Men's Shose</span>
+                            <span><strong>2,950,000đ</strong></span>
+                        </div>
+
+                        <div class="product-btn">
+                            <button class="btn btn-outline-dark text-center"><i class="fa-solid fa-cart-shopping"></i> ADD</button>
+                            <button class="btn btn-outline-light"><i class="fa-solid fa-circle-info"></i> BUY</button>
+                        </div>
+
+                    </a>
+                    <a class="product-item text-decoration-none" href="#">
+                        <img src="public/imgs/product/product6.png" alt="">
+                        <div class="infor d-grid py-3">
+                            <span><strong>Nike Air Force 1'07</strong></span>
+                            <span>Men's Shose</span>
+                            <span><strong>2,950,000đ</strong></span>
+                        </div>
+
+                        <div class="product-btn">
+                            <button class="btn btn-outline-dark text-center"><i class="fa-solid fa-cart-shopping"></i> ADD</button>
+                            <button class="btn btn-outline-light"><i class="fa-solid fa-circle-info"></i> BUY</button>
+                        </div>
+
+                    </a>
+                    <a class="product-item text-decoration-none" href="#">
+                        <img src="public/imgs/product/product6.png" alt="">
+                        <div class="infor d-grid py-3">
+                            <span><strong>Nike Air Force 1'07</strong></span>
+                            <span>Men's Shose</span>
+                            <span><strong>2,950,000đ</strong></span>
+                        </div>
+
+                        <div class="product-btn">
+                            <button class="btn btn-outline-dark text-center"><i class="fa-solid fa-cart-shopping"></i> ADD</button>
+                            <button class="btn btn-outline-light"><i class="fa-solid fa-circle-info"></i> BUY</button>
+                        </div>
+
+                    </a>
+                    
                     
 
                 </div>
@@ -185,12 +227,35 @@
 
 <script>
     const productlist = document.getElementById('product-list');
-    const navlist = document.getElementById('nav-list');
-
-    function openthedoor () {
-        navlist.style.visibility= 'hidden';
-        
+    const navlist = document.getElementById('nav-left');
+    const product = document.querySelector(".p-product");
+    const fullbtn = document.getElementById("full-btn");
+    
+    // hàm ấn vào để gạt bỏ thanh lọc và phóng to gian hàng 
+    function fullscreen() {
+       if(fullbtn.innerHTML !== "X") {
+            navlist.style.display="none";
+            productlist.classList.remove("col-md-9");
+            productlist.classList.remove("overflow-auto");
+            productlist.classList.add("col-md-12");
+            product.classList.add("fullscreen");
+            fullbtn.innerHTML = "X";
+       }else{
+            navlist.style.display="block";
+            productlist.classList.add("col-md-9");
+            productlist.classList.add("overflow-auto");
+            productlist.classList.remove("col-md-12");
+            product.classList.remove("fullscreen");
+            fullbtn.innerHTML = '<span>Full <i class="fa-solid fa-sliders"></i> </span>';
+       }
     }
+    
+    // gắn envent
+    fullbtn.addEventListener('click', () => {
+        fullscreen();
+    })
+    
+    
 </script> 
 
 <style>
