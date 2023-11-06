@@ -30,7 +30,7 @@
             </div>
         </div>
         <!-- botton -->
-        <div class="row p-4">
+        <div id="nav-list" class="row p-4">
             <div id="nav-left" class="col-md-3 py-3">
                 <!-- giới tính  -->
                 <div class="p-gender">
@@ -76,7 +76,7 @@
                 </div>
             </div>
 
-            <div class="col-md-9 overflow-auto">
+            <div id="product-list" class="col-md-9 overflow-auto">
                 <div class="p-product">
                     <a class="product-item text-decoration-none" href="#">
                         <img src="public/imgs/product/product1.png" alt="">
@@ -182,6 +182,16 @@
             </div>
         </div>
 </div>
+
+<script>
+    const productlist = document.getElementById('product-list');
+    const navlist = document.getElementById('nav-list');
+
+    function openthedoor () {
+        navlist.style.visibility= 'hidden';
+        
+    }
+</script> 
 
 <style>
     <?php include_once'public/css/product/product.css' ?>

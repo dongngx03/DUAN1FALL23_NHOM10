@@ -30,6 +30,8 @@ if (isset($_GET['act'])) {
     include_once './views/home/home.php';
 }
 
+
+
 include_once './views/components/footer.php';
 
 
