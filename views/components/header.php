@@ -11,7 +11,6 @@
     <!-- gg font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <!-- icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@icon/themify-icons@1.0.1-alpha.3/themify-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@icon/themify-icons/themify-icons.min.css">
