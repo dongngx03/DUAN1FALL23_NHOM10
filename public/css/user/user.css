@@ -1,4 +1,110 @@
-h1{
-    text-align: center;
-    color: red;
-}
+    .u-avt img{
+        display: block;
+        width: 50px;
+        border-radius: 50%;
+        margin-left: 20px; 
+    }
+    .u-name span{
+        display: block;
+        padding-top: 8px;
+    }
+    .u-name span,
+    .u-settiing{
+        padding-left: 15px;
+    }
+    .u-settiing a{
+        text-decoration: none;
+        color: darkgrey;
+    }
+    .u-settiing i{
+        padding-right: 5px;
+    }
+    .u-profile{
+        padding-top: 25px;
+    }
+    .fuc{
+        display: grid;
+        padding: 50px 0 0 20px;
+    }
+    .u-form-user ,
+    .u-profile,
+    .user{
+        display: flex;
+    }
+    .user,
+    .u-fuc{
+        padding-top: 20px;
+    }
+    .u-fuc i{
+        padding-right: 10px;
+    }
+    .fuc a{
+        text-decoration: none;
+        color: black;
+    }
+    .fuc .ti-shopping-cart{
+        color: orange;
+    }
+    .fuc .ti-shopping-cart{
+        color: orange;
+    }
+    .fuc .ti-clipboard{
+        color: blue;
+    }
+    .fuc .ti-shift-right,
+    .fuc .ti-announcement{
+        color: red;
+    }
+    .fuc .ti-receipt{
+        color: chocolate;
+    }
+    .u-prof{
+        padding-left: 100px;
+    }
+    .u-ip-info{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-top: 27px;
+        column-gap: 100px;
+    }
+    .u-ip-info label{
+        display: block;
+        padding-top: 10px;
+    }
+    .u-form-user {
+        flex-direction: column;
+    }
+    .u-form-user button{
+        margin-top: 30px;
+        background-color: black;
+        color: white;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    .u-ip-info input{
+        width: 100%;
+        border: 0.5px solid #DBDBDB;
+        border-radius: 0.2rem;
+
+    }
+    .u-ip-info input:hover{
+        border: 0.5px solid rgb(11, 187, 11);
+    }
+    .u-ip-info input:focus{
+        outline: 0.1px solid rgb(11, 187, 11);
+
+    }
+    .u-ip-info .describe{
+        width: 100%;
+        padding-bottom: 60px;
+    }
+    .sidebar{
+        padding-right: 20px;
+        border-right: 1px solid rgb(154, 149, 149);
+    }
+    .info-user{
+        padding-bottom: 10px;
+    }
