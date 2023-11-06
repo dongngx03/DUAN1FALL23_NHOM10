@@ -9,7 +9,7 @@ body{
     width: 1200px;
     height: 1000px;
 }
-.h-nav{
+.he-nav{
     padding-left: 50px;
     width:100% ;
     display: flex;
@@ -31,7 +31,6 @@ body{
     line-height: 140px;
 }
 .help {
-    
     padding-right: 100px;
 }
 .banner-user{
