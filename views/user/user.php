@@ -6,10 +6,10 @@
         <div class="sidebar">
             <div class="u-profile">
                 <div class="u-avt">
-                    <img src="imgs/avt1.jpg" alt="" >
+                    <img src="public/imgs/product/product2.png" alt="" >
                 </div>
                 <div class="u-name">
-                    <span>akalong04</span>
+                    <span><strong>akalong04</strong></span>
                     <div class="u-settiing">
                         <a href="#"><i class="ti-pencil"></i>Sửa Hồ Sơ</a>
                     </div>
