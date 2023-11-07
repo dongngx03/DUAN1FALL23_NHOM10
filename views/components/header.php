@@ -11,10 +11,8 @@
     <!-- gg font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <!-- icon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@icon/themify-icons@1.0.1-alpha.3/themify-icons.min.css">
-    
+    <link rel="stylesheet" href="icon/themify-icons/themify-icons.css">
 
     <title>Document</title>
     <style>
@@ -24,7 +22,7 @@
 <body>
     <header>
         <div class="h-nav">
-            <a href="#" class="h-logo"><img src="public/imgs/user/logo.jpg" alt="" ></a>
+            <a href="?act=home" class="h-logo"><img src="public/imgs/user/logo.jpg" alt="" ></a>
             <ul>
                 <li><a href="?act=product">Products</a></li>
                 <li><a href="#">Contact</a></li>

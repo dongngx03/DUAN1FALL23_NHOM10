@@ -97,7 +97,7 @@
         </div>
         <div class="row justify-content-center">
             <div id="home-btn" class="col-3">
-                <button class="btn btn-dark">Shop</button>
+                <a href="" class="btn btn-dark">Shop</a>
             </div>
         </div>
     </div>
