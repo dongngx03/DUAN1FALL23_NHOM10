@@ -17,7 +17,7 @@
                
             </div>
             <div class="fuc">
-                <a style="font-size: large; color: rgb(212, 212, 26);" href="#" class="u-fuc"><i class="ti-announcement"></i>20/11 Free Ship All</a>
+                <a href="#" class="u-fuc"><i class="ti-announcement"></i>20/11 Free Ship All</a>
                 <a href="#" class="u-fuc"><i class="ti-shopping-cart"></i> Giỏ hàng</a>
                 <a href="#" class="u-fuc"><i class="ti-clipboard"></i>Đơn mua</a>
                 <a href="#" class="u-fuc"><i class="ti-receipt"></i>Voucher của bạn</a>
