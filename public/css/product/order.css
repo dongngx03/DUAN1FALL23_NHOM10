@@ -1,0 +1,188 @@
+.u-avt img{
+    display: block;
+    width: 50px;
+    border-radius: 50%;
+    margin-left: 20px; 
+    border: 0.5px solid black;
+    object-fit: contain;
+}
+.u-name span{
+    display: block;
+    padding-top: 8px;
+}
+.u-name span,
+.u-settiing{
+    padding-left: 15px;
+}
+.fuc a:hover{
+    color: red;
+}
+.u-settiing a{
+    text-decoration: none;
+    color: darkgrey;
+}
+.u-settiing i{
+    padding-right: 5px;
+}
+.u-profile{
+    padding-top: 25px;
+}
+.fuc{
+    display: grid;
+    padding: 50px 0 0 20px;
+}
+.u-form-user ,
+.u-profile,
+.user{
+    display: flex;
+    padding-bottom: 20px;
+}
+.user{
+    background-color: #f6f6f6;
+    justify-content: center;
+    gap: 50px;
+}
+.user,
+.u-fuc{
+    padding-top: 20px;
+}
+.u-fuc i{
+    padding-right: 10px;
+}
+.fuc a{
+    text-decoration: none;
+    color: black;
+}
+.fuc .ti-shopping-cart{
+    color: orange;
+}
+.fuc .ti-shopping-cart{
+    color: orange;
+}
+.fuc .ti-clipboard{
+    color: blue;
+}
+.fuc .ti-shift-right,
+.fuc .ti-announcement{
+    color: red;
+}
+.fuc .ti-receipt{
+    color: chocolate;
+}
+.dh-nav{
+    margin-top: 2rem;
+    width: 60%;
+}
+.dh-nav-order li{
+    list-style: none;
+}
+.dh-nav-order ul{
+    display: flex;
+    gap: 3rem;
+   width: 100%;
+   height: 100%;
+   line-height: 3rem;
+   font-size: 16px;
+   background-color: white;
+}
+.dh-nav-order li a{
+    text-decoration: none;
+    color: black;
+    padding-left: 2rem;
+}
+.form-sp{
+    background-color: white;
+}
+.h-form-sp{
+    padding-top: 0.8rem;
+    margin-left: 2rem;
+}
+.h-form-sp a{
+   margin-left: 14rem;
+   color: black;
+   text-decoration: none;
+   opacity: 25%;
+}
+.dh-tk{
+    padding-bottom: 2rem;
+    
+}
+.dh-tk form input{
+    width: 100%;
+    height: 2rem;
+    background-color: rgb(207, 201, 201);
+    padding-left: 2rem;
+    border: 1px solid black;
+}
+.dh-tk form{
+    position: relative;
+}
+.dh-tk form button{
+    position: absolute;
+    background-color:rgb(207, 201, 201) ;
+    border: 0.2rem rgb(207, 201, 201) solid;
+    left: 0.1rem;
+    top: 0.1rem;
+    height: 1.5rem;
+}
+.dh-img img{
+    width: 10rem;
+    height: auto;
+    object-fit: cover;
+}
+.dh-body{
+    display: flex;
+    padding: 0.7rem;
+}
+.dh-text{
+    padding: 0.7rem;
+}
+.dh-text p{
+    opacity: 50%;
+    padding-top: 0.5rem;
+}
+.dh-text a{
+    color: black;
+    text-decoration: none;
+}
+.dh-price{
+    color: black;
+}
+.dh-complete{
+    background-color: white;
+    margin-top: 0.3rem;
+    height: 8rem;
+    
+}
+.dg-complete-span{
+    text-align: right;
+    padding: 0.8rem;
+    margin-right: 1.5rem;
+}
+.dg-complete{
+    padding-top: 1rem;
+    display: flex;
+}
+.dg-complete-text{
+    font-size: 0.8rem;
+    display: flex;
+   padding-left: 2.1rem;
+}
+.dg-complete-a{
+   font-size: 0.8rem;
+   padding-top: 1.5rem;
+   margin-left: 0.5rem;
+}
+.dg-complete-b{
+    background-color: rgb(204, 196, 196);
+    width: 7rem;
+    height: 2rem; 
+    line-height: 2rem;
+    margin: 1rem;
+    text-align: center;
+}
+.dg-complete-b a{
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
