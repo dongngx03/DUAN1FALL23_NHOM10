@@ -1,4 +1,3 @@
-
 <div class="container-fluid">
     <div id="title-top" class="row">
         <span class="text-center">landing-page team10 DLQ shose shop</span>
