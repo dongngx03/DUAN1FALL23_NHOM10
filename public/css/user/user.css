@@ -88,6 +88,7 @@
     }
     .u-form-user {
         flex-direction: column;
+        width: 100%;
     }
     .u-form-user button{
         margin-top: 30px;
@@ -103,6 +104,9 @@
         border: 0.5px solid #DBDBDB;
         border-radius: 0.2rem;
 
+    }
+    .div span{
+        width: 100%;
     }
     .u-ip-info input:hover{
         border: 0.5px solid rgb(11, 187, 11);
@@ -126,4 +130,7 @@
     .div input::placeholder{
         font-size: 0.9rem;
         padding-left: 0.5rem;
+    }
+    .div p{
+        font-size: 12px;
     }
