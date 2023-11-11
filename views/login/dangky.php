@@ -19,7 +19,7 @@
                     <img src="public/imgs/login/banner1.png" alt="">
                 </div>
                 <div class="login-main py-5">
-                    <form class="login-main-form" action="" method="post">
+                    <form class="login-main-form" action="" method="post" id="myForm" onsubmit="validateForm(event)">
                         <div class="title px-4 pt-4">
                             <span class="h4">Đăng ký</span>
                         </div>
@@ -73,7 +73,6 @@
         const email = document.getElementById("email");
         const password = document.getElementById("password");
         const confirmPassword = document.getElementById("confirmPassword");
-        const errPassword = document.getElementById("errPassword");
 
         if (user.onblur(user) && email.onblur(email) && password.onblur(password) && confirmPassword.onblur(confirmPassword)) {
             const myForm = document.getElementById("myForm");
@@ -115,8 +114,7 @@
             password.style.border = '1px solid red';
             errPassword.textContent = 'Vui lòng nhập.';
             return false;
-
-        } 
+        }
         if (!passwordPattern.test(password.value.trim())) {
             errPassword.textContent = 'Mật khẩu phải có 8 kí tự và chữ cái đầu viết hoa.';
             return false;
@@ -128,16 +126,22 @@
 
         }
     };
-    confirmPassword.onblur = function() {
-  if (confirmPassword.value !== password.value) {
-    errPassword.textContent = 'Mật khẩu không khớp.';
-    confirmPassword.style.border = '1px solid red';
-    return false;
-  } else {
-    errPassword.textContent = '';
-    confirmPassword.style.border = '1px solid green';
-    return true;
-  }
-};
+    confirmPassword.onblur = function () {
+        if (confirmPassword.value.trim() != password.value.trim()) {
+            errConfirmPassword.textContent = 'Mật khẩu không khớp.';
+            confirmPassword.style.border = '1px solid red';
+            return false;
+        }
+        if (confirmPassword.value.trim() === '') {
+            confirmPassword.style.border = '1px solid red';
+            errConfirmPassword.textContent = 'Vui lòng nhập.';
+            return false;
+        }
+        else {
+            confirmPassword.style.border = '1px solid green';
+            errConfirmPassword.textContent = '';
+            return true;
+        }
+    };
 
 </script>
