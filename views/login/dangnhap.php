@@ -19,17 +19,17 @@
                         <img src="public/imgs/login/banner1.png" alt="">
                     </div>
                     <div class="login-main py-5">
-                        <form class="login-main-form" action="" method="post">
+                        <form id="form" class="login-main-form" action="" method="post">
                             <div class="title px-4 pt-4">
                                 <span class="h4">Đăng nhập</span>
                             </div>
                             
                             <div class="form-ip px-4">
-                                <input type="email" placeholder="Email">
+                                <input id="email" type="email" placeholder="Email">
                                 <span class="error"> </span>
                             </div>
                             <div class="form-ip px-4">
-                                <input type="password" placeholder="Mật khẩu">
+                                <input id="pw" type="password" placeholder="Mật khẩu">
                                 <span class="error"> </span>
                             </div>
 
@@ -58,3 +58,4 @@
            
         </div>
     </div>
+    

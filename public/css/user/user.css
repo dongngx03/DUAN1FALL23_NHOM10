@@ -134,3 +134,6 @@
     .div p{
         font-size: 12px;
     }
+    .div{
+        transition: 1s all;
+    }
