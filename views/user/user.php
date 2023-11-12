@@ -94,7 +94,6 @@
 <script>
     function validateForm(event) {
         event.preventDefault();
-
         const user = document.getElementById('user');
         const pass = document.getElementById('pass');
         const email = document.getElementById('email');
@@ -111,9 +110,7 @@
             const myForm = document.getElementById('myForm');
             myForm.onsubmit = null;
             myForm.submit();
-
         }
-
     }
     user.onblur = function() {
         if (user.value.trim() === '') {
@@ -136,7 +133,6 @@
             pass.style.border = '1px solid green';
             errPass.textContent = '';
             return true;
-
         }
     };
     email.onblur = function() {
