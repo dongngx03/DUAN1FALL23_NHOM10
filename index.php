@@ -30,6 +30,9 @@ if (isset($_GET['act'])) {
         case 'cart':
             include_once './views/product/cart.php';
             break;
+        case 'productdetail':
+            include_once './views/product/productdetail.php';
+            break;
 
     }
 } else {
