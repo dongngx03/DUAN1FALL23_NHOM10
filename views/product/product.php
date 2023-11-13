@@ -1,18 +1,23 @@
 <div class="container-fluid">   
     <!-- navbar top -->
-       <div class="row mb-1">
-            <div id="p-menu" class="bg-light d-flex justify-content-center">
-                <ul class="p-navrow">
-                    <li><a href="#"><i class="fa-solid fa-shoe-prints"></i> Giày</a></li>
-                    <li><a href="#">Dép</a></li>
-                    <li><a href="#">Giá tốt </a></li>
-                    <li><a href="#">Khác.. </a></li>
-                    <li><a href="#"><i class="fa-solid fa-cart-shopping"></i> Giỏ hàng </a></li>
-                </ul>
-
-                
+        <div class="h-nav2">
+            <ul>
+                <li><a href="">Navbar</a></li>
+                <li><a href="">addproduct</a></li>
+                <li><a href="">Link</a></li>
+                <li><a href="">Dropdown</a></li>
+                <li><a href="">Disabled</a></li>
+            </ul>
+            <div class="h-box-right">
+                <div class="h-search">
+                    <button class="h-btn-search"><i class="fa-brands fa-sistrix"></i>
+                    <input id="inputseah" class="h-ip-search" type="search" placeholder="search"></button>
+                </div>
+                <a href="?act=dangky" class="h-btn-user"><i class="ti-user"></i></a>
+                <a href="?act=dangky" class="h-btn-user"><i class="ti-shopping-cart"></i></a>
             </div>
-       </div>
+        </div>
+
         <!-- mid -->
         <div class="row p-4">
             <div class="p-mid">
@@ -240,6 +245,7 @@
             productlist.classList.add("col-md-12");
             product.classList.add("fullscreen");
             fullbtn.innerHTML = "X";
+           
     }else{
             navlist.style.display="block";
             productlist.classList.add("col-md-9");
@@ -254,6 +260,9 @@
 fullbtn.addEventListener('click', () => {
     fullscreen();
 })
+
+
+
 </script> 
    
 <style>

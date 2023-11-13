@@ -92,15 +92,24 @@
 .ti-shopping-cart{
     color: white;
 }
+
+/* nav-đen đen bên dưới header bên trên prodcut */
 .h-nav2{
     background-color: black;
     display: flex;
     justify-content: space-between;
+    height: 3rem;
+    
+   
 }
 .h-nav2 ul{
     display: flex;
-    list-style: none;   
-    margin-top: 10px;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    
 }
 .h-nav2 ul li a{
     text-decoration: none;
@@ -111,6 +120,7 @@
 .h-nav2 ul li a:hover{
     opacity: calc(0.2);
 }
+/* hết  */
 /* END HEADER */
 
 
