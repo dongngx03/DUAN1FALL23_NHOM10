@@ -29,14 +29,26 @@
                 <li><a href="#">Deal Hot</a></li>
                 <li><a href="#">News</a></li>
             </ul>    
+        </div>
+
+        <div class="h-nav2">
+            <ul>
+                <li><a href="">Navbar</a></li>
+                <li><a href="">addproduct</a></li>
+                <li><a href="">Link</a></li>
+                <li><a href="">Dropdown</a></li>
+                <li><a href="">Disabled</a></li>
+            </ul>
             <div class="h-box-right">
                 <div class="h-search">
                     <button class="h-btn-search"><i class="fa-brands fa-sistrix"></i>
                     <input class="h-ip-search" type="search" placeholder="search"></button>
                 </div>
-                <a href="?act=dangky" class="h-btn-user"><i class="fa-solid fa-user"></i></a>
+                <a href="?act=dangky" class="h-btn-user"><i class="ti-user"></i></a>
+                <a href="?act=dangky" class="h-btn-user"><i class="ti-shopping-cart"></i></a>
             </div>
         </div>
-           
+        
     </header>
       
+    
