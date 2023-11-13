@@ -15,9 +15,9 @@
             </div>
        </div>
 
-       <div class="row">
+       <div class="row pt-4">
             <!-- left -->
-            <div class="col-md-7">
+            <div class="col-md-7 d-grid">
                 <div class="d_left p-4 pt-5">
                     <div class="d_left_box1 ms-5">
                         <div class="box1_item">
@@ -32,13 +32,31 @@
                         <div class="box1_item">
                             <img src="https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/786867c8-f1f7-4dfd-9a7e-039d92406715/air-jordan-1-low-shoes-6Q1tFM.png" alt="">
                         </div>
+                        <div class="box1_item">
+                            <img src="https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/786867c8-f1f7-4dfd-9a7e-039d92406715/air-jordan-1-low-shoes-6Q1tFM.png" alt="">
+                        </div>
                         
                     </div>
 
                     <div class="d_left_box2">
-                        <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-WrLlWX.png" alt="">
+                        <div class="left_box2_conatiner">
+                            <img class="img-banner" src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-WrLlWX.png" alt="">
+                            <img class="img-banner" src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3f02e510-f566-44bb-be33-4ea370d605ee/air-force-1-07-shoe-NMmm1B.png" alt="">
+                            <img class="img-banner" src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2e9a8534-224b-4919-bba2-9a55661c7eba/air-force-1-07-shoe-NMmm1B.png" alt="">
+                            <img class="img-banner" src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d4776188-7104-419e-a1c8-f055737b9e6e/court-vision-low-next-nature-shoes-N2fFHb.png" alt="">
+                        </div>
+
+                        <div class="d_left_box2_btn">
+
+                            <button onclick="prew()" class="btn btn-outline-light"><i class="fa-solid fa-chevron-left text-dark"></i></button>
+                            <button onclick="next()" class="btn btn-outline-light"><i class="fa-solid fa-chevron-right text-dark"></i></button>
+                           
+
+                        </div>
                     </div>
                 </div>
+
+                
             </div>
 
             <!-- right -->
@@ -98,7 +116,7 @@
                     </div>
 
                     <div class="d_right_size pt-4 d-flex">
-                        <h3 class="selectcolor">Select Size / <a href="" class="text-decoration-none text-danger">Size Guide</a></h3>
+                        <span class="selectcolor">Select Size / <a href="" class="text-decoration-none text-danger">Size Guide</a></span>
                     </div>
 
                     <div class="d_size">
@@ -131,12 +149,12 @@
                         </a>
                     </div>
                     <div class="d_right_size pt-1 d-flex gap-1">
-                        <h3 class="selectcolor">Số lượng còn:</h3>
-                        <h3 id="gioihan" class="selectcolor text-danger"> 30</h3>
+                        <span class="selectcolor">Số lượng còn:</span>
+                        <span id="gioihan" class="selectcolor text-danger"> 30</span>
                     </div>
 
                     <div class="d_right_size pt-4 d-flex">
-                        <h3 class="selectcolor">Quantity </h3>
+                        <span class="selectcolor">Quantity </span>
                     </div>
 
                     <div class="d_quantity">
@@ -147,11 +165,17 @@
 
                     <div class="d_option">
                         <a class="btn btn-dark rounded-pill" href="">
-                            <span>Add To Cart</span>
+                            <span>Add To Cart <i class="fa-regular fa-heart"></i></span>
                         </a>
                         <button class="btn btn-outline-dark rounded-pill">
                             <span>Buy Now</span>
                         </button>
+                    </div>
+
+                    <div class="d_desc pt-3">
+                        <span>
+                        The radiance lives on in the Nike Air Force 1 '07, the b-ball icon that puts a fresh spin on what you know best: crisp leather, bold colours and the perfect amount of flash to make you shine.
+                        </span>
                     </div>
                    
                 </div>
@@ -159,79 +183,55 @@
 
        </div>
 
+       <div class="row pt-2 px-4">
+            <div class="py-3 ">
+                <span class="h4 fw-normal"> Bình luận từ người dùng  </span>
+            </div>
+       </div>
+
+       <!-- phần cmt và sản phẩm liên quan  -->
+       <div class="row pt-5 px-4">
+           <div class="span py-3">
+                <span class="h4 fw-normal"> Có Thể Bạn cũng thích </span>
+
+           </div>
+
+           <div class="row px-3">
+                <div class="d_product-list">
+                    <div class="d_product-list-item">
+                        <a class="list-item d-grid gap-1" href="">
+                            <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/53f44f04-f9a1-439e-82bd-1fabea198a2a/court-vision-low-next-nature-shoes-N2fFHb.png" alt="">
+                            <strong><span class="h5 fw-bold">Nike air force 1</span></strong>
+                            <span>Men shose</span>
+                            <strong><span>1.000.000đ</span></strong>
+                        </a>
+                        <a class="list-item d-grid gap-1" href="">
+                            <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/53f44f04-f9a1-439e-82bd-1fabea198a2a/court-vision-low-next-nature-shoes-N2fFHb.png" alt="">
+                            <strong><span class="h5 fw-bold">Nike air force 1</span></strong>
+                            <span>Men shose</span>
+                            <strong><span>1.000.000đ</span></strong>
+                        </a>
+                        <a class="list-item d-grid gap-1" href="">
+                            <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/53f44f04-f9a1-439e-82bd-1fabea198a2a/court-vision-low-next-nature-shoes-N2fFHb.png" alt="">
+                            <strong><span class="h5 fw-bold">Nike air force 1</span></strong>
+                            <span>Men shose</span>
+                            <strong><span>1.000.000đ</span></strong>
+                        </a>
+                        <a class="list-item d-grid gap-1" href="">
+                            <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/53f44f04-f9a1-439e-82bd-1fabea198a2a/court-vision-low-next-nature-shoes-N2fFHb.png" alt="">
+                            <strong><span class="h5 fw-bold">Nike air force 1</span></strong>
+                            <span>Men shose</span>
+                            <strong><span>1.000.000đ</span></strong>
+                        </a>
+                      
+                    </div>
+                </div>
+           </div>
+       </div>
+
        
 </div>
 
 <script>
-        // Lấy tất cả các thẻ a có class là 'color_item'
-        var colorItems = document.querySelectorAll('.color_item');
-
-        // Duyệt qua từng thẻ a và lấy giá trị của thẻ span bên trong
-        colorItems.forEach(function(item) {
-            var spanText = item.querySelector('.color_item_text').textContent;
-            var icon = item.querySelector('.icon')
-
-            switch (spanText) {
-                case 'Blue':
-                    icon.style.color='blue'
-                    break;
-                case 'Red':
-                    icon.style.color='red'
-                    break;
-                case 'Yellow':
-                    icon.style.color='yellow'
-                    break;
-                case 'Pink':
-                    icon.style.color='pink'
-                    break;
-                case 'Black':
-                    icon.style.color='black'
-                    break;
-                case 'White':
-                    icon.style.color='White'
-                    break;
-                case 'Green':
-                    icon.style.color='green'
-                    break;
-               
-            }
-
-            item.addEventListener('click', function() {
-                // Xóa class 'clicked' khỏi tất cả các phần tử
-                colorItems.forEach(function(item) {
-                    item.classList.remove('clicked');
-                });
-
-                // Thêm class 'clicked' cho phần tử được click
-                this.classList.add('clicked');
-            });
-        });
-
-        const tang = document.getElementById('tang');
-        const giam = document.getElementById('giam');
-        const quantity = document.getElementById('quantity');
-        const gioihan = document.getElementById('gioihan').textContent;
-
-
-        quantity.addEventListener('blur', () => {
-            if(quantity.value>= parseInt(gioihan)) {
-                quantity.value = parseInt(gioihan);
-                quantity.style.border = '1px solid red';
-            }else if(quantity.value <= 0) {
-                quantity.value = 1;
-            }
-        })
-        tang.addEventListener('click', () => {
-            quantity.value ++;
-            if(quantity.value>= parseInt(gioihan)) {
-                quantity.value = parseInt(gioihan);
-                quantity.style.border = '1px solid red';
-            }
-        })
-        giam.addEventListener('click', () => {
-            quantity.value--;
-            if(quantity.value <=0) {
-                quantity.value = 1
-            }
-        })
-    </script>
+    <?php include_once'public/js/product/productdetail.js' ?>
+</script>

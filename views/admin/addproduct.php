@@ -1,0 +1,179 @@
+<?php include_once'./controllers/admin/addproductController.php' ?>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">addproduct</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<!-- body -->
+
+<div class="container-fluid bg-light ">
+    <div class="row pt-5 ">
+        <h1 class="text-center">ADD PRODUCT</h1>
+    </div>
+    <div class="row p-5">
+        <div class="col-md-12 bg-white shadow-lg p-3 mb-5 bg-body rounded">
+            <span class="h3">Thêm Sản Phẩm </span>
+            <form class="pt-3" action="" method="post" enctype="multipart/form-data">
+                <!-- name -->
+                <div class="mb-3">
+                    <strong><label for="" class="form-label">Name product</label></strong>
+                    <input type="text" class="form-control" name="p_name">
+                </div>
+                <!-- price -->
+                <div class="mb-3">
+                    <strong><label for="" class="form-label">Price </label></strong>
+                    <input type="number" class="form-control"  name="p_price">
+                </div>
+                <!-- desc -->
+                <div class="mb-3">
+                    <strong><label for="" class="form-label">Description</label></strong>
+                    <textarea class="form-control" id="" rows="3" name="p_desc"></textarea>
+                </div>
+                <!-- brand -->
+                <div class="mb-3">
+                    <strong><label for="" class="form-label">Brand </label></strong>
+                    <select name="brand_id" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                        <!--  -->
+                        <?php foreach($dataBrand as $value): ?>
+                        <option value="<?php echo $value['brand_id'] ?>"><?php echo $value['brand_name'] ?></option>
+                        <?php endforeach; ?>
+                        <!--  -->
+                    </select>
+                </div>
+                <!-- type -->
+                <div class="mb-3">
+                    <strong><label for="" class="form-label">Type </label></strong>
+                    <select name="type_id" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                        <!--  -->
+                        <?php foreach($dataType as $value): ?>
+                        <option value="<?php echo $value['type_id'] ?>"><?php echo $value['type_name'] ?></option>
+                        <?php endforeach; ?>
+                        <!--  -->
+                    </select>
+                </div>
+                <!-- img avatar -->
+                <div class="mb-3">
+                    <strong><label for="" class="form-label">Img avatar</label></strong>
+                    <input class="form-control" type="file" name="img_avatar">
+                </div>
+
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-dark w-100" name="addProduct">Add</button>
+                </div>
+            </form>
+        </div>
+
+
+
+
+        <div class="col-md-12 bg-white shadow-lg p-3 mb-5 bg-body rounded">
+            <span class="h3">Sản Phẩm Biến Thể  </span>
+            <form class="pt-3" action="" method="post">
+                <!-- ID product -->
+                <div class="mb-3">
+                    <strong><label for="" class="form-label">ID product </label></strong>
+                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                        <option selected>Open this select ID</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <!-- ID size -->
+                <div class="mb-3">
+                    <strong><label for="" class="form-label"> Size </label></strong>
+                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                        <!--  -->
+                        <?php foreach($dataSizes as $value): ?>
+                        <option value="<?php echo $value['size_id'] ?>"><?php echo $value['size_name'] ?></option>
+                        <?php endforeach; ?>
+                        <!--  -->
+                    </select>
+                </div>
+                <!-- ID color -->
+                <div class="mb-3">
+                    <strong><label for="" class="form-label"> Color </label></strong>
+                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                        <!--  -->
+                        <?php foreach($dataColor as $value): ?>
+                        <option value="<?php echo $value['color_id'] ?>"><?php echo $value['color_name'] ?></option>
+                        <?php endforeach; ?>
+                        <!--  -->
+                    </select>
+                </div>
+                 <!-- price -->
+                <div class="mb-3">
+                    <strong><label for="" class="form-label">Quantity </label></strong>
+                    <input type="number" class="form-control"  placeholder="">
+                </div>
+
+                <div class="mb-3">
+                    <button class="btn btn-dark w-100">Add</button>
+                </div>
+
+            </form>
+        </div>
+
+
+
+        <div class="col-md-12 bg-white shadow-lg p-3 mb-5 bg-body rounded">
+            <span class="h3">Thêm ảnh sản phẩm  </span>
+            <form action="" method="post">
+                <!-- img url -->
+                <div class="mb-3">
+                    <strong><label for="" class="form-label">Img url</label></strong>
+                    <input class="form-control" type="file">
+                </div>
+               <!-- ID product -->
+               <div class="mb-3">
+                    <strong><label for="" class="form-label"> Product ID </label></strong>
+                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                        <option selected>Open this select ID product</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <button class="btn btn-dark w-100">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
