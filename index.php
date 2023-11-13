@@ -1,4 +1,10 @@
 <?php
+// session 
+session_start();
+
+
+
+// phần web 
 include_once './views/components/header.php';
 
 
@@ -30,6 +36,14 @@ if (isset($_GET['act'])) {
         case 'cart':
             include_once './views/product/cart.php';
             break;
+        case 'productdetail':
+            include_once './views/product/productdetail.php';
+            break;
+
+        case 'addproduct':
+            include_once './views/admin/addproduct.php';
+            break;
+
 
     }
 } else {
