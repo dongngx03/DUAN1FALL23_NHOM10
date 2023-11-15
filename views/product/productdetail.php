@@ -1,7 +1,13 @@
+<?php 
+    include_once'./controllers/product/productdetailController.php';
+?>
 <style>
     <?php include_once'public/css/product/productdetail.css'; ?>
 </style>
 <div class="container-fluid">   
+    <!-- mã sản phẩm  -->
+    <input id="product_id" type="hidden" value="<?php echo $p_id ?>">
+
     <!-- navbar top -->
         <div class="h-nav2">
             <ul>
@@ -26,30 +32,23 @@
             <div class="col-md-7 d-grid">
                 <div class="d_left p-4 pt-5">
                     <div class="d_left_box1 ms-5">
-                        <div class="box1_item">
-                            <img src="https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/786867c8-f1f7-4dfd-9a7e-039d92406715/air-jordan-1-low-shoes-6Q1tFM.png" alt="">
-                        </div>
-                        <div class="box1_item">
-                            <img src="https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c6a4a8bf-2f39-4311-9852-ae95d0ae18ca/air-jordan-1-low-shoes-6Q1tFM.png" alt="">
-                        </div>
-                        <div class="box1_item">
-                            <img src="https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/786867c8-f1f7-4dfd-9a7e-039d92406715/air-jordan-1-low-shoes-6Q1tFM.png" alt="">
-                        </div>
-                        <div class="box1_item">
-                            <img src="https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/786867c8-f1f7-4dfd-9a7e-039d92406715/air-jordan-1-low-shoes-6Q1tFM.png" alt="">
-                        </div>
-                        <div class="box1_item">
-                            <img src="https://static.nike.com/a/images/t_default/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/786867c8-f1f7-4dfd-9a7e-039d92406715/air-jordan-1-low-shoes-6Q1tFM.png" alt="">
-                        </div>
+                        <!--  -->
+                        <?php if(!empty($dataImg)) foreach($dataImg as $value): ?>
+                            <div class="box1_item">
+                                <img src="public/imgs/product/<?php echo $value['img_url'] ?>" alt="">
+                            </div>
+                        <?php endforeach; ?>
+                        <!--  -->
                         
                     </div>
 
                     <div class="d_left_box2">
                         <div class="left_box2_conatiner">
-                            <img class="img-banner" src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-WrLlWX.png" alt="">
-                            <img class="img-banner" src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3f02e510-f566-44bb-be33-4ea370d605ee/air-force-1-07-shoe-NMmm1B.png" alt="">
-                            <img class="img-banner" src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2e9a8534-224b-4919-bba2-9a55661c7eba/air-force-1-07-shoe-NMmm1B.png" alt="">
-                            <img class="img-banner" src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d4776188-7104-419e-a1c8-f055737b9e6e/court-vision-low-next-nature-shoes-N2fFHb.png" alt="">
+                            <!--  -->
+                            <?php if(!empty($dataImg)) foreach($dataImg as $value): ?>
+                            <img class="img-banner" src="public/imgs/product/<?php echo $value['img_url'] ?>" alt="">
+                            <?php endforeach; ?>
+                            <!--  -->
                         </div>
 
                         <div class="d_left_box2_btn">
@@ -74,90 +73,36 @@
 
                     <h3 class="pt-3 selectcolor">Select Color</h3>
                     <div class="d_right_color">
-                        <a href="#" class="color_item">
+                        <!--  -->
+                        <?php if(!empty($dataColor)) foreach($dataColor as $value): ?>
+                        <a href="" class="color_item">
                             <i class="fa-solid fa-face-smile icon"></i>
-                            <span class="color_item_text">Blue</span>
+                            <span class="color_item_text"><?php echo $value['color_name'] ?></span>
+                            <input class="color_item_input" type="hidden" value="<?php echo $value['color_id'] ?>">
                         </a>
-                        <a href="#" class="color_item">
-                            <i class="fa-solid fa-face-smile icon"></i>
-                            <span class="color_item_text">Red</span>
-
-                        </a>
-                        <a href="#" class="color_item">
-                            <i class="fa-solid fa-face-smile icon"></i>
-                            <span class="color_item_text">Yellow</span>
-
-                        </a>
-                        <a href="#" class="color_item">
-                            <i class="fa-solid fa-face-smile icon"></i>
-                            <span class="color_item_text">Pink</span>
-
-                        </a>
-                        <a href="#" class="color_item">
-                            <i class="fa-solid fa-face-smile icon"></i>
-                            <span class="color_item_text">Black</span>
-
-                        </a>
-                        <a href="#" class="color_item">
-                            <i class="fa-solid fa-face-smile icon"></i>
-                            <span class="color_item_text">White</span>
-
-                        </a>
-                        <a href="#" class="color_item">
-                            <i class="fa-solid fa-face-smile icon"></i>
-                            <span class="color_item_text">Green</span>
-
-                        </a>
-                        <a href="#" class="color_item">
-                            <i class="fa-solid fa-face-smile icon"></i>
-                            <span class="color_item_text">White</span>
-
-                        </a>
-                        <a href="#" class="color_item">
-                            <i class="fa-solid fa-face-smile icon"></i>
-                            <span class="color_item_text">White</span>
-
-                        </a>
+                        <?php endforeach; ?>
+                        <!--  -->
+                       
                        
                     </div>
 
-                    <div class="d_right_size pt-4 d-flex">
+                    <div class="d_right_size pt-4 pb-2 d-flex">
                         <span class="selectcolor">Select Size / <a href="" class="text-decoration-none text-danger">Size Guide</a></span>
                     </div>
-
+                            <!-- SIZE -->
                     <div class="d_size">
-                        <a class="size_item" href="#">
-                            <span class="text-dark fw-bold">EU 36</span>
-                        </a>
-                        <a class="size_item" href="#">
-                            <span class="text-dark fw-bold">EU 37</span>
-                        </a>
-                        <a class="size_item" href="#">
-                            <span class="text-dark fw-bold">EU 38</span>
-                        </a>
-                        <a class="size_item" href="#">
-                            <span class="text-dark fw-bold">EU 39</span>
-                        </a>
-                        <a class="size_item" href="#">
-                            <span class="text-dark fw-bold">EU 40</span>
-                        </a>
-                        <a class="size_item" href="#">
-                            <span class="text-dark fw-bold">EU 41</span>
-                        </a>
-                        <a class="size_item" href="#">
-                            <span class="text-dark fw-bold">EU 42</span>
-                        </a>
-                        <a class="size_item" href="#">
-                            <span class="text-dark fw-bold">EU 43</span>
-                        </a>
-                        <a class="size_item" href="#">
-                            <span class="text-dark fw-bold">EU 44</span>
-                        </a>
+                        <div class="border border-1 rounded-2 p-5">
+                            <span class="text-center p-3 text-danger ">Bạn vui lòng chọn màu để tìm size</span>
+                        </div>
+
                     </div>
-                    <div class="d_right_size pt-1 d-flex gap-1">
-                        <span class="selectcolor">Số lượng còn:</span>
-                        <span id="gioihan" class="selectcolor text-danger"> 30</span>
+                            <!-- SIZE -->
+
+                            <!-- số lượng  -->
+                    <div class="d_right_size pt-3 d-flex gap-1">
+                        <div id="gioihan" class="selectcolor text-danger"></div>
                     </div>
+                            <!-- số lượng  -->
 
                     <div class="d_right_size pt-4 d-flex">
                         <span class="selectcolor">Quantity </span>

@@ -1,7 +1,5 @@
 <?php 
-    // kết nối với database
-    include'./models/database.php';
-
+   
 
     // thêm sản phẩm 
     function addProduct($p_name, $p_price, $p_desc, $brand_id, $type_id, $img_avatar) {
@@ -11,6 +9,6 @@
         $stmt = connect()->prepare($query);
         $stmt->execute();
     }
-   
+    
 
 ?>

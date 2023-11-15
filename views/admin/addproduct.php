@@ -40,6 +40,7 @@
 
 
 <!-- body -->
+                        <!-- thêm sản phẩm bình thường  -->
 
 <div class="container-fluid bg-light ">
     <div class="row pt-5 ">
@@ -99,7 +100,7 @@
         </div>
 
 
-
+                            <!-- thêm sản phẩm biến thể  -->
 
         <div class="col-md-12 bg-white shadow-lg p-3 mb-5 bg-body rounded">
             <span class="h3">Sản Phẩm Biến Thể  </span>
@@ -107,19 +108,20 @@
                 <!-- ID product -->
                 <div class="mb-3">
                     <strong><label for="" class="form-label">ID product </label></strong>
-                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                        <option selected>Open this select ID</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <select name="p_id" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                        <!--  -->
+                        <?php foreach($dataProduct as $value): ?>
+                        <option value="<?php echo $value['product_id'] ?>"><?php echo $value['product_name'] ?></option>
+                        <?php endforeach; ?>
+                        <!--  -->
                     </select>
                 </div>
                 <!-- ID size -->
                 <div class="mb-3">
                     <strong><label for="" class="form-label"> Size </label></strong>
-                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                    <select name="size_id" class="form-select" id="floatingSelect" aria-label="Floating label select example">
                         <!--  -->
-                        <?php foreach($dataSizes as $value): ?>
+                        <?php foreach($dataSize as $value): ?>
                         <option value="<?php echo $value['size_id'] ?>"><?php echo $value['size_name'] ?></option>
                         <?php endforeach; ?>
                         <!--  -->
@@ -128,7 +130,7 @@
                 <!-- ID color -->
                 <div class="mb-3">
                     <strong><label for="" class="form-label"> Color </label></strong>
-                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                    <select name="color_id" class="form-select" id="floatingSelect" aria-label="Floating label select example">
                         <!--  -->
                         <?php foreach($dataColor as $value): ?>
                         <option value="<?php echo $value['color_id'] ?>"><?php echo $value['color_name'] ?></option>
@@ -136,42 +138,43 @@
                         <!--  -->
                     </select>
                 </div>
-                 <!-- price -->
+                 <!-- quantity -->
                 <div class="mb-3">
                     <strong><label for="" class="form-label">Quantity </label></strong>
-                    <input type="number" class="form-control"  placeholder="">
+                    <input name="quantity" type="number" class="form-control"  placeholder="">
                 </div>
 
                 <div class="mb-3">
-                    <button class="btn btn-dark w-100">Add</button>
+                    <button class="btn btn-dark w-100" name="addProductVariant">Add</button>
                 </div>
 
             </form>
         </div>
 
 
-
+                                <!-- thêm ảnh sản phẩm  -->
         <div class="col-md-12 bg-white shadow-lg p-3 mb-5 bg-body rounded">
             <span class="h3">Thêm ảnh sản phẩm  </span>
-            <form action="" method="post">
+            <form action="" method="post" enctype="multipart/form-data">
                 <!-- img url -->
                 <div class="mb-3">
                     <strong><label for="" class="form-label">Img url</label></strong>
-                    <input class="form-control" type="file">
+                    <input name="img_url" class="form-control" type="file">
                 </div>
                <!-- ID product -->
                <div class="mb-3">
                     <strong><label for="" class="form-label"> Product ID </label></strong>
-                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                        <option selected>Open this select ID product</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <select name="p_id" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                        <!--  -->
+                        <?php foreach($dataProduct as $value): ?>
+                        <option value="<?php echo $value['product_id'] ?>"><?php echo $value['product_name'] ?></option>
+                        <?php endforeach; ?>
+                        <!--  -->
                     </select>
                 </div>
 
                 <div class="mb-3">
-                    <button class="btn btn-dark w-100">Add</button>
+                    <button name="addImg" class="btn btn-dark w-100">Add img</button>
                 </div>
             </form>
         </div>
