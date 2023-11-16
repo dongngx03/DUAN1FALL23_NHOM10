@@ -11,11 +11,11 @@
     <!-- navbar top -->
         <div class="h-nav2">
             <ul>
-                <li><a href="">Navbar</a></li>
-                <li><a href="">addproduct</a></li>
-                <li><a href="">Link</a></li>
-                <li><a href="">Dropdown</a></li>
-                <li><a href="">Disabled</a></li>
+                <li><a href="">Giày</a></li>
+                <li><a href="">Giép</a></li>
+                <li><a href="">Phản hồi</a></li>
+                <li><a href="">Bảng tin</a></li>
+                <li><a href="">Khác</a></li>
             </ul>
             <div class="h-box-right">
                 <div class="h-search">
@@ -67,10 +67,17 @@
             <!-- right -->
             <div class="col-md-5">
                 <div class="d_right py-5">
-                    <h1 class="h2">Nike Calm</h1>
-                    <h2 class="h5 fw-bolder">Men's Slides</h2>
-                    <span class="pt-3 fw-bolder">1,479,000 đ</span>
-
+                    <!--  -->
+                    <?php if(!empty($dataProduct)) foreach($dataProduct as $value): ?>
+                        <h1 class="h2"><?php echo $value['product_name'] ?></h1>
+                    <?php endforeach; ?>
+                    <!--  -->
+                    <h2 class="h5 fw-bolder">Men/Women's Slides</h2>
+                    <!--  -->
+                    <?php if(!empty($dataProduct)) foreach($dataProduct as $value): ?>
+                    <span class="pt-3 fw-bolder"><?php echo number_format($value['product_price']) ?> đ</span>
+                    <?php endforeach; ?>
+                    <!--  -->
                     <h3 class="pt-3 selectcolor">Select Color</h3>
                     <div class="d_right_color">
                         <!--  -->
@@ -124,10 +131,18 @@
                     </div>
 
                     <div class="d_desc pt-3">
+                        <hr>
+                        <!--  -->
+                        <?php if(!empty($dataProduct)) foreach($dataProduct as $value): ?>
                         <span>
-                        The radiance lives on in the Nike Air Force 1 '07, the b-ball icon that puts a fresh spin on what you know best: crisp leather, bold colours and the perfect amount of flash to make you shine.
+                            <?php echo $value['product_desc'] ?>
                         </span>
+                        <?php endforeach; ?>
+
+                        <hr class="">
+                        <!--  -->
                     </div>
+
                    
                 </div>
             </div>

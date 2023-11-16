@@ -168,6 +168,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #ffff;
 }
 .size_item:hover{
     border: 1px solid black;

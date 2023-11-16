@@ -15,10 +15,11 @@
     // lấy hết tất cả các màu mà chiếc giày đó đang có 
     $dataColor = getColorId($p_id);
     
+    $dataProduct = getProductId($p_id);
 
     // $dataSize = getSizeId($p_id, 1);
     // echo "<pre>";
-    // print_r($_SESSION);
+    // print_r($dataProduct);
     // echo "<pre>";
     
 ?>
