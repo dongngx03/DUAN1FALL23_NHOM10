@@ -20,4 +20,6 @@ function readTable($table_name) {
     $data = $stmt->fetchAll();
     return $data;
 }
+
+
 ?>
