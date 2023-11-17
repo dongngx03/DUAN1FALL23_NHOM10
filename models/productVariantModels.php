@@ -37,4 +37,25 @@
         $data = $stmt->fetchALL(PDO::FETCH_ASSOC);
         return $data;
     }
+
+    // check xem sản phẩm biến thể đã tồn tại hay chưa 
+    function checkProductVariant($p_id, $size_id, $color_id) {
+        $query = "SELECT * FROM productvariants 
+                WHERE product_id = '$p_id' and size_id = '$size_id' and color_id = '$color_id'
+         ";
+        $stmt = connect()->prepare($query);
+        $stmt->execute();
+        $check = $stmt->rowCount();
+        return $check;
+    }
+    // check xem sản phảm biến thể là sản phảm nào 
+    function getProductVariant3param($p_id, $size_id, $color_id) {
+        $query = "SELECT pv_id FROM productvariants 
+                WHERE product_id = '$p_id' and size_id = '$size_id' and color_id = '$color_id'
+        ";
+        $stmt = connect()->prepare($query);
+        $stmt->execute();
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
 ?>

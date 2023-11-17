@@ -17,4 +17,13 @@
         return $data;
     }
 
+    // hàm check xem tên sản phẩm đã tồn tại hay chưa 
+    function checkProductName($p_name) {
+        $query = "SELECT * FROM products WHERE product_name = '$p_name'";
+        $stmt = connect()->prepare($query);
+        $stmt->execute();
+        $checkName = $stmt->rowCount();
+        return $checkName;
+    }
+
 ?>
