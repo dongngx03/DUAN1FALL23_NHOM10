@@ -7,26 +7,29 @@
      var icon = item.querySelector('.icon')
 
      switch (spanText) {
-         case 'Blue':
+         case 'blue':
              icon.style.color='blue'
              break;
-         case 'Red':
+         case 'red':
              icon.style.color='red'
              break;
-         case 'Yellow':
+         case 'yellow':
              icon.style.color='yellow'
              break;
-         case 'Pink':
+         case 'pink':
              icon.style.color='pink'
              break;
-         case 'Black':
+         case 'black':
              icon.style.color='black'
              break;
-         case 'White':
+         case 'white':
              icon.style.color='White'
              break;
-         case 'Green':
+         case 'green':
              icon.style.color='green'
+             break;
+         case 'orange':
+             icon.style.color='orange'
              break;
         
      }
@@ -91,7 +94,7 @@
     }else{
         index = 0;
     }
-    console.log(index);
+    
     box2.style.transform = `translateX(-${width * index}px)`;
     
  }
@@ -102,16 +105,16 @@
      }else{
         index = imgs.length-1;
      }
-    console.log(index);
+    
     box2.style.transform = `translateX(-${width * index}px)`;
  }
 
- setInterval(next, 3000);
+ setInterval(next, 5000);
 
 
  const inputseah = document.querySelector('#inputseah');
 const width1 = inputseah.offsetWidth;
-console.log(inputseah);
+
 
   inputseah.addEventListener('click', () => {
     inputseah.style.width = `${width1 * 2.5}px`;
@@ -122,4 +125,112 @@ console.log(inputseah);
     inputseah.style.transition = '0.5s all';
   })
 
+  // tìm kiếm size thwo màu 
+  var product_id = document.getElementById('product_id');   
+  var product_id_value = product_id.value;
+
+  const color_item = document.querySelectorAll('.color_item');
+  const color_item_input = document.querySelectorAll('.color_item_input');
+
+  for (let i = 0; i < color_item.length; i++) {
+        
+        color_item[i].addEventListener('click', async (e) => {
+            e.preventDefault();
+            const color_id = color_item_input[i].value;
+            
+            try {
+                const url = `controllers/product/api/colorImg.php?color_id=${color_id}&&p_id=${product_id_value}`;
+
+                // gửi method 
+                var response = await fetch(url);
+
+                if (!response.ok) {
+                    throw new Error('Request failed');
+                }
+
+                const data = await response.json();
+                var d_size = document.querySelector('.d_size');
+               // Kiểm tra xem có dữ liệu hay không
+                if (data.length > 0) {
+                    d_size.innerHTML = ""; // Xóa nội dung hiện tại
+                    // dựa vào dữ liệu đã vê thì in ra màn hình 
+                    data.forEach((dataItem) => {
+                        // tạo 1 thẻ mới 
+                        const newItem = document.createElement('button');
+                        // theme class có tên size_item vào thẻ vừa tạo 
+                        newItem.classList.add('size_item');
+                       
+                        // cho nội dung của thẻ 
+                        newItem.innerHTML = `
+                            <span class="text-dark fw-bold">EU ${dataItem.size_name}</span>
+                            <input class="size_item_id" type="hidden" value="${dataItem.size_id}">
+                        `;
+                        // sự liện khi click vào từng thẻ 
+                        // api tiếp 
+                        newItem.addEventListener('click', async (e) =>  {
+                            e.preventDefault();
+                            // lấy data.size_id
+                            const sizes_id = dataItem.size_id;
+                            // dùng fetch gửi dữ liệu lên sever
+
+                            try {
+                                const url = `controllers/product/api/getSizeForColor.php?size_id=${sizes_id}`;
+                                const response = await fetch(url);
+                                
+
+                                // lấy dữ liệu về 
+                                const data = await response.json();
+                                console.log(data);
+
+                                if(data.length>0) {
+                                    const gioihan = document.getElementById('gioihan');
+                                    gioihan.innerHTML = data.map((data) => {
+                                        return `
+                                            Số lượng còn: ${data.quantity} Chiếc
+                                        `
+                                    })
+                                }
+
+                            } catch (error) {
+                                console.error('Error:', error);
+                                console.log('Response:', await response.text());
+                            }
+                            
+                        });
+                        // cuối cùng là thêm thẻ nhỏ vào thẻ lớn 
+                        d_size.appendChild(newItem);
+                    });
+                } else {
+                    // Nếu không có dữ liệu, thực hiện xử lý khác, ví dụ: thông báo không có dữ liệu
+                    d_size.innerHTML = () => {
+                        return `
+                            <div class="border border-1 rounded-2 p-5">
+                                <span class="text-center p-3 text-danger ">Không có size nào cả </span>
+                            </div>
+                            
+                        `
+                    }
+                    // Hoặc có thể ẩn hoặc xóa phần tử '.d_size' nếu cần
+                }
+                            
+
+                return true;
+            } catch (error) {
+                console.error('Error:', error);
+                console.log('Response:', await response.text());
+                alert('khong gửi được req')
+                return false;
+            }
+            
+        })
+
+
+    
+  }
+
+
+
  
+
+
+  

@@ -3,66 +3,91 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">Admin</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">addproduct</a>
+        <!-- Sản phẩm  -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Sản Phẩm 
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="?admin=addproduct">Thêm Mới Sản Phẩm </a></li>
+            <li><a class="dropdown-item" href="?admin=productlist">Quản lý danh mục sản phẩm </a></li>
+            <li><a class="dropdown-item" href="?admin=seahproduct">Tìm kiếm sản phẩm </a></li>
+            <li><a class="dropdown-item" href="#">Quản lý hình ảnh sản phẩm</a></li>
+          </ul>
         </li>
+        <!-- hết sản phẩm  -->
+
+        <!-- Bình luận  -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Bình Luận 
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Danh sách Bình luận </a></li>
+            <li><a class="dropdown-item" href="#">Tìm Kiếm bình luận </a></li>
+            <li><a class="dropdown-item" href="#">Phân loại bình luận </a></li>
+            <li><a class="dropdown-item" href="#">Quản lý bình luận </a></li>
+          </ul>
+        </li>
+        <!-- hết danh sách bình luận   -->
+
+        
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#"></a>
+        </li>
+
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
+       
+      
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+     
     </div>
   </div>
 </nav>
 
 
 <!-- body -->
+                        <!-- thêm sản phẩm bình thường  -->
 
 <div class="container-fluid bg-light ">
     <div class="row pt-5 ">
-        <h1 class="text-center">ADD PRODUCT</h1>
+        <h1 class="text-center text-secondary">ADD PRODUCT</h1>
     </div>
     <div class="row p-5">
         <div class="col-md-12 bg-white shadow-lg p-3 mb-5 bg-body rounded">
-            <span class="h3">Thêm Sản Phẩm </span>
+            <span class="h3 text-secondary">Thêm Sản Phẩm </span>
             <form class="pt-3" action="" method="post" enctype="multipart/form-data">
                 <!-- name -->
                 <div class="mb-3">
                     <strong><label for="" class="form-label">Name product</label></strong>
-                    <input type="text" class="form-control" name="p_name">
+                    <input type="text" class="form-control" name="p_name" value="<?php echo (isset($_POST['p_name'])? $_POST['p_name']:'') ?>">
+                    <!--  -->
+                    <span class="text-danger ">
+                        <?php
+                         echo(!empty($err['p_name'])? $err['p_name']:'');
+                         echo(!empty($err['checkNameProduct'])? $err['checkNameProduct']:'');
+                        ?>
+                    </span>
                 </div>
                 <!-- price -->
                 <div class="mb-3">
                     <strong><label for="" class="form-label">Price </label></strong>
-                    <input type="number" class="form-control"  name="p_price">
+                    <input type="number" class="form-control"  name="p_price" value="<?php echo (isset($_POST['p_price'])? $_POST['p_price']:'') ?>">
+                    <span class="text-danger "><?php echo(!empty($err['p_price'])? $err['p_price']:'') ?></span>
                 </div>
                 <!-- desc -->
                 <div class="mb-3">
                     <strong><label for="" class="form-label">Description</label></strong>
-                    <textarea class="form-control" id="" rows="3" name="p_desc"></textarea>
+                    <textarea class="form-control" id="" rows="3" name="p_desc" value="<?php echo (isset($_POST['p_desc'])? $_POST['p_desc']:'') ?>"></textarea>
+                    <span class="text-danger "><?php echo(!empty($err['p_desc'])? $err['p_desc']:'') ?></span>
                 </div>
                 <!-- brand -->
                 <div class="mb-3">
@@ -90,6 +115,7 @@
                 <div class="mb-3">
                     <strong><label for="" class="form-label">Img avatar</label></strong>
                     <input class="form-control" type="file" name="img_avatar">
+                    <span class="text-danger "><?php echo(!empty($err['img_avatar'])? $err['img_avatar']:'') ?></span>
                 </div>
 
                 <div class="mb-3">
@@ -99,81 +125,90 @@
         </div>
 
 
-
+                            <!-- thêm sản phẩm biến thể  -->
 
         <div class="col-md-12 bg-white shadow-lg p-3 mb-5 bg-body rounded">
-            <span class="h3">Sản Phẩm Biến Thể  </span>
+            <span class="h3 text-secondary">Sản Phẩm Biến Thể  </span>
             <form class="pt-3" action="" method="post">
                 <!-- ID product -->
                 <div class="mb-3">
                     <strong><label for="" class="form-label">ID product </label></strong>
-                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                        <option selected>Open this select ID</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <select name="p_id" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                        <!--  -->
+                        <?php foreach($dataProduct as $value): ?>
+                        <option value="<?php echo $value['product_id'] ?>"><?php echo $value['product_name'] ?></option>
+                        <?php endforeach; ?>
+                        <!--  -->
                     </select>
+                    
                 </div>
                 <!-- ID size -->
                 <div class="mb-3">
                     <strong><label for="" class="form-label"> Size </label></strong>
-                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                    <select name="size_id" class="form-select" id="floatingSelect" aria-label="Floating label select example">
                         <!--  -->
-                        <?php foreach($dataSizes as $value): ?>
+                        <?php foreach($dataSize as $value): ?>
                         <option value="<?php echo $value['size_id'] ?>"><?php echo $value['size_name'] ?></option>
                         <?php endforeach; ?>
                         <!--  -->
                     </select>
+                  
                 </div>
                 <!-- ID color -->
                 <div class="mb-3">
                     <strong><label for="" class="form-label"> Color </label></strong>
-                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                    <select name="color_id" class="form-select" id="floatingSelect" aria-label="Floating label select example">
                         <!--  -->
                         <?php foreach($dataColor as $value): ?>
                         <option value="<?php echo $value['color_id'] ?>"><?php echo $value['color_name'] ?></option>
                         <?php endforeach; ?>
                         <!--  -->
                     </select>
+                
                 </div>
-                 <!-- price -->
+                 <!-- quantity -->
                 <div class="mb-3">
                     <strong><label for="" class="form-label">Quantity </label></strong>
-                    <input type="number" class="form-control"  placeholder="">
+                    <input name="quantity" type="number" class="form-control"  placeholder="">
+                    <span class="text-danger "><?php echo(!empty($err1['quantity'])? $err1['quantity']:'') ?></span>
                 </div>
+               
 
                 <div class="mb-3">
-                    <button class="btn btn-dark w-100">Add</button>
+                    <button class="btn btn-dark w-100" name="addProductVariant">Add</button>
+                    <span class="text-danger text-center "><?php echo(!empty($err1['variant_exit'])? $err1['variant_exit']:'') ?></span>
                 </div>
 
             </form>
         </div>
 
 
-
+                                <!-- thêm ảnh sản phẩm  -->
         <div class="col-md-12 bg-white shadow-lg p-3 mb-5 bg-body rounded">
-            <span class="h3">Thêm ảnh sản phẩm  </span>
-            <form action="" method="post">
+            <span class="h3 text-secondary">Thêm ảnh sản phẩm  </span>
+            <form action="" method="post" enctype="multipart/form-data">
                 <!-- img url -->
                 <div class="mb-3">
                     <strong><label for="" class="form-label">Img url</label></strong>
-                    <input class="form-control" type="file">
+                    <input name="img_url" class="form-control" type="file">
                 </div>
                <!-- ID product -->
                <div class="mb-3">
                     <strong><label for="" class="form-label"> Product ID </label></strong>
-                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                        <option selected>Open this select ID product</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <select name="p_id" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                        <!--  -->
+                        <?php foreach($dataProduct as $value): ?>
+                        <option value="<?php echo $value['product_id'] ?>"><?php echo $value['product_name'] ?></option>
+                        <?php endforeach; ?>
+                        <!--  -->
                     </select>
                 </div>
 
                 <div class="mb-3">
-                    <button class="btn btn-dark w-100">Add</button>
+                    <button name="addImg" class="btn btn-dark w-100">Add img</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+

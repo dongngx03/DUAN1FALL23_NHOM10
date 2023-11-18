@@ -1,3 +1,6 @@
+<?php
+    include_once'./controllers/product/productController.php';
+?>
 <div class="container-fluid">   
     <!-- navbar top -->
         <div class="h-nav2">
@@ -13,8 +16,13 @@
                     <button class="h-btn-search"><i class="fa-brands fa-sistrix"></i>
                     <input id="inputseah" class="h-ip-search" type="search" placeholder="search"></button>
                 </div>
-                <a href="?act=dangky" class="h-btn-user"><i class="ti-user"></i></a>
-                <a href="?act=dangky" class="h-btn-user"><i class="ti-shopping-cart"></i></a>
+                <!-- thẻ user phân quyền  -->
+                <a 
+                href="index.php?act=product&&checkrole=<?php echo(isset($_SESSION['role_id'])?$_SESSION['role_id']: 4) ?>" class="h-btn-user">
+                <i class="ti-user"></i>
+                </a>
+                <!-- thẻ user phân quyền  -->
+                <a href="" class="h-btn-user"><i class="ti-shopping-cart"></i></a>
             </div>
         </div>
 
@@ -82,20 +90,26 @@
 
             <div id="product-list" class="col-md-9 overflow-auto">
                 <div class="p-product">
-                    <a class="product-item text-decoration-none" href="#">
-                        <img src="public/imgs/product/product1.png" alt="">
+
+                    <!--  -->
+                    <?php if(!empty($dataProduct)) foreach($dataProduct as $value): ?>
+                    <div class="product-item text-decoration-none">
+                        <img src="public/imgs/product/<?php echo $value['img_avatar'] ?>" alt="">
                         <div class="infor d-grid py-3">
-                            <span><strong>Nike Air Force 1'07</strong></span>
-                            <span>Men's Shose</span>
-                            <span><strong>2,950,000đ</strong></span>
+                            <span><strong><?php echo $value['product_name'] ?></strong></span>
+                            <span> Woman/Men's Shose</span>
+                            <span><strong><?php echo number_format($value['product_price']) ?> đ</strong></span>
                         </div>
 
                         <div class="product-btn">
-                            <button class="btn btn-outline-dark text-center"><i class="fa-solid fa-cart-shopping"></i> ADD</button>
-                            <button class="btn btn-outline-light"><i class="fa-solid fa-circle-info"></i> BUY</button>
+                            <a href="" class="btn btn-outline-dark text-center"><i class="fa-solid fa-cart-shopping"></i> ADD CART</a>
+                            <a href="?act=product&&detail=<?php echo $value['product_id'] ?>" class="btn btn-outline-light"><i class="fa-solid fa-circle-info"></i> DETAIL</a>
                         </div>
 
-                    </a>
+                    </div>
+                    <?php endforeach; ?>
+                    <!--  -->
+
                     <a class="product-item text-decoration-none" href="#">
                         <img src="public/imgs/product/product2.png" alt="">
                         <div class="infor d-grid py-3">

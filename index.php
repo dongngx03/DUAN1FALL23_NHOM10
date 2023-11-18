@@ -2,13 +2,35 @@
 // session 
 session_start();
 
-
-
 // phần web 
 include_once './views/components/header.php';
 
+// phần admin 
+if(isset($_GET['admin']) && $_GET['admin']!= null) {
+    $admin = $_GET['admin'];
+    switch ($admin) {
+        case 'addproduct':
+            include'./views/admin/addproduct.php';
+            break;
+        case 'productlist':
+            include'./views/admin/productList.php';
+            break;
+        case 'productdetail':
+            include'./views/admin/productDetail.php';
+            break;
+        case 'seahproduct':
+            include'./views/admin/seahproduct.php';
+            break;
+        
+        default:
+            include'./views/404/404.php';
+            break;
+    }
+    die();
+}
 
-if (isset($_GET['act'])) {
+// phần app bình thường 
+if (isset($_GET['act']) && $_GET['act']!= null) {
     $act = $_GET['act'];
 
     switch ($act) {
@@ -40,17 +62,15 @@ if (isset($_GET['act'])) {
             include_once './views/product/productdetail.php';
             break;
 
-        case 'addproduct':
-            include_once './views/admin/addproduct.php';
+        // trường hợp không hợp lệ
+        default:
+            include'./views/404/404.php';
             break;
-
 
     }
 } else {
     include_once './views/home/home.php';
 }
-
-
 
 include_once './views/components/footer.php';
 
