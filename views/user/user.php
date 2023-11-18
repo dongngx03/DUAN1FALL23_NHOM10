@@ -150,7 +150,6 @@
             email.style.border = '1px solid green';
             errEmail.textContent = '';
             return true;
-
         }   
     };
     phone.onblur = function() {
@@ -168,7 +167,6 @@
             phone.style.border = '1px solid green';
             errPhone.textContent = '';
             return true;
-
         }
     };
         xa.onblur = function() {
