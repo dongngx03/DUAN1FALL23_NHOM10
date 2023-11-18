@@ -9,7 +9,7 @@
     <input id="product_id" type="hidden" value="<?php echo $p_id ?>">
 
     <!-- navbar top -->
-        <div class="h-nav2">
+        <div class="h-nav2 bg-dark">
             <ul>
                 <li><a href="">Giày</a></li>
                 <li><a href="">Giép</a></li>

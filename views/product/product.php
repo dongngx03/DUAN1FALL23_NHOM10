@@ -16,8 +16,13 @@
                     <button class="h-btn-search"><i class="fa-brands fa-sistrix"></i>
                     <input id="inputseah" class="h-ip-search" type="search" placeholder="search"></button>
                 </div>
-                <a href="?act=dangky" class="h-btn-user"><i class="ti-user"></i></a>
-                <a href="?act=dangky" class="h-btn-user"><i class="ti-shopping-cart"></i></a>
+                <!-- thẻ user phân quyền  -->
+                <a 
+                href="index.php?act=product&&checkrole=<?php echo(isset($_SESSION['role_id'])?$_SESSION['role_id']: 4) ?>" class="h-btn-user">
+                <i class="ti-user"></i>
+                </a>
+                <!-- thẻ user phân quyền  -->
+                <a href="" class="h-btn-user"><i class="ti-shopping-cart"></i></a>
             </div>
         </div>
 

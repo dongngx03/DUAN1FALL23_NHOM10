@@ -159,6 +159,7 @@ const width1 = inputseah.offsetWidth;
                         const newItem = document.createElement('button');
                         // theme class có tên size_item vào thẻ vừa tạo 
                         newItem.classList.add('size_item');
+                       
                         // cho nội dung của thẻ 
                         newItem.innerHTML = `
                             <span class="text-dark fw-bold">EU ${dataItem.size_name}</span>

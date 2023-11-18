@@ -14,5 +14,25 @@
         header('location: ?act=productdetail');
         return true;
      }
+
+   //   echo "<pre>";
+   //   print_r($_SESSION);
+   //   echo "<pre>";
+
+   //   session_destroy();
+
+   // sử lý chuyển trang user và admin 
+
+   if(isset($_GET['checkrole'])) {
+      $role = $_GET['checkrole'];
+      switch ($role) {
+         case 4: // người dùng không 
+            header('location: ?act=dangnhap');
+            break;
+         case 3: // trang người dùng 
+            header('location: ?act=user');
+            break;
+      }
+   }
     
 ?>

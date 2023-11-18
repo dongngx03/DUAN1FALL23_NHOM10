@@ -17,7 +17,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="?admin=addproduct">Thêm Mới Sản Phẩm </a></li>
             <li><a class="dropdown-item" href="?admin=productlist">Quản lý danh mục sản phẩm </a></li>
-            <li><a class="dropdown-item" href="#">Quản lý Theo Loại Sản Phẩm</a></li>
+            <li><a class="dropdown-item" href="?admin=seahproduct">Tìm kiếm sản phẩm </a></li>
             <li><a class="dropdown-item" href="#">Quản lý hình ảnh sản phẩm</a></li>
           </ul>
         </li>
@@ -59,11 +59,11 @@
 
 <div class="container-fluid bg-light ">
     <div class="row pt-5 ">
-        <h1 class="text-center">ADD PRODUCT</h1>
+        <h1 class="text-center text-secondary">ADD PRODUCT</h1>
     </div>
     <div class="row p-5">
         <div class="col-md-12 bg-white shadow-lg p-3 mb-5 bg-body rounded">
-            <span class="h3">Thêm Sản Phẩm </span>
+            <span class="h3 text-secondary">Thêm Sản Phẩm </span>
             <form class="pt-3" action="" method="post" enctype="multipart/form-data">
                 <!-- name -->
                 <div class="mb-3">
@@ -128,7 +128,7 @@
                             <!-- thêm sản phẩm biến thể  -->
 
         <div class="col-md-12 bg-white shadow-lg p-3 mb-5 bg-body rounded">
-            <span class="h3">Sản Phẩm Biến Thể  </span>
+            <span class="h3 text-secondary">Sản Phẩm Biến Thể  </span>
             <form class="pt-3" action="" method="post">
                 <!-- ID product -->
                 <div class="mb-3">
@@ -185,7 +185,7 @@
 
                                 <!-- thêm ảnh sản phẩm  -->
         <div class="col-md-12 bg-white shadow-lg p-3 mb-5 bg-body rounded">
-            <span class="h3">Thêm ảnh sản phẩm  </span>
+            <span class="h3 text-secondary">Thêm ảnh sản phẩm  </span>
             <form action="" method="post" enctype="multipart/form-data">
                 <!-- img url -->
                 <div class="mb-3">
@@ -211,3 +211,4 @@
         </div>
     </div>
 </div>
+

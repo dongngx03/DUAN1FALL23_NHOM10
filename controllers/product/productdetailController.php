@@ -19,7 +19,7 @@
 
     // $dataSize = getSizeId($p_id, 1);
     // echo "<pre>";
-    // print_r($dataProduct);
+    // print_r($_SESSION);
     // echo "<pre>";
     
 ?>

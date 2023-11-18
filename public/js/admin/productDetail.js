@@ -1,3 +1,6 @@
+
+
+
 // xử lý gọi api lên để lấy sanrphaamr theo màu 
 const colorBtn = document.querySelectorAll('.variant_color');
 // id cảu sản phẩm 
@@ -6,10 +9,10 @@ const productId = document.getElementById('product_id').value;
 const color_id = document.querySelectorAll('.color_id');
 console.log(color_id);
 
-
 // xử lý 
 for (let i = 0; i < colorBtn.length; i++) {
     colorBtn[i].addEventListener('click', async (e) => {
+        
         e.preventDefault();
         const colorID = color_id[i].value;
         const url = `controllers/admin/api/getProductForColor.php?getproductforcolor=${colorID}&&product_id=${productId}`;

@@ -18,6 +18,9 @@ if(isset($_GET['admin']) && $_GET['admin']!= null) {
         case 'productdetail':
             include'./views/admin/productDetail.php';
             break;
+        case 'seahproduct':
+            include'./views/admin/seahproduct.php';
+            break;
         
         default:
             include'./views/404/404.php';
