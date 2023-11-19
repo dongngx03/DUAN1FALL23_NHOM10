@@ -21,8 +21,9 @@
 
    //   session_destroy();
 
-   // sử lý chuyển trang user và admin 
 
+   
+   // sử lý chuyển trang user và admin 
    if(isset($_GET['checkrole'])) {
       $role = $_GET['checkrole'];
       switch ($role) {
@@ -32,7 +33,20 @@
          case 3: // trang người dùng 
             header('location: ?act=user');
             break;
+         case 2: // trang người dùng 
+            header('location: ?act=admin');
+            break;
       }
    }
+   // sử lý chuyển trang đến cart cho người dùng 
+   // nếu như người dùng chưa đăng nhập thì chưa cào được cart
+   if(isset($_GET['checkcart'])) {
+      if($_GET['checkcart'] == 0) {
+         header('location: ?act=dangnhap');
+      }else{
+         header('location: ?act=cart');
+      }
+   }
+  
     
 ?>
