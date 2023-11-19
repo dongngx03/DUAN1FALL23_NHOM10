@@ -40,6 +40,23 @@ function connect() {
     $data = $stmt->fetchALL(PDO::FETCH_ASSOC);
     return $data;
 }
+// thêm sản phẩm vào giỏ hàng 
+function addCart($user_id, $pv_id) {
+    $query = "INSERT INTO carts(user_id,pv_id,status) VALUE('$user_id', '$pv_id', 1)";
+    $stmt = connect()->prepare($query);
+    $stmt->execute();
+}
+
+// tìm xem với size và color và p_id thì đó là sản phẩm nào 
+function seahProductVariant($p_id, $color_id, $size_id) {
+    $query = "SELECT pv_id FROM productvariants
+     WHERE product_id = '$p_id' and color_id = '$color_id' and size_id = '$size_id'
+    ";
+    $stmt = connect()->prepare($query);
+    $stmt->execute();
+    $data = $stmt->fetch();
+    return $data;
+}
 
 
 

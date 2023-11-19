@@ -22,10 +22,10 @@
         </div>
         <div class="fuc">
             <a href="#" class="u-fuc"><i class="ti-announcement"></i>20/11 Free Ship All</a>
-            <a href="#" class="u-fuc"><i class="ti-shopping-cart"></i> Giỏ hàng</a>
+            <a href="?act=cart" class="u-fuc"><i class="ti-shopping-cart"></i> Giỏ hàng</a>
             <a href="#" class="u-fuc"><i class="ti-clipboard"></i>Đơn mua</a>
             <a href="#" class="u-fuc"><i class="ti-receipt"></i>Voucher của bạn</a>
-            <a href="?act=user&&dangxuat" class="u-fuc"><i class="ti-shift-right"></i>Đăng xuất</a>
+            <a id="login" href="" class="u-fuc"><i class="ti-shift-right"></i>Đăng xuất</a>
         </div>
 
     </div>
@@ -212,17 +212,7 @@
             return true;
         }
     };
-    diachi.onblur = function() {
-        if (diachi.value.trim() === '') {
-            diachi.style.border = '1px solid red';
-            errDiachi.textContent = 'Vui lòng nhập.';
-            return false
-        } else {
-            diachi.style.border = '1px solid green';
-            errDiachi.textContent = '';
-            return true
-        }
-    };
+   
     mota.onblur = function() {
         if (mota.value.trim() === '') {
             mota.style.border = '1px solid red';
@@ -234,4 +224,24 @@
             return true
         }
     };
+
+
+    // đăng xuât
+    const dangxuat = document.querySelector('#login')
+    console.log(dangxuat);
+    dangxuat.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log(1);
+        Swal.fire({
+            icon: 'warning',
+            title: 'Bạn Muốn Đăng Xuất ?',
+            showCancelButton: true,
+            confirmButtonText: 'Đăng Xuất',
+            cancelButtonText: 'Không',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = '?act=user&&dangxuat';
+            }
+        });
+    })
 </script>

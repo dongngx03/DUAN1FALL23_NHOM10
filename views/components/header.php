@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- icon -->
     <link rel="stylesheet" href="icon/themify-icons/themify-icons.css">
-
+    
     <title>Document</title>
     <style>
         <?php include_once'public/css/index.css' ?>
@@ -30,7 +30,6 @@
                 <li><a href="#">News</a></li>
             </ul>    
         </div>
-        
     </header>
       
     
