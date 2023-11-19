@@ -1,18 +1,10 @@
-<div class="container-fluid">   
-    <!-- navbar top -->
-       <div class="row mb-1">
-            <div id="p-menu" class="bg-light d-flex justify-content-center">
-                <ul class="p-navrow">
-                    <li><a href="#"><i class="fa-solid fa-shoe-prints"></i> Giày</a></li>
-                    <li><a href="#">Dép</a></li>
-                    <li><a href="#">Giá tốt </a></li>
-                    <li><a href="#">Khác.. </a></li>
-                    <li><a href="#"><i class="fa-solid fa-cart-shopping"></i> Giỏ hàng </a></li>
-                </ul>
+<?php
+    include_once'./controllers/product/productController.php';
+?>
+<div class="container-fluid"> 
+    <!-- nabar -->
+    <?php include'./views/components/navbar.php' ?>
 
-                
-            </div>
-       </div>
         <!-- mid -->
         <div class="row p-4">
             <div class="p-mid">
@@ -28,9 +20,11 @@
                 </div>
             </div>
         </div>
+
         <!-- botton -->
         <div id="nav-list" class="row p-4">
             <div id="nav-left" class="col-md-3 py-3">
+                
                 <!-- giới tính  -->
                 <div class="p-gender">
                    <div class="p-gender-item">
@@ -41,6 +35,7 @@
                             <li><input type="checkbox"><label for="">Cả hai</label></li>
                         </ul>
                    </div>
+
                 <!-- giá tiền  -->
                 </div>
                 <div class="p-gender">
@@ -68,7 +63,6 @@
                             <li><input type="checkbox"><label for=""><i class="fa-solid fa-circle text-dark"></i> Black</label></li>
                             <li><input type="checkbox"><label for=""><i class="fa-solid fa-circle text-light"></i> White</label></li>
                             <li><input type="checkbox"><label for="">Other</label></li>
-                          
                         </ul>
                    </div>
 
@@ -77,20 +71,26 @@
 
             <div id="product-list" class="col-md-9 overflow-auto">
                 <div class="p-product">
-                    <a class="product-item text-decoration-none" href="#">
-                        <img src="public/imgs/product/product1.png" alt="">
+
+                    <!--  -->
+                    <?php if(!empty($dataProduct)) foreach($dataProduct as $value): ?>
+                    <div class="product-item text-decoration-none">
+                        <img src="public/imgs/product/<?php echo $value['img_avatar'] ?>" alt="">
                         <div class="infor d-grid py-3">
-                            <span><strong>Nike Air Force 1'07</strong></span>
-                            <span>Men's Shose</span>
-                            <span><strong>2,950,000đ</strong></span>
+                            <span><strong><?php echo $value['product_name'] ?></strong></span>
+                            <span> Woman/Men's Shose</span>
+                            <span><strong><?php echo number_format($value['product_price']) ?> đ</strong></span>
                         </div>
 
                         <div class="product-btn">
-                            <button class="btn btn-outline-dark text-center"><i class="fa-solid fa-cart-shopping"></i> ADD</button>
-                            <button class="btn btn-outline-light"><i class="fa-solid fa-circle-info"></i> BUY</button>
+                            <a href="" class="btn btn-outline-dark text-center"><i class="fa-solid fa-cart-shopping"></i> ADD CART</a>
+                            <a href="?act=product&&detail=<?php echo $value['product_id'] ?>" class="btn btn-outline-light"><i class="fa-solid fa-circle-info"></i> DETAIL</a>
                         </div>
 
-                    </a>
+                    </div>
+                    <?php endforeach; ?>
+                    <!--  -->
+
                     <a class="product-item text-decoration-none" href="#">
                         <img src="public/imgs/product/product2.png" alt="">
                         <div class="infor d-grid py-3">
@@ -226,38 +226,40 @@
 </div>
 
 <script>
-    const productlist = document.getElementById('product-list');
+   const productlist = document.getElementById('product-list');
     const navlist = document.getElementById('nav-left');
     const product = document.querySelector(".p-product");
     const fullbtn = document.getElementById("full-btn");
-    
+
     // hàm ấn vào để gạt bỏ thanh lọc và phóng to gian hàng 
     function fullscreen() {
-       if(fullbtn.innerHTML !== "X") {
+    if(fullbtn.innerHTML !== "X") {
             navlist.style.display="none";
             productlist.classList.remove("col-md-9");
             productlist.classList.remove("overflow-auto");
             productlist.classList.add("col-md-12");
             product.classList.add("fullscreen");
             fullbtn.innerHTML = "X";
-       }else{
+           
+    }else{
             navlist.style.display="block";
             productlist.classList.add("col-md-9");
             productlist.classList.add("overflow-auto");
             productlist.classList.remove("col-md-12");
             product.classList.remove("fullscreen");
             fullbtn.innerHTML = '<span>Full <i class="fa-solid fa-sliders"></i> </span>';
-       }
     }
-    
-    // gắn envent
-    fullbtn.addEventListener('click', () => {
-        fullscreen();
-    })
-    
-    
-</script> 
+    }
 
+// gắn envent
+fullbtn.addEventListener('click', () => {
+    fullscreen();
+})
+
+
+
+</script> 
+   
 <style>
     <?php include_once'public/css/product/product.css' ?>
 </style>

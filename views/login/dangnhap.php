@@ -1,5 +1,7 @@
 <!-- code -->
-
+<?php 
+    include'./controllers/login/dangnhapController.php';
+?>
 <style>
     <?php include_once'public/css/login/dangnhap.css' ?>
 </style>
@@ -25,16 +27,28 @@
                             </div>
                             
                             <div class="form-ip px-4">
-                                <input id="email" type="email" placeholder="Email">
-                                <span class="error"> </span>
+                                <input id="email" type="email" placeholder="Email" name="user_email" value="<?php echo(isset($_POST['user_email'])? $_POST['user_email']:'') ?>">
+                                <span class="error">
+                                    <?php 
+                                       echo(!empty($err['user_email'])? $err['user_email']:'');
+                                       echo(!empty($err['checkEmail'])? $err['checkEmail']:'');
+                                       
+                                    ?>
+                                </span>
                             </div>
                             <div class="form-ip px-4">
-                                <input id="pw" type="password" placeholder="Mật khẩu">
-                                <span class="error"> </span>
+                                <input id="pw" type="password" placeholder="Mật khẩu" name="user_pw" value="<?php echo(isset($_POST['user_pw'])? $_POST['user_pw']:'') ?>">
+                                <span class="error"> 
+                                    <?php 
+                                         echo(!empty($err['user_pw'])? $err['user_pw']:'');
+                                         echo(!empty($err['checkPw'])? $err['checkPw']:'');
+
+                                    ?>
+                                </span>
                             </div>
 
                             <div class="form-ip px-4">
-                                <button class="btn btn-dark">Đăng nhập </button>
+                                <button class="btn btn-dark" name="login" type="submit">Đăng nhập </button>
                             </div>
                             <div class="form-ip px-4">
                                 <a class="text-decoration-none" href="?act=quenmk"> Bạn quên mật khẩu ?</a>

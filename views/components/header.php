@@ -29,14 +29,8 @@
                 <li><a href="#">Deal Hot</a></li>
                 <li><a href="#">News</a></li>
             </ul>    
-            <div class="h-box-right">
-                <div class="h-search">
-                    <button class="h-btn-search"><i class="fa-brands fa-sistrix"></i>
-                    <input class="h-ip-search" type="search" placeholder="search"></button>
-                </div>
-                <a href="?act=dangky" class="h-btn-user"><i class="fa-solid fa-user"></i></a>
-            </div>
         </div>
-           
+        
     </header>
       
+    
