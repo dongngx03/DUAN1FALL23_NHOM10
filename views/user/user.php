@@ -4,6 +4,8 @@
 <style>
     <?php include_once 'public/css/user/user.css' ?>
 </style>
+<!--  -->
+<?php foreach($dataUser as $value): ?>
 <div class="user">
     <div class="sidebar">
         <div class="u-profile">
@@ -11,7 +13,7 @@
                 <img src="public/imgs/product/product2.png" alt="">
             </div>
             <div class="u-name">
-                <span><strong>akalong04</strong></span>
+                <span><strong><?php echo $value['user_name'] ?></strong></span>
                 <div class="u-settiing">
                     <a href="#"><i class="ti-pencil"></i>Sửa Hồ Sơ</a>
                 </div>
@@ -32,7 +34,7 @@
         <div class="info-user">Quản lý thông tin hồ sơ để bảo mật tài khoản</div>
         <hr>
         <!--  -->
-       <?php foreach($dataUser as $value): ?>
+      
         <form class="u-form-user" method="post" id="myForm" onsubmit="validateForm(event)">
             <div class="u-ip-info">
                 <div class="u-ip-left">
@@ -88,11 +90,12 @@
             <button name="btnSubmit" type="submit">Cập Nhật</button>
             <span class="sucess"></span>
         </form>
-        <?php endforeach; ?>
+       
         <!--  -->
         </div>
     </div>
 </div>
+<?php endforeach; ?>
 
 
 <script>

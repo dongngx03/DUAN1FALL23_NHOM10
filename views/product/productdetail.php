@@ -9,23 +9,7 @@
     <input id="product_id" type="hidden" value="<?php echo $p_id ?>">
 
     <!-- navbar top -->
-        <div class="h-nav2 bg-dark">
-            <ul>
-                <li><a href="">Giày</a></li>
-                <li><a href="">Giép</a></li>
-                <li><a href="">Phản hồi</a></li>
-                <li><a href="">Bảng tin</a></li>
-                <li><a href="">Khác</a></li>
-            </ul>
-            <div class="h-box-right">
-                <div class="h-search">
-                    <button class="h-btn-search"><i class="fa-brands fa-sistrix"></i>
-                    <input id="inputseah" class="h-ip-search" type="search" placeholder="search"></button>
-                </div>
-                <a href="?act=dangky" class="h-btn-user"><i class="ti-user"></i></a>
-                <a href="?act=dangky" class="h-btn-user"><i class="ti-shopping-cart"></i></a>
-            </div>
-        </div>
+    <?php include'./views/components/navbar.php' ?>
 
        <div class="row pt-4">
             <!-- left -->
@@ -121,14 +105,14 @@
                         <button id="giam" class="btn btn-outline-dark bg-light"><span>-</span></button>
                     </div>
 
-                    <div class="d_option">
-                        <a class="btn btn-dark rounded-pill" href="">
+                    <form class="d_option" method="post">
+                        <button type="submit" name="addCart" class="btn btn-dark rounded-pill">
                             <span>Add To Cart <i class="fa-regular fa-heart"></i></span>
-                        </a>
+                        </button>
                         <button class="btn btn-outline-dark rounded-pill">
                             <span>Buy Now</span>
                         </button>
-                    </div>
+                    </form>
 
                     <div class="d_desc pt-3">
                         <hr>

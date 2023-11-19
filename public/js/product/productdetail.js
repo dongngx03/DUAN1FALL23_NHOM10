@@ -112,18 +112,7 @@
  setInterval(next, 5000);
 
 
- const inputseah = document.querySelector('#inputseah');
-const width1 = inputseah.offsetWidth;
 
-
-  inputseah.addEventListener('click', () => {
-    inputseah.style.width = `${width1 * 2.5}px`;
-    inputseah.style.transition = '0.5s all';
-  })
-  inputseah.addEventListener('blur', () => {
-    inputseah.style.width = `${width1}px`;
-    inputseah.style.transition = '0.5s all';
-  })
 
   // tìm kiếm size thwo màu 
   var product_id = document.getElementById('product_id');   

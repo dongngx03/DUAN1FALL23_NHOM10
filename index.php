@@ -6,7 +6,7 @@ session_start();
 include_once './views/components/header.php';
 
 // phần admin 
-if(isset($_GET['admin']) && $_GET['admin']!= null) {
+if(isset($_GET['admin']) && $_GET['admin']!= null && isset($_SESSION['role_id']) && $_SESSION['role_id']==2) {
     $admin = $_GET['admin'];
     switch ($admin) {
         case 'addproduct':
@@ -28,7 +28,6 @@ if(isset($_GET['admin']) && $_GET['admin']!= null) {
     }
     die();
 }
-
 // phần app bình thường 
 if (isset($_GET['act']) && $_GET['act']!= null) {
     $act = $_GET['act'];
@@ -60,6 +59,9 @@ if (isset($_GET['act']) && $_GET['act']!= null) {
             break;
         case 'productdetail':
             include_once './views/product/productdetail.php';
+            break;
+        case 'admin':
+            include_once './views/user/admin.php';
             break;
 
         // trường hợp không hợp lệ

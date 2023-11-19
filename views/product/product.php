@@ -1,30 +1,9 @@
 <?php
     include_once'./controllers/product/productController.php';
 ?>
-<div class="container-fluid">   
-    <!-- navbar top -->
-        <div class="h-nav2">
-            <ul>
-                <li><a href="">Navbar</a></li>
-                <li><a href="">addproduct</a></li>
-                <li><a href="">Link</a></li>
-                <li><a href="">Dropdown</a></li>
-                <li><a href="">Disabled</a></li>
-            </ul>
-            <div class="h-box-right">
-                <div class="h-search">
-                    <button class="h-btn-search"><i class="fa-brands fa-sistrix"></i>
-                    <input id="inputseah" class="h-ip-search" type="search" placeholder="search"></button>
-                </div>
-                <!-- thẻ user phân quyền  -->
-                <a 
-                href="index.php?act=product&&checkrole=<?php echo(isset($_SESSION['role_id'])?$_SESSION['role_id']: 4) ?>" class="h-btn-user">
-                <i class="ti-user"></i>
-                </a>
-                <!-- thẻ user phân quyền  -->
-                <a href="" class="h-btn-user"><i class="ti-shopping-cart"></i></a>
-            </div>
-        </div>
+<div class="container-fluid"> 
+    <!-- nabar -->
+    <?php include'./views/components/navbar.php' ?>
 
         <!-- mid -->
         <div class="row p-4">
@@ -41,9 +20,11 @@
                 </div>
             </div>
         </div>
+
         <!-- botton -->
         <div id="nav-list" class="row p-4">
             <div id="nav-left" class="col-md-3 py-3">
+                
                 <!-- giới tính  -->
                 <div class="p-gender">
                    <div class="p-gender-item">
@@ -54,6 +35,7 @@
                             <li><input type="checkbox"><label for="">Cả hai</label></li>
                         </ul>
                    </div>
+
                 <!-- giá tiền  -->
                 </div>
                 <div class="p-gender">
@@ -81,7 +63,6 @@
                             <li><input type="checkbox"><label for=""><i class="fa-solid fa-circle text-dark"></i> Black</label></li>
                             <li><input type="checkbox"><label for=""><i class="fa-solid fa-circle text-light"></i> White</label></li>
                             <li><input type="checkbox"><label for="">Other</label></li>
-                          
                         </ul>
                    </div>
 
