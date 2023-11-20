@@ -76,17 +76,19 @@
                        
                        
                     </div>
+                  
 
                     <div class="d_right_size pt-4 pb-2 d-flex">
-                        <span class="selectcolor">Select Size / <a href="" class="text-decoration-none text-danger">Size Guide</a></span>
+                        <span class="selectcolor">Select Size / <a href="" class="text-decoration-none text-secondary">Size Guide</a></span>
                     </div>
                             <!-- SIZE -->
                     <div class="d_size">
                         <div class="border border-1 rounded-2 p-5">
-                            <span class="text-center p-3 text-danger ">Bạn vui lòng chọn màu để tìm size</span>
+                            <span class="text-center p-3 text-secondary ">Bạn vui lòng chọn màu để tìm size</span>
                         </div>
 
                     </div>
+                   
                             <!-- SIZE -->
 
                             <!-- số lượng  -->
@@ -104,16 +106,21 @@
                         <input id="quantity" type="number" class="input" value="1">
                         <button id="giam" class="btn btn-outline-dark bg-light"><span>-</span></button>
                     </div>
-
+                    
+                    <!-- thông báo từ sever khi ta thêm vào giỏ hàng  -->
+                    <div class="err">
+                        <span id="mess_cart" class="text-danger"></span>
+                    </div>
+                    <!-- Thêm vào giỏ hàng và mua hàng  -->
                     <form class="d_option" method="post">
-                        <button type="submit" name="addCart" class="btn btn-dark rounded-pill">
+                        <button id="add_Cart" class="btn btn-dark rounded-pill">
                             <span>Add To Cart <i class="fa-regular fa-heart"></i></span>
                         </button>
                         <button class="btn btn-outline-dark rounded-pill">
                             <span>Buy Now</span>
                         </button>
                     </form>
-
+                    <!-- Mô tả về sản phẩm  -->
                     <div class="d_desc pt-3">
                         <hr>
                         <!--  -->
@@ -178,6 +185,7 @@
                 </div>
            </div>
        </div>
+       
 
        
 </div>
@@ -185,3 +193,4 @@
 <script>
     <?php include_once'public/js/product/productdetail.js' ?>
 </script>
+

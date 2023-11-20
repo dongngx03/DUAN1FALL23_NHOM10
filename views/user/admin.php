@@ -9,7 +9,7 @@
     <div class="sidebar">
         <div class="u-profile">
             <div class="u-avt">
-                <img src="public/imgs/product/product2.png" alt="">
+                <img src="public/imgs/product/Home.svg" alt="">
             </div>
             <div class="u-name">
                 <span><strong><?php echo $value['user_name'] ?></strong></span>
@@ -20,11 +20,11 @@
 
         </div>
         <div class="fuc">
-            <a href="?admin=addproduct" class="u-fuc"><i class="ti-announcement"></i>Trang Quản Trị</a>
+            <a href="?admin=addproduct" class="u-fuc"><i class="ti-home"></i>Trang Quản Trị</a>
             <a href="#" class="u-fuc"><i class="ti-shopping-cart"></i> Giỏ hàng</a>
             <a href="#" class="u-fuc"><i class="ti-clipboard"></i>Đơn mua</a>
             <a href="#" class="u-fuc"><i class="ti-receipt"></i>Voucher của bạn</a>
-            <a href="?act=user&&dangxuat" class="u-fuc"><i class="ti-shift-right"></i>Đăng xuất</a>
+            <a id="login" href="" class="u-fuc"><i class="ti-shift-right"></i>Đăng xuất</a>
         </div>
 
     </div>
@@ -93,4 +93,24 @@
     </div>
 </div>
 <?php endforeach; ?>
+<script>
+    // đăng xuât
+    const dangxuat = document.querySelector('#login')
+    console.log(dangxuat);
+    dangxuat.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log(1);
+        Swal.fire({
+            icon: 'warning',
+            title: 'Bạn Muốn Đăng Xuất ?',
+            showCancelButton: true,
+            confirmButtonText: 'Đăng Xuất',
+            cancelButtonText: 'Không',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = '?act=user&&dangxuat';
+            }
+        });
+    })
+</script>
 

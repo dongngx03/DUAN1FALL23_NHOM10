@@ -6,9 +6,19 @@
     // kết nối với bảng giỏ hàng 
     include'./models/cartModel.php';
 
-   // lấy hết tất cả dữ dữ liệu cart của người dùng 
-   $dataCart = getCartOnePersion($_SESSION['user_id']);
-   // lấy hết màu cảu 1 sản phẩm này 
+     // xóa giỏ hàng 
+     if(isset($_GET['delete']) && $_GET['delete']!='') {
+        $cart_id = $_GET['delete'];
+        deleteCart($cart_id);
+    }
+    // lấy tất cả sản phẩm trong giỏ hàng của 1 khách hàng 
+    $dataCart = getCartOneUser($_SESSION['user_id']);
+
+   
+    // echo "<pre>";
+    // print_r($dataCart);
+    // echo "<pre>";
+    
    
    
 
