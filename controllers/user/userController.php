@@ -37,6 +37,7 @@
         empty($_POST['huyen'])? $err['huyen'] = "Vui Lòng nhập Quận/Huyện nơi bạn ở  ":'';
         empty($_POST['tinh'])? $err['tinh'] = "Vui Lòng nhập Tỉnh/Thành Phố nơi bạn ở  ":'';
 
+       
         // nếu người dùng muốn thay dối email của họ 
         if($email != $dataUser[0]['user_email']){
             // check xem email họ có tồn tại trùng với người khác hay không ?
@@ -44,14 +45,14 @@
                 // nếu có thì return về false
                 $check = false;
                 // biến lưu lỗi thông báo cho người dùng 
-                $thongbao = "Email đã tồn tại";
+                $err['email_trung'] = "Email đã tồn tại";
             }
         }
         // tường tự check sdt cũng như check email 
         if($sdt != $dataUser[0]['user_phone']){
             if($checkPhone != 0){
                 $check = false;
-                $thongbao = "Số điện thoại đã tồn tại";
+                $err['phone_trung'] = "Số điện thoại đã tồn tại";
             }
         }
         // bước 1 check xem người dùng đã nhập đúng các trường hay không 
