@@ -37,7 +37,7 @@ for (let i = 0; i < colorBtn.length; i++) {
                                 <td>${dataItem.color_name}</td>
                                 <td>${dataItem.size_name}</td>
                                 <td>${dataItem.quantity} chiếc</td>
-                                <td>
+                                <td class="d-grid gap-1">
                                     <a class="btn btn-danger" href="">Xóa</a>
                                     <a class="btn btn-primary" href="">Thêm số lượng</a>
                                 </td>
@@ -52,5 +52,40 @@ for (let i = 0; i < colorBtn.length; i++) {
         }
 
     })
+
+    const color = document.querySelectorAll('.color');
+    color.forEach(function(item) {
+        const spanText = item.textContent;
+        switch (spanText) {
+            case 'blue':
+                item.style.backgroundColor='blue'
+                break;
+            case 'red':
+                item.style.backgroundColor='red'
+                break;
+            case 'yellow':
+                item.style.backgroundColor='yellow'
+                item.style.color='black'
+                break;
+            case 'pink':
+                item.style.backgroundColor='pink'
+                break;
+            case 'black':
+                item.style.backgroundColor='black'
+                break;
+            case 'white':
+                item.style.backgroundColor='White'
+                item.style.color='black'
+                break;
+            case 'green':
+                item.style.backgroundColor='green'
+                break;
+            case 'orange':
+                item.style.backgroundColor='orange'
+                break;
+           
+        }
+
+    });
     
 }

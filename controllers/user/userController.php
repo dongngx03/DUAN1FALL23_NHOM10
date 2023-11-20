@@ -22,7 +22,7 @@
         $huyen = $_POST['huyen'];
         $tinh = $_POST['tinh'];
         $diachi = $_POST['diachi'];
-        $target_dir = "./public/imgs/product/";
+        $target_dir = "./public/imgs/user/";
         $target_file = $target_dir . basename($_FILES["img"]["name"]);
         $checkEmail = checkEmail($email);
         $checkPhone = checkPhone($sdt);

@@ -1,5 +1,5 @@
 <?php 
-    include'./controllers/admin/productListController.php';
+    include'./controllers/admin/product/productListController.php';
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
@@ -80,9 +80,9 @@
                             <img style="width:100px;height:auto" src="public/imgs/product/<?php echo $value['img_avatar'] ?>" alt="">
                         </td>
                        
-                        <td>
+                        <td class="d-grid gap-1">
                             <a class="btn  btn-primary" href="?admin=productdetail&&product_id=<?php echo $value['product_id'] ?>">Chi tiết</a>
-                            <a class="btn  btn-success" href="">Thêm biến thể</a>
+                            <a class="btn  btn-success" href="?admin=addproductvariant&&product_id=<?php echo $value['product_id'] ?>">Thêm biến thể</a>
                             <a class="btn btn-danger" href="">Xóa sản phẩm </a>
                         </td>
                     </tr>

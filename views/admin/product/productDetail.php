@@ -1,5 +1,5 @@
 <?php 
-include'./controllers/admin/productDetailController.php';
+include'./controllers/admin/product/productDetailController.php';
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
@@ -67,7 +67,7 @@ include'./controllers/admin/productDetailController.php';
             <!--  -->
             <?php if(!empty($dataColor))foreach($dataColor as $value): ?>
                 <div class="variant_color">
-                    <button class="btn btn-outline-dark"><?php echo $value['color_name'] ?></button>
+                    <button class="btn btn-outline-light color"><?php echo $value['color_name'] ?></button>
                     <input class="color_id" type="hidden" value="<?php echo $value['color_id'] ?>">
                 </div>
             <?php endforeach; ?>
@@ -82,7 +82,7 @@ include'./controllers/admin/productDetailController.php';
         </div>
         <div class="col-md-12 pt-1">
             <table class="table col-md-12 shadow-lg p-3 mb-5 bg-body rounded">
-                <thead class="table-dark">
+                <thead class="table-secondary">
                     <tr>
                         <th scope="col">STT</th>
                         <th scope="col">Tên Sản Phẩm </th>

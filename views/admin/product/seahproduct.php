@@ -1,4 +1,4 @@
-<?php include_once'./controllers/admin/seahProductController.php' ?>
+<?php include_once'./controllers/admin/product/seahProductController.php' ?>
 
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

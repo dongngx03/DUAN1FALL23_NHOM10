@@ -9,7 +9,7 @@
     <div class="sidebar">
         <div class="u-profile">
             <div class="u-avt">
-                <img src="public/imgs/product/product2.png" alt="">
+                <img src="public/imgs/product/Home.svg" alt="">
             </div>
             <div class="u-name">
                 <span><strong><?php echo $value['user_name'] ?></strong></span>
@@ -20,7 +20,7 @@
 
         </div>
         <div class="fuc">
-            <a href="?admin=addproduct" class="u-fuc"><i class="ti-announcement"></i>Trang Quản Trị</a>
+            <a href="?admin=addproduct" class="u-fuc"><i class="ti-home"></i>Trang Quản Trị</a>
             <a href="#" class="u-fuc"><i class="ti-shopping-cart"></i> Giỏ hàng</a>
             <a href="#" class="u-fuc"><i class="ti-clipboard"></i>Đơn mua</a>
             <a href="#" class="u-fuc"><i class="ti-receipt"></i>Voucher của bạn</a>

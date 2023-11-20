@@ -1,4 +1,4 @@
-<?php include_once'./controllers/admin/addproductController.php' ?>
+<?php include_once'./controllers/admin/product/addproductController.php' ?>
 
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
