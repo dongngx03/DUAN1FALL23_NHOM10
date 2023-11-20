@@ -33,7 +33,7 @@
          case 3: // trang người dùng 
             header('location: ?act=user');
             break;
-         case 2: // trang người dùng 
+         case 2: // trang admin 
             header('location: ?act=admin');
             break;
       }

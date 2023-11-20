@@ -10,7 +10,7 @@
     <div class="sidebar">
         <div class="u-profile">
             <div class="u-avt">
-                <img src="public/imgs/product/product2.png" alt="">
+             <img src="<?=$value['user_img']?>" alt="">
             </div>
             <div class="u-name">
                 <span><strong><?php echo $value['user_name'] ?></strong></span>
@@ -35,59 +35,88 @@
         <hr>
         <!--  -->
       
-        <form class="u-form-user" method="post" id="myForm" onsubmit="validateForm(event)">
+        <form class="u-form-user" enctype="multipart/form-data" method="post" id="myForm" onsubmit="validateForm(event)">
             <div class="u-ip-info">
                 <div class="u-ip-left">
+                <div class="div">
+                     <input type="hidden" name="user_id" value="<?=$user_id?>">
+                    </div>
                     <div class="div">
                         <label for="">Tên đăng nhập</label>
                         <input type="text" name="user_name" id="user" value="<?php echo $value['user_name'] ?>">
-                        <p id="errUser" style="color: red;"></p>
+                        <p id="errUser" style="color: red;">
+                            <?php echo(isset($err['user_name'])? $err['user_name']:'') ?>
+                        </p>
                     </div>
                     <div class="div">
                         <label for="">Mật khẩu</label>
                         <input type="password" name="user_pw" id="pass" value="<?php echo $value['user_pw'] ?>">
-                        <p id="errPass" style="color: red;"></p>
+                        <p id="errPass" style="color: red;">
+                            <?php echo(isset($err['user_pw'])? $err['user_pw']:'') ?>
+                        </p>
                     </div>
                     <div class="div">
                         <label for="">Email</label>
                         <input type="text" name="user_email" id="email" value="<?php echo $value['user_email'] ?>">
-                        <p id="errEmail" style="color: red;"></p>
+                        <p id="errEmail" style="color: red;">
+                            <?php 
+                                if(isset($thongbao)){
+                                    echo $thongbao;
+                                }
+                                echo(isset($err['user_email'])? $err['user_email']:'')
+                            ?>
+                        </p>
                     </div>
                     <div class="div">
                         <label for="">Số Điện Thoại</label>
                         <input type="text" name="user_phone" id="phone" placeholder="Số điện thoại" value="<?php echo $value['user_phone'] ?>">
-                        <p id="errPhone" style="color: red;"></p>
+                        <p id="errPhone" style="color: red;">
+                            <?php 
+                                if(isset($thongbaoPhone)){
+                                    echo $thongbaoPhone;
+                                }
+                                echo(isset($err['user_phone'])? $err['user_phone']:'')
+                            ?>
+                            </p>
                     </div>
                     <div class="div">
                         <label for="">Ảnh</label>
-                        <input type="file" name="user_img">
+                        <input type="file" name="img">
                     </div>
                 </div>
                 <div class="u-ip-right">
                     <div class="div">
                         <label for="">Xã</label>
-                        <input type="text" placeholder="Nhập xã/phường" id="xa" value="<?php echo $value['user_xa'] ?>">
-                        <p id="errXa" style="color: red;"></p>
+                        <input type="text" name="xa" placeholder="Nhập xã/phường" id="xa" value="<?php echo $value['user_xa'] ?>">
+                        <p id="errXa" style="color: red;">
+                            <?php echo(isset($err['xa'])? $err['xa']:'') ?>
+                        </p>
                     </div>
                     <div class="div">
                         <label for="">Huyện</label>
-                        <input type="text" placeholder="Nhập huyện/quận" id="huyen" value="<?php echo $value['user_huyen'] ?>">
-                        <p id="errHuyen" style="color: red;"></p>
+                        <input type="text" name="huyen" placeholder="Nhập huyện/quận" id="huyen" value="<?php echo $value['user_huyen'] ?>">
+                        <p id="errXa" style="color: red;">
+                            <?php echo(isset($err['huyen'])? $err['huyen']:'') ?>
+                        </p>
                     </div>
                     <div class="div">
                         <label for="">Tỉnh</label>
-                        <input type="text" placeholder="Nhập tỉnh/thành phố" id="tinh" value="<?php echo $value['user_tinh'] ?>">
-                        <p id="errTinh" style="color: red;"></p>
+                        <input type="text" name="tinh" placeholder="Nhập tỉnh/thành phố" id="tinh" value="<?php echo $value['user_tinh'] ?>">
+                        <p id="errXa" style="color: red;">
+                            <?php echo(isset($err['tinh'])? $err['tinh']:'') ?>
+                        </p>
                     </div>
                    
                     <div class="div">
-                        <label for="">Địa trỉ chi tiết </label>
-                        <input class="describe" type="text" placeholder="Địa chỉ rõ hơn" id="mota" value="<?php echo $value['diatri_chitiet'] ?>">
-                        <p id="errMota" style="color: red;"></p>
+                        <label for="">Địa chỉ chi tiết </label>
+                        <input class="describe" name="diachi" type="text" placeholder="Địa chỉ rõ hơn" id="mota" value="<?php echo $value['diatri_chitiet'] ?>">
+                        <p id="errXa" style="color: red;">
+                           
+                        </p>
                     </div>
                 </div>
             </div>
-            <button name="btnSubmit" type="submit">Cập Nhật</button>
+            <button id="update" name="capnhat" type="submit">Cập Nhật</button>
             <span class="sucess"></span>
         </form>
        
@@ -97,135 +126,24 @@
 </div>
 <?php endforeach; ?>
 
-
 <script>
-    function validateForm(event) {
-        event.preventDefault();
-        const user = document.getElementById('user');
-        const pass = document.getElementById('pass');
-        const email = document.getElementById('email');
-        const phone = document.getElementById('phone');
-        const xa = document.getElementById('xa');
-        const huyen = document.getElementById('huyen');
-        const tinh = document.getElementById('tinh');
-        const diachi = document.getElementById('diachi');
-        const mota = document.getElementById('mota');
-        const errorText = document.getElementById('errorText');
-
-        if (user.onblur(user) && pass.onblur(pass) && email.onblur(email) && phone.onblur(phone) && xa.onblur(xa) &&huyen.onblur(huyen)
-        && tinh.onblur(tinh) && diachi.onblur(diachi) && mota.onblur(mota)) {
-            const myForm = document.getElementById('myForm');
-            myForm.onsubmit = null;
-            myForm.submit();
-        }
-    }
-    user.onblur = function() {
-        if (user.value.trim() === '') {
-            user.style.border = '1px solid red';
-            errUser.textContent = 'Vui lòng nhập.';
-            return false;
-        } else {
-            user.style.border = '1px solid green';
-            errUser.textContent = '';
-            return true;
-        }
-    };
-    pass.onblur = function() {
-        if (pass.value.trim() === '') {
-            pass.style.border = '1px solid red';
-            errPass.textContent = 'Vui lòng nhập.';
-            return false;
-
-        } else {
-            pass.style.border = '1px solid green';
-            errPass.textContent = '';
-            return true;
-        }
-    };
-    email.onblur = function() {
-        const emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-        if (email.value.trim() === '') {
-            email.style.border = '1px solid red';
-            errEmail.textContent = 'Vui lòng nhập.';
-            return false;
-        }
-        if (!emailPattern.test(email.value.trim())) {
-            errEmail.textContent = 'Email không hợp lệ';
-            return false;
-        } else {
-            email.style.border = '1px solid green';
-            errEmail.textContent = '';
-            return true;
-
-        }   
-    };
-    phone.onblur = function() {
-        const phoneNumberPattern = /^\d{10}$/;
-        if (phone.value.trim() === '') {
-            phone.style.border = '1px solid red';
-            errPhone.textContent = 'Vui lòng nhập.';
-            return false;
-        }
-        if (!phoneNumberPattern.test(phone.value.trim())) {
-            errPhone.textContent = 'SDT không hợp lệ';
-            return false;
-        }
-        else {
-            phone.style.border = '1px solid green';
-            errPhone.textContent = '';
-            return true;
-
-        }
-    };
-        xa.onblur = function() {
-        if (xa.value.trim() === '') {
-            xa.style.border = '1px solid red';
-            errXa.textContent = 'Vui lòng nhập.';
-            return false;
-
-        } else {
-            xa.style.border = '1px solid green';
-            errXa.textContent = '';
-            return true;
-        }
-    };
-    huyen.onblur = function() {
-        if (huyen.value.trim() === '') {
-            huyen.style.border = '1px solid red';
-            errHuyen.textContent = 'Vui lòng nhập.';
-            return false;
-
-        } else {
-            huyen.style.border = '1px solid green';
-            errHuyen.textContent = '';
-            return true;
-        }
-    };
-    tinh.onblur = function() {
-        if (tinh.value.trim() === '') {
-            tinh.style.border = '1px solid red';
-            errTinh.textContent = 'Vui lòng nhập.';
-            return false;
-        } else {
-            tinh.style.border = '1px solid green';
-            errTinh.textContent = '';
-            return true;
-        }
-    };
-   
-    mota.onblur = function() {
-        if (mota.value.trim() === '') {
-            mota.style.border = '1px solid red';
-            errMota.textContent = 'Vui lòng nhập.';
-            return false
-        } else {
-            mota.style.border = '1px solid green';
-            errMota.textContent = '';
-            return true
-        }
-    };
-
-
+    // cập nhật 
+    const update = document.getElementById('update');
+        update.addEventListener('click', (e) => {
+        e.preventDefault();
+        Swal.fire({
+            icon: 'question',
+            title: 'Bạn Chắc Chắn Muốn Thay Đổi Thông Tin Chứ ?',
+            showCancelButton: true,
+            confirmButtonText: 'Thay Đổi',
+            cancelButtonText: 'Không',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const form = document.getElementById('myForm');
+                form.submit(); // Gửi form khi xác nhận
+            }
+        });
+    })
     // đăng xuât
     const dangxuat = document.querySelector('#login')
     console.log(dangxuat);
