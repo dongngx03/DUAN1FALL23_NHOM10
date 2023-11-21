@@ -18,7 +18,7 @@
             <li><a class="dropdown-item" href="?admin=addproduct">Thêm Mới Sản Phẩm </a></li>
             <li><a class="dropdown-item" href="?admin=productlist">Quản lý danh mục sản phẩm </a></li>
             <li><a class="dropdown-item" href="?admin=seahproduct">Tìm kiếm sản phẩm </a></li>
-            <li><a class="dropdown-item" href="#">Quản lý hình ảnh sản phẩm</a></li>
+           
           </ul>
         </li>
         <!-- hết sản phẩm  -->
@@ -58,7 +58,7 @@
     <h2 class="text-center pt-3 text-secondary">Danh mục sản phẩm </h2>
     <div class="row pt-3">
         <div class="col-md-12">
-            <table class="table  bg-white shadow-lg p-2 mb-5 bg-body rounded">
+            <table class="table  bg-white shadow-lg p-2 mb-5 bg-body rounded align-middle text-center">
                 <thead class="table-secondary">
                     <tr>
                         <th scope="col">ID Sản phẩm </th>
@@ -80,7 +80,7 @@
                             <img style="width:100px;height:auto" src="public/imgs/product/<?php echo $value['img_avatar'] ?>" alt="">
                         </td>
                        
-                        <td class="d-grid gap-1">
+                        <td class="">
                             <a class="btn  btn-primary" href="?admin=productdetail&&product_id=<?php echo $value['product_id'] ?>">Chi tiết</a>
                             <a class="btn  btn-success" href="?admin=addproductvariant&&product_id=<?php echo $value['product_id'] ?>">Thêm biến thể</a>
                             <a class="btn btn-danger" href="">Xóa sản phẩm </a>

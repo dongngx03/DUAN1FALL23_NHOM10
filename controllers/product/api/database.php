@@ -10,7 +10,7 @@ function getQuantity($p_id, $color_id, $size_id) {
         ";
         $stmt = connect()->prepare($query);
         $stmt->execute();
-        $data = $stmt->fetchALL(PDO::FETCH_ASSOC);
+        $data = $stmt->fetch(PDO::FETCH_ASSOC);
         return $data;
 }
 

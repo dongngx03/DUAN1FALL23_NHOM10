@@ -37,7 +37,7 @@ for (let i = 0; i < colorBtn.length; i++) {
                                 <td>${dataItem.color_name}</td>
                                 <td>${dataItem.size_name}</td>
                                 <td>${dataItem.quantity} chiếc</td>
-                                <td class="d-grid gap-1">
+                                <td class="">
                                     <a class="btn btn-danger" href="">Xóa</a>
                                     <a class="btn btn-primary" href="">Thêm số lượng</a>
                                 </td>

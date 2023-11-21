@@ -11,7 +11,7 @@ if(isset($_GET['size_id'])) {
     $color_id = $_SESSION['color_id'];
     $p_id = $_SESSION['p_id'];
     $_SESSION['size_id'] = $size_id;
-    $data = getQuantity($p_id, $color_id, $size_id);
+    $data = [getQuantity($p_id, $color_id, $size_id)];
     echo json_encode($data);
 }
 

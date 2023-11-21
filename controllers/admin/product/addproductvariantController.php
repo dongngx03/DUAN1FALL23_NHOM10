@@ -14,6 +14,8 @@
     // lấy dữ liệu bảng của 1 product chỉ định 
     isset($_GET['product_id'])?$p_id = $_GET['product_id']:'';
     $product = getProductId($p_id);
+    // lấy hết ảnh của 1 sanrp hẩm 
+    $productImg = getImgId($p_id);
 
     $err = [];
     // thêm sản phẩm biến thể 
@@ -38,6 +40,22 @@
                 $err['variantExit'] = 'Sản phẩm biến thể đã tồn tại ';
             }
         }
+    }
+
+    // thêm ảnh sản phẩm 
+    // thêm ảnh cho từng sản phẩm 
+    if(isset($_POST['addImg'])) {
+        $img_url = $_FILES['img_url']['name'];
+        $p_id = $_POST['p_id'];
+
+        if( $_FILES['img_url']['name'] != "" &&  $_FILES['img_url']['error']==0) {
+            $target_dir = "public/imgs/product/";
+            $target_file = $target_dir . basename($_FILES["img_url"]["name"]);
+            move_uploaded_file($_FILES["img_url"]["tmp_name"], $target_file);
+            addImg($img_url, $p_id);
+            return true;
+        }   
+        
     }
 
 ?>

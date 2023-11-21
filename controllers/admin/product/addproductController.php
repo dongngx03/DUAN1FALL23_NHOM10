@@ -86,13 +86,15 @@
         $img_url = $_FILES['img_url']['name'];
         $p_id = $_POST['p_id'];
 
-        if( $_FILES['img_url']['name'] != "" &&  $_FILES['img_url']['error']==0) {
-            $target_dir = "public/imgs/product/";
-            $target_file = $target_dir . basename($_FILES["img_url"]["name"]);
-            move_uploaded_file($_FILES["img_url"]["tmp_name"], $target_file);
-            addImg($img_url, $p_id);
-            return true;
-        }   
+        if(!empty($_POST['p_id'])) {
+            if( $_FILES['img_url']['name'] != "" &&  $_FILES['img_url']['error']==0) {
+                $target_dir = "public/imgs/product/";
+                $target_file = $target_dir . basename($_FILES["img_url"]["name"]);
+                move_uploaded_file($_FILES["img_url"]["tmp_name"], $target_file);
+                addImg($img_url, $p_id);
+                    
+            }   
+        } 
         
     }
 
