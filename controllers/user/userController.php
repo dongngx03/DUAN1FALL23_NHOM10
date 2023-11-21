@@ -22,7 +22,7 @@
         $huyen = $_POST['huyen'];
         $tinh = $_POST['tinh'];
         $diachi = $_POST['diachi'];
-        $target_dir = "./public/imgs/user/";
+        $target_dir = "./public/imgs/product/";
         $target_file = $target_dir . basename($_FILES["img"]["name"]);
         $checkEmail = checkEmail($email);
         $checkPhone = checkPhone($sdt);
@@ -51,7 +51,7 @@
         if($sdt != $dataUser[0]['user_phone']){
             if($checkPhone != 0){
                 $check = false;
-                $thongbao = "Số điện thoại đã tồn tại";
+                $thongbaoPhone = "Số điện thoại đã tồn tại";
             }
         }
         // bước 1 check xem người dùng đã nhập đúng các trường hay không 

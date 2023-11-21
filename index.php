@@ -10,19 +10,16 @@ if(isset($_GET['admin']) && $_GET['admin']!= null && isset($_SESSION['role_id'])
     $admin = $_GET['admin'];
     switch ($admin) {
         case 'addproduct':
-            include'./views/admin/product/addproduct.php';
+            include'./views/admin/addproduct.php';
             break;
         case 'productlist':
-            include'./views/admin/product/productList.php';
+            include'./views/admin/productList.php';
             break;
         case 'productdetail':
-            include'./views/admin/product/productDetail.php';
+            include'./views/admin/productDetail.php';
             break;
         case 'seahproduct':
-            include'./views/admin/product/seahproduct.php';
-            break;
-        case 'addproductvariant':
-            include'./views/admin/product/addproductvariant.php';
+            include'./views/admin/seahproduct.php';
             break;
         
         default:
