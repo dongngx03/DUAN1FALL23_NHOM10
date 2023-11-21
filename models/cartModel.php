@@ -1,13 +1,13 @@
 <?php 
    // lây tất cả sản phẩm trong giỏ hàng của 1 khách hàng 
    function getCartOneUser($user_id) {
-        $query = "SELECT product_name, color_name, size_name, img_avatar, GROUP_CONCAT(DISTINCT pv.pv_id), product_price, cart_id
+        $query = "SELECT *
                 FROM carts join productvariants as pv on carts.pv_id = pv.pv_id
-                            join products as p on pv.product_id = p.product_id
-                            join colors on pv.color_id = colors.color_id
-                            join sizes on pv.size_id = pv.size_id
+                           join sizes on pv.size_id = sizes.size_id
+                           join colors on pv.color_id = colors.color_id
+                           join products on pv.product_id = products.product_id
                 WHERE user_id = '$user_id' and carts.status = 1
-                group by pv.pv_id
+               
         ";
         $stmt = connect()->prepare($query);
         $stmt->execute();
