@@ -18,7 +18,7 @@
             <li><a class="dropdown-item" href="?admin=addproduct">Thêm Mới Sản Phẩm </a></li>
             <li><a class="dropdown-item" href="?admin=productlist">Quản lý danh mục sản phẩm </a></li>
             <li><a class="dropdown-item" href="?admin=seahproduct">Tìm kiếm sản phẩm </a></li>
-            <li><a class="dropdown-item" href="#">Quản lý hình ảnh sản phẩm</a></li>
+           
           </ul>
         </li>
         <!-- hết sản phẩm  -->

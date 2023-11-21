@@ -170,6 +170,7 @@
                                 // lấy dữ liệu về 
                                 const data = await response.json();
                                 console.log(data);
+                                console.log(typeof data);
 
                                 if(data.length>0) {
                                     const gioihan = document.getElementById('gioihan');

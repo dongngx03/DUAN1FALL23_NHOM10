@@ -18,7 +18,7 @@ include'./controllers/admin/product/productDetailController.php';
             <li><a class="dropdown-item" href="?admin=addproduct">Thêm Mới Sản Phẩm </a></li>
             <li><a class="dropdown-item" href="?admin=productlist">Quản lý danh mục sản phẩm </a></li>
             <li><a class="dropdown-item" href="?admin=seahproduct">Tìm kiếm sản phẩm </a></li>
-            <li><a class="dropdown-item" href="#">Quản lý hình ảnh sản phẩm</a></li>
+           
           </ul>
         </li>
         <!-- hết sản phẩm  -->
@@ -81,7 +81,7 @@ include'./controllers/admin/product/productDetailController.php';
             <strong><span class="text-secondary h4">Số Sản Phẩm Dựa Trên Màu</span></strong>
         </div>
         <div class="col-md-12 pt-1">
-            <table class="table col-md-12 shadow-lg p-3 mb-5 bg-body rounded">
+            <table class="table col-md-12 shadow-lg p-3 mb-5 bg-body rounded align-middle text-center">
                 <thead class="table-secondary">
                     <tr>
                         <th scope="col">STT</th>

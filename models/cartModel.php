@@ -20,6 +20,6 @@
         $query = "UPDATE carts SET status = 0 WHERE cart_id = '$cart_id'";
         $stmt = connect()->prepare($query);
         $stmt->execute();
-   } 
+   }
    
 ?>
