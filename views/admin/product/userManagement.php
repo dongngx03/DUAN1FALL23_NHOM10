@@ -1,4 +1,4 @@
-<?php include_once'./controllers/admin/product/seahProductController.php' ?>
+<?php include_once'./controllers/user/listuserController.php' ?>
 
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -52,32 +52,45 @@
     </div>
   </div>
 </nav>
-
-<!-- body -->
-
-<div class="container-fluid bg-light">
-    <div class="row">
+<!-- phần danh sách người dùng -->
+<div class="container-fluid">
+    <h2 class="text-center pt-3 text-secondary">Danh sách User </h2>
+    <div class="row pt-3">
         <div class="col-md-12">
-            <h2 class="text-center p-3">Tìm Kiếm Sản Phẩm </h2>
-        </div>
-        <!-- tìm kiếm  -->
-        <div class="col-md-12 ">
-            <form class=" bg-white shadow-sm p-2 mb-5 bg-body rounded">
-                <div class="mb-3">
-                    <label  class="form-label">Nhập ID Sản Phẩm  </label>
-                    <input id="inputSeah" type="text"  class="form-control"  aria-describedby="emailHelp">
-                </div>
-                <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-            </form>
-        </div>
-
-        <div class="col-md-12 ">
-            
+            <table class="table  bg-white shadow-lg p-2 mb-5 bg-body rounded">
+                <thead class="table-secondary">
+                    <tr>
+                        <th scope="col">Tên đăng nhập </th>
+                        <th scope="col">Mật khẩu</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Số điện thoại</th>
+                        <th scope="col">Vai trò</th>
+                        <th scope="col">Chức năng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   <!-- sản phẩm  -->
+                   <?php if(!empty($dataUser)) foreach($dataUser as $value): ?>
+                    <tr>
+                        <td><?php echo $value['user_name'] ?></td>
+                        <td><?php echo $value['user_pw'] ?></td>
+                        <td><?php echo $value['user_email'] ?></td>
+                        <td><?php echo $value['user_phone'] ?></td>
+                        <td><?php echo $value['role_id'] ?></td>
+                       
+                        <td class="d-grid gap-1">
+                            <a class="btn btn-danger" href="">Sửa tài khoản </a>
+                            <a class="btn btn-danger" href="">Xóa tài khoản </a>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                   
+                  
+                </tbody>
+            </table>
         </div>
     </div>
+    
 </div>
 
-<script>
-  <?php include'public/js/admin/seahProduct.js' ?>
-</script>
 

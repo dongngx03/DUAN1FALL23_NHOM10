@@ -60,5 +60,23 @@
         $stmt = $conn->prepare($query);
         $stmt->execute();  
     }
+    //sắp xếp tài khoản theo cột id
+    function listUser()
+{
+    $query = "SELECT * FROM users order by id desc"; 
+    $stmt = connect()->prepare($query);
+    $stmt->execute();
+    $data = $stmt->fetchAll();
+    return $data;
+}
+function deleteUser($id)
+{
+    $query = "DELETE FROM `users` WHERE id='$id'";
+    $stmt = connect()->prepare($query);
+    $stmt->execute();
+    $rowCount = $stmt->rowCount();
+    return $rowCount;
+}
+
     
 ?>

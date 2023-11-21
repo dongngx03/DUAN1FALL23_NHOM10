@@ -24,6 +24,9 @@ if(isset($_GET['admin']) && $_GET['admin']!= null && isset($_SESSION['role_id'])
         case 'addproductvariant':
             include'./views/admin/product/addproductvariant.php';
             break;
+        case 'userManagement':
+            include'./views/admin/product/userManagement.php';
+            break;
         
         default:
             include'./views/404/404.php';

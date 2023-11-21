@@ -23,7 +23,7 @@ include'./controllers/admin/product/productDetailController.php';
         </li>
         <!-- hết sản phẩm  -->
 
-        <!-- Bình luận  -->
+        Bình luận 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Bình Luận 
@@ -39,11 +39,11 @@ include'./controllers/admin/product/productDetailController.php';
 
         
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#"></a>
+          <a class="nav-link active" aria-current="page" href="?admin=useManagement"></a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="?admin=userManagement">Link</a>
         </li>
        
       

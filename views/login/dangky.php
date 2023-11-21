@@ -22,17 +22,17 @@
                 </div>
                 <div class="login-main py-5">
                     <!-- fomr -->
-                    <form class="login-main-form" action="" method="post">
+                    <form class="login-main-form" action="" method="post" id="myForm" onsubmit="validateForm(event)">
                         <div class="title px-4 pt-4">
                             <span class="h4">Đăng ký</span>
                         </div>
                         <div class="form-ip px-4">
                             <input type="text" placeholder="Tên của bạn" name="user_name" id="user" value="<?php echo(isset($_POST['user_name'])? $_POST['user_name'] : '') ?>">
-                            <span id="errUser" style="color: red;"><?php echo(isset($err['user_name'])? $err['user_name']: '') ?></span>
+                            <span id="erruser" style="color: red;"><?php echo(isset($err['user_name'])? $err['user_name']: '') ?></span>
                         </div>
                         <div class="form-ip px-4">
                             <input type="email" placeholder="Email" name="user_email" id="email" value="<?php echo(isset($_POST['user_email'])? $_POST['user_email'] : '') ?>">
-                            <span id="errUser" style="color: red;">
+                            <span id="erremail" style="color: red;">
                                 <?php
                                 echo(isset($err['user_email'])? $err['user_email']: '');
                                 echo(isset($err['trungemail'])? $err['trungemail']: '');
@@ -42,12 +42,12 @@
                         </div>
                         <div class="form-ip px-4">
                             <input type="password" placeholder="Mật khẩu" name="user_pw" id="password" value="<?php echo(isset($_POST['user_pw'])? $_POST['user_pw'] : '') ?>">
-                            <span id="errUser" style="color: red;"><?php echo(isset($err['user_pw'])? $err['user_pw']: '') ?></span>
+                            <span id="errpassword" style="color: red;"><?php echo(isset($err['user_pw'])? $err['user_pw']: '') ?></span>
                         </div>
                         <div class="form-ip px-4">
                             <input type="password" placeholder="Nhập lại mật khẩu" name="user_pw1"
                                 id="confirmPassword">
-                                <span id="errUser" style="color: red;">
+                                <span id="errconfirmPassword" style="color: red;">
                                 <?php
                                  echo(isset($err['user_pw1'])? $err['user_pw1']: '');
                                  echo(isset($err['trungpw'])? $err['trungpw']: '');
