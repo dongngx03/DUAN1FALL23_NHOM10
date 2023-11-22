@@ -14,13 +14,13 @@
     <!-- icon -->
     <link rel="stylesheet" href="icon/themify-icons/themify-icons.css">
     
-    <title>Document</title>
+    <title>Shop Lừa Đảo</title>
     <style>
         <?php include_once'public/css/index.css' ?>
     </style>
 </head>
 <body>
-    <header>
+    <header class="bg-light">
         <div class="h-nav">
             <a href="?act=home" class="h-logo"><img src="public/imgs/user/logo.jpg" alt="" ></a>
             <ul>

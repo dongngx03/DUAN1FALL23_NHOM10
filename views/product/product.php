@@ -1,7 +1,7 @@
 <?php
     include_once'./controllers/product/productController.php';
 ?>
-<div class="container-fluid"> 
+<div class="container-fluid bg-light"> 
     <!-- nabar -->
     <?php include'./views/components/navbar.php' ?>
 
