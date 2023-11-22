@@ -22,7 +22,7 @@
 <body>
     <header class="bg-light">
         <div class="h-nav">
-            <a href="?act=home" class="h-logo"><img src="public/imgs/user/logo.jpg" alt="" ></a>
+            <a href="?act=home" class="h-logo"><img src="public/imgs/home/Planet.svg" alt="" ></a>
             <ul>
                 <li><a href="?act=product">Products</a></li>
                 <li><a href="#">Contact</a></li>

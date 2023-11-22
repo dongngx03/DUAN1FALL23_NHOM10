@@ -1,5 +1,5 @@
 
-<footer>
+<footer class="">
     <div class="f-col">
         <div class="f-col1">
             <div class="f-itemcol1">
