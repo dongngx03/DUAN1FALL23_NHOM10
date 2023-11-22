@@ -36,340 +36,64 @@
            <!-- check hãng  -->
             <div class="brand shadow-sm p-3 mb-5 bg-body rounded text-secondary fw-bold">
                 <h4>Hãng </h4>
+                <?php if(!empty($dataBrand)) foreach($dataBrand as $value): ?>
                 <div class="form-check brand_check pt-1 d-flex align-items-center gap-2">
-                    <input class="form-check-input" type="checkbox" id="checkboxNike">
-                    <label class="form-check-label" for="checkboxNike">Nike</label>
+                    <input class="form-check-input" type="checkbox" id="" name="brand" value="<?php echo $value['brand_id'] ?>">
+                    <label class="form-check-label" for=""><?php echo ucfirst($value['brand_name']) ?></label>
                 </div>
-                <div class="form-check brand_check pt-1 d-flex align-items-center gap-2">
-                    <input class="form-check-input" type="checkbox" id="checkboxAdidas">
-                    <label class="form-check-label" for="checkboxAdidas">Adidas</label>
-                </div>
-                <div class="form-check brand_check pt-1 d-flex align-items-center gap-2">
-                    <input class="form-check-input" type="checkbox" id="checkboxPuma">
-                    <label class="form-check-label" for="checkboxPuma">Puma</label>
-                </div>
-
+                <?php endforeach; ?>
                 <hr>
                 <!-- tầm tiền -->
                 <h4>Giá </h4>
                 <div class="form-check brand_check pt-1 d-flex align-items-center gap-2">
-                    <input class="form-check-input" type="checkbox" id="500">
+                    <input class="form-check-input" type="checkbox" id="_500" name="price" value="1500">
+                    <label class="form-check-label" for="_500">Nhỏ hơn 500 nghìn</label>
+                </div>
+                <div class="form-check brand_check pt-1 d-flex align-items-center gap-2">
+                    <input class="form-check-input" type="checkbox" id="500" name="price" value="5001">
                     <label class="form-check-label" for="500">500 nghìn - 1 triệu</label>
                 </div>
                 <div class="form-check brand_check pt-1 d-flex align-items-center gap-2">
-                    <input class="form-check-input" type="checkbox" id="1">
+                    <input class="form-check-input" type="checkbox" id="1" name="price" value="12">
                     <label class="form-check-label" for="1">1 triệu - 2 triệu </label>
                 </div>
                 <div class="form-check brand_check pt-1 d-flex align-items-center gap-2">
-                    <input class="form-check-input" type="checkbox" id="2">
+                    <input class="form-check-input" type="checkbox" id="2" name="price" value="23">
                     <label class="form-check-label" for="2">2 triệu - 3 triệu </label>
                 </div>
                 <div class="form-check brand_check pt-1 d-flex align-items-center gap-2">
-                    <input class="form-check-input" type="checkbox" id="3">
+                    <input class="form-check-input" type="checkbox" id="3" name="price" value="34">
                     <label class="form-check-label" for="3">3 triệu - 4 triệu </label>
                 </div>
                 <div class="form-check brand_check pt-1 d-flex align-items-center gap-2">
-                    <input class="form-check-input" type="checkbox" id="4">
+                    <input class="form-check-input" type="checkbox" id="4" name="price" value="4">
                     <label class="form-check-label" for="4">lơn hơn 4 triệu</label>
                 </div>
 
                 <hr>
                 <!-- màu  -->
                 <h4>Màu </h4>
+                <?php if(!empty($dataColor)) foreach($dataColor as $value): ?>
                 <div class="form-check brand_check pt-1 d-flex align-items-center gap-2">
-                    <input class="form-check-input" type="checkbox" id="black">
-                    <label class="form-check-label" for="black">Black </label>
+                    <input class="form-check-input" type="checkbox" id="" name="color" value="<?php echo $value['color_id'] ?>">
+                    <label class="form-check-label" for=""><?php echo ucfirst($value['color_name']) ?></label>
                 </div>
-                <div class="form-check brand_check pt-1 d-flex align-items-center gap-2">
-                    <input class="form-check-input" type="checkbox" id="white">
-                    <label class="form-check-label" for="white">white </label>
-                </div>
-                <div class="form-check brand_check pt-1 d-flex align-items-center gap-2">
-                    <input class="form-check-input" type="checkbox" id="red">
-                    <label class="form-check-label" for="red">red </label>
-                </div>
-                <div class="form-check brand_check pt-1 d-flex align-items-center gap-2">
-                    <input class="form-check-input" type="checkbox" id="green">
-                    <label class="form-check-label" for="green">green </label>
-                </div>
-                <div class="form-check brand_check pt-1 d-flex align-items-center gap-2">
-                    <input class="form-check-input" type="checkbox" id="blue">
-                    <label class="form-check-label" for="blue">blue</label>
-                </div>
-
-    
+                <?php endforeach; ?>
+                
             </div>
         </div>
 
         <!-- phải  -->
-        <div class="r_box bg-white gap-2">
-            <div class="item">
-                <!-- ảnh  -->
-                <div class="item_img">
-                    <img src="public/imgs/product/product1.png" alt="">
-                </div>
-                <!-- tên -->
-                <div class="item_name">
-                    <strong><span>Nike air foce 1</span></strong>
-                </div>
-                <div class="item_desc">
-                    <span class="text-secondary ">Woman/Men's Shose</span>
-                </div>
-                <!-- giá  -->
-                <div class="item_price">
-                    <strong><span>1.000.000 đ</span></strong>
-                </div>
-                <div class="over">
-                    <a class="btn btn-dark" href="">chi tiết </a>
-                    <a class="btn btn-outline-dark" href="">mua </a>
-                </div>
-
-            </div>
-            <div class="item">
-                <!-- ảnh  -->
-                <div class="item_img">
-                    <img src="public/imgs/product/product1.png" alt="">
-                </div>
-                <!-- tên -->
-                <div class="item_name">
-                    <strong><span>Nike air foce 1</span></strong>
-                </div>
-                <div class="item_desc">
-                    <span class="text-secondary ">Woman/Men's Shose</span>
-                </div>
-                <!-- giá  -->
-                <div class="item_price">
-                    <strong><span>1.000.000 đ</span></strong>
-                </div>
-                <div class="over">
-                    <a class="btn btn-dark" href="">chi tiết </a>
-                    <a class="btn btn-outline-dark" href="">mua </a>
-                </div>
-
-            </div>
-            <div class="item">
-                <!-- ảnh  -->
-                <div class="item_img">
-                    <img src="public/imgs/product/product1.png" alt="">
-                </div>
-                <!-- tên -->
-                <div class="item_name">
-                    <strong><span>Nike air foce 1</span></strong>
-                </div>
-                <div class="item_desc">
-                    <span class="text-secondary ">Woman/Men's Shose</span>
-                </div>
-                <!-- giá  -->
-                <div class="item_price">
-                    <strong><span>1.000.000 đ</span></strong>
-                </div>
-                <div class="over">
-                    <a class="btn btn-dark" href="">chi tiết </a>
-                    <a class="btn btn-outline-dark" href="">mua </a>
-                </div>
-
-            </div>
-            <div class="item">
-                <!-- ảnh  -->
-                <div class="item_img">
-                    <img src="public/imgs/product/product1.png" alt="">
-                </div>
-                <!-- tên -->
-                <div class="item_name">
-                    <strong><span>Nike air foce 1</span></strong>
-                </div>
-                <div class="item_desc">
-                    <span class="text-secondary ">Woman/Men's Shose</span>
-                </div>
-                <!-- giá  -->
-                <div class="item_price">
-                    <strong><span>1.000.000 đ</span></strong>
-                </div>
-                <div class="over">
-                    <a class="btn btn-dark" href="">chi tiết </a>
-                    <a class="btn btn-outline-dark" href="">mua </a>
-                </div>
-
-            </div>
-            <div class="item">
-                <!-- ảnh  -->
-                <div class="item_img">
-                    <img src="public/imgs/product/product1.png" alt="">
-                </div>
-                <!-- tên -->
-                <div class="item_name">
-                    <strong><span>Nike air foce 1</span></strong>
-                </div>
-                <div class="item_desc">
-                    <span class="text-secondary ">Woman/Men's Shose</span>
-                </div>
-                <!-- giá  -->
-                <div class="item_price">
-                    <strong><span>1.000.000 đ</span></strong>
-                </div>
-                <div class="over">
-                    <a class="btn btn-dark" href="">chi tiết </a>
-                    <a class="btn btn-outline-dark" href="">mua </a>
-                </div>
-
-            </div>
-            <div class="item">
-                <!-- ảnh  -->
-                <div class="item_img">
-                    <img src="public/imgs/product/product1.png" alt="">
-                </div>
-                <!-- tên -->
-                <div class="item_name">
-                    <strong><span>Nike air foce 1</span></strong>
-                </div>
-                <div class="item_desc">
-                    <span class="text-secondary ">Woman/Men's Shose</span>
-                </div>
-                <!-- giá  -->
-                <div class="item_price">
-                    <strong><span>1.000.000 đ</span></strong>
-                </div>
-                <div class="over">
-                    <a class="btn btn-dark" href="">chi tiết </a>
-                    <a class="btn btn-outline-dark" href="">mua </a>
-                </div>
-
-            </div>
-            <div class="item">
-                <!-- ảnh  -->
-                <div class="item_img">
-                    <img src="public/imgs/product/product1.png" alt="">
-                </div>
-                <!-- tên -->
-                <div class="item_name">
-                    <strong><span>Nike air foce 1</span></strong>
-                </div>
-                <div class="item_desc">
-                    <span class="text-secondary ">Woman/Men's Shose</span>
-                </div>
-                <!-- giá  -->
-                <div class="item_price">
-                    <strong><span>1.000.000 đ</span></strong>
-                </div>
-                <div class="over">
-                    <a class="btn btn-dark" href="">chi tiết </a>
-                    <a class="btn btn-outline-dark" href="">mua </a>
-                </div>
-
-            </div>
-            <div class="item">
-                <!-- ảnh  -->
-                <div class="item_img">
-                    <img src="public/imgs/product/product1.png" alt="">
-                </div>
-                <!-- tên -->
-                <div class="item_name">
-                    <strong><span>Nike air foce 1</span></strong>
-                </div>
-                <div class="item_desc">
-                    <span class="text-secondary ">Woman/Men's Shose</span>
-                </div>
-                <!-- giá  -->
-                <div class="item_price">
-                    <strong><span>1.000.000 đ</span></strong>
-                </div>
-                <div class="over">
-                    <a class="btn btn-dark" href="">chi tiết </a>
-                    <a class="btn btn-outline-dark" href="">mua </a>
-                </div>
-
-            </div>
-            <div class="item">
-                <!-- ảnh  -->
-                <div class="item_img">
-                    <img src="public/imgs/product/product1.png" alt="">
-                </div>
-                <!-- tên -->
-                <div class="item_name">
-                    <strong><span>Nike air foce 1</span></strong>
-                </div>
-                <div class="item_desc">
-                    <span class="text-secondary ">Woman/Men's Shose</span>
-                </div>
-                <!-- giá  -->
-                <div class="item_price">
-                    <strong><span>1.000.000 đ</span></strong>
-                </div>
-                <div class="over">
-                    <a class="btn btn-dark" href="">chi tiết </a>
-                    <a class="btn btn-outline-dark" href="">mua </a>
-                </div>
-
-            </div>
-            <div class="item">
-                <!-- ảnh  -->
-                <div class="item_img">
-                    <img src="public/imgs/product/product1.png" alt="">
-                </div>
-                <!-- tên -->
-                <div class="item_name">
-                    <strong><span>Nike air foce 1</span></strong>
-                </div>
-                <div class="item_desc">
-                    <span class="text-secondary ">Woman/Men's Shose</span>
-                </div>
-                <!-- giá  -->
-                <div class="item_price">
-                    <strong><span>1.000.000 đ</span></strong>
-                </div>
-                <div class="over">
-                    <a class="btn btn-dark" href="">chi tiết </a>
-                    <a class="btn btn-outline-dark" href="">mua </a>
-                </div>
-
-            </div>
-            <div class="item">
-                <!-- ảnh  -->
-                <div class="item_img">
-                    <img src="public/imgs/product/product1.png" alt="">
-                </div>
-                <!-- tên -->
-                <div class="item_name">
-                    <strong><span>Nike air foce 1</span></strong>
-                </div>
-                <div class="item_desc">
-                    <span class="text-secondary ">Woman/Men's Shose</span>
-                </div>
-                <!-- giá  -->
-                <div class="item_price">
-                    <strong><span>1.000.000 đ</span></strong>
-                </div>
-                <div class="over">
-                    <a class="btn btn-dark" href="">chi tiết </a>
-                    <a class="btn btn-outline-dark" href="">mua </a>
-                </div>
-
-            </div>
-            <div class="item">
-                <!-- ảnh  -->
-                <div class="item_img">
-                    <img src="public/imgs/product/product1.png" alt="">
-                </div>
-                <!-- tên -->
-                <div class="item_name">
-                    <strong><span>Nike air foce 1</span></strong>
-                </div>
-                <div class="item_desc">
-                    <span class="text-secondary ">Woman/Men's Shose</span>
-                </div>
-                <!-- giá  -->
-                <div class="item_price">
-                    <strong><span>1.000.000 đ</span></strong>
-                </div>
-                <div class="over">
-                    <a class="btn btn-dark" href="">chi tiết </a>
-                    <a class="btn btn-outline-dark" href="">mua </a>
-                </div>
-
-            </div>
+        <div id="r_box" class="r_box bg-white gap-2">
+           
+           
      
         </div>
     </div>
 </div>
+
+<script>
+    <?php include"public/js/product/product1.js" ?>
+</script>
 
 

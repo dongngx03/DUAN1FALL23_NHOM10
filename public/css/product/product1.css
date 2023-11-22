@@ -30,7 +30,6 @@
     height:400px;
     display: flex;
     flex-direction: column;
-    gap: 2;
     overflow: hidden;
 
 }
