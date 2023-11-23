@@ -6,8 +6,8 @@
     
    
 
-    // lấy tất cả dữ liệu bảng sản phẩm 
-    $dataUser = readTable('users');
+    // lấy tất cả dữ liệu bảng user 
+    $dataUser = listUser();
     
     // echo "<pre>"; 
     // print_r($dataUser);

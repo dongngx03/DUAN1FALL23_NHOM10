@@ -60,22 +60,14 @@
         $stmt = $conn->prepare($query);
         $stmt->execute();  
     }
-    //sắp xếp tài khoản theo cột id
+    //xuất danh sách user
     function listUser()
 {
-    $query = "SELECT * FROM users order by id desc"; 
+    $query = "SELECT * FROM users WHERE status = 0 order by user_id desc LIMIT 0,25"; 
     $stmt = connect()->prepare($query);
     $stmt->execute();
     $data = $stmt->fetchAll();
     return $data;
-}
-function deleteUser($id)
-{
-    $query = "DELETE FROM `users` WHERE id='$id'";
-    $stmt = connect()->prepare($query);
-    $stmt->execute();
-    $rowCount = $stmt->rowCount();
-    return $rowCount;
 }
 
     

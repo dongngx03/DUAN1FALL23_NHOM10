@@ -64,8 +64,6 @@
                         <th scope="col">Mật khẩu</th>
                         <th scope="col">Email</th>
                         <th scope="col">Số điện thoại</th>
-                        <th scope="col">Vai trò</th>
-                        <th scope="col">Chức năng</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -76,12 +74,6 @@
                         <td><?php echo $value['user_pw'] ?></td>
                         <td><?php echo $value['user_email'] ?></td>
                         <td><?php echo $value['user_phone'] ?></td>
-                        <td><?php echo $value['role_id'] ?></td>
-                       
-                        <td class="d-grid gap-1">
-                            <a class="btn btn-danger" href="">Sửa tài khoản </a>
-                            <a class="btn btn-danger" href="">Xóa tài khoản </a>
-                        </td>
                     </tr>
                     <?php endforeach; ?>
                    
