@@ -3,7 +3,7 @@
     <?php include_once 'public/css/product/cart.css' ?>
 </style>
  <div class="container-flud bg-light">
-    <?php include'./views/components/navbar.php' ?>
+    
     <div class="row mt-2">
         <div class="cart-top">
             <div class="cart-top__title d-flex ms-5">
@@ -39,7 +39,34 @@
             </div>
 
             <!-- Nội dung -->
+            <?php
+                if(empty($dataCart)) {
+                    echo '
+                        <div class="row shadow-sm rounded px-3 py-5 mb-3 bg-white">
+                            <div class="col-md-12 d-flex justity-content-center p-5">
+                                    <h4 class="text-secondary text-center">Hiện tại bạn chưa có sản phẩm nào trong giỏ hàng, hãy thêm những sản phẩm yêu thích nhất của bạn vào đây </h4>
+                                    <div class="spinner center">
+                                        <div class="spinner-blade"></div>
+                                        <div class="spinner-blade"></div>
+                                        <div class="spinner-blade"></div>
+                                        <div class="spinner-blade"></div>
+                                        <div class="spinner-blade"></div>
+                                        <div class="spinner-blade"></div>
+                                        <div class="spinner-blade"></div>
+                                        <div class="spinner-blade"></div>
+                                        <div class="spinner-blade"></div>
+                                        <div class="spinner-blade"></div>
+                                        <div class="spinner-blade"></div>
+                                        <div class="spinner-blade"></div>
+                                    </div>
+                            </div>
+                        </div>
+                    ';
+                }
+            ?>
+            <?php if(!empty($dataCart)) foreach($dataCart as $value):  ?>
             <div class="row bg-white shadow-sm rounded px-3 py-4 mb-3">
+                <input class="cart_id" type="hidden" value="<?php echo $value['cart_id'] ?>">
                 <div class="col-md-1 d-flex justity-content-center">
                     <div class="cart__input  d-flex justify-content-center align-items-center">
                         <label class="custom-checkbox">
@@ -50,19 +77,19 @@
                 </div>
                 <div class="col-md-3 d-flex justity-content-center">
                     <div class="cart__product d-flex gap-3  d-flex justify-content-center align-items-center">
-                        <img src="public/imgs/product/product1.png" alt="">
+                        <img src="public/imgs/product/<?php echo $value['img_avatar'] ?>" alt="">
                         <div class="cart__product__deatil">
-                            <strong><span>Nike air foce 1</span></strong>
-                            <span class="text-secondary">Color: white</span>
-                            <span class="text-danger">Size: 41</span>
+                            <strong><span><?php echo $value['product_name'] ?></span></strong>
+                            <span class="text-secondary">Color: <i class="fa-solid fa-circle color_type"></i> <span class="color_item"><?php echo $value['color_name'] ?></span></span>
+                            <span class="text-secondary text-decoration-underline ">Size: <?php echo $value['size_name'] ?></span>
 
                         </div>
                     </div>
                 </div>
                 <div class="col-md-2 d-flex align-items-center justify-content-center ">
                     <div class="cart__price">
-                        <strong><span class="text-danger price_real">1000000 <span>đ</span></span></strong>
-                        <span class="price text-secondary">Kho:<span class="price_item">50</span> chiếc</span>
+                        <strong><span class="text-danger price_real"><?php echo number_format($value['product_price']) ?><span>đ</span></span></strong>
+                        <span class="price text-secondary">Kho:<span class="price_item"><?php echo $value['quantity'] ?></span> chiếc</span>
                     </div>
                 </div>
                 <div class="col-md-2 d-flex justify-content-center">
@@ -74,7 +101,7 @@
                 </div>
                 <div class="col-md-2 d-flex justify-content-center">
                     <div class="cart_total d-flex justify-content-center align-items-center">
-                        <span class="total_price"></span>
+                        <span class="total_price fw-bold"></span>
                     </div>
                 </div>
                 <div class="col-md-2 d-flex justify-content-center">
@@ -85,8 +112,9 @@
                     </div>
                 </div>
             </div>
+            <?php endforeach; ?>
 
-
+            <!-- chức năng  -->
             <div class="row bg-white shadow-sm rounded px-3 py-4 mb-3">
                     <div class="col-md-3 d-flex justify-content-start align-items-center">
                         <label class="custom-checkbox">
