@@ -60,10 +60,9 @@
                         <input type="text" name="user_email" id="email" value="<?php echo $value['user_email'] ?>">
                         <p id="errEmail" style="color: red;">
                             <?php 
-                                if(isset($thongbao)){
-                                    echo $thongbao;
-                                }
-                                echo(isset($err['user_email'])? $err['user_email']:'')
+
+                                echo(isset($err['user_email'])? $err['user_email']:'');
+                                echo(isset($err['email_trung'])? $err['email_trung']:'')
                             ?>
                         </p>
                     </div>
@@ -72,10 +71,9 @@
                         <input type="text" name="user_phone" id="phone" placeholder="Số điện thoại" value="<?php echo $value['user_phone'] ?>">
                         <p id="errPhone" style="color: red;">
                             <?php 
-                                if(isset($thongbaoPhone)){
-                                    echo $thongbaoPhone;
-                                }
-                                echo(isset($err['user_phone'])? $err['user_phone']:'')
+                              
+                                echo(isset($err['user_phone'])? $err['user_phone']:'');
+                                echo(isset($err['phone_trung'])? $err['phone_trung']:'');
                             ?>
                             </p>
                     </div>
