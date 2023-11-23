@@ -1,5 +1,5 @@
  <!-- navbar top -->
- <div class="h-nav2 shadow-sm p-3 mb-5 bg-body rounded">
+ <div class="h-nav2 shadow-sm p-3  bg-body rounded">
             <ul>
                 <li><a href="?act=product1">Nike</a></li>
                 <li><a href="">addproduct</a></li>
