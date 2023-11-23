@@ -1,0 +1,83 @@
+.box1{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.r_box{
+    width: 80%;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.l_box{
+    width: 20%;
+    height: 100%;
+    
+}
+/* check hãng  */
+.brand{
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+.item{
+    width: 321px;
+    height:400px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+}
+.item_img{
+    width: 100%;
+    height: auto;
+}
+.item_img img{
+    width: 100%;
+    height:auto;
+    object-fit: contain;
+}
+.item_name{
+    font-size: 22px;
+}
+
+.over{
+   opacity: 0;
+  
+  
+}
+
+.item:hover .item_name,
+.item:hover .item_desc{
+    transform: translateY(30px);
+    transition: 0.5s all;
+    opacity: 0;
+  
+}
+.item:hover .item_price{
+    transform: translateY(-55px);
+    transition: 0.5s all;
+    font-size: 20px;
+    color: black;
+    text-align: center;
+  
+}
+.item:hover .over{
+    opacity: 1;
+    transform: translateY(-55px);
+    transition: 0.5s all;
+    text-align: center;
+}
+.item:hover .item_img{
+    transform: scale(0.95);
+    transition: transform 0.3s ease-in-out;
+}
+
+
+
+

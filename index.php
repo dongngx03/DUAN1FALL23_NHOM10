@@ -63,6 +63,9 @@ if (isset($_GET['act']) && $_GET['act']!= null) {
         case 'admin':
             include_once './views/user/admin.php';
             break;
+        case 'product1':
+            include_once './views/product/product1.php';
+            break;
 
         // trường hợp không hợp lệ
         default:

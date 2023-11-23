@@ -1,7 +1,7 @@
 <?php
     include_once'./controllers/product/productController.php';
 ?>
-<div class="container-fluid"> 
+<div class="container-fluid bg-light"> 
     <!-- nabar -->
     <?php include'./views/components/navbar.php' ?>
 
@@ -90,135 +90,6 @@
                     </div>
                     <?php endforeach; ?>
                     <!--  -->
-
-                    <a class="product-item text-decoration-none" href="#">
-                        <img src="public/imgs/product/product2.png" alt="">
-                        <div class="infor d-grid py-3">
-                            <span><strong>Nike Air Force 1'07</strong></span>
-                            <span>Men's Shose</span>
-                            <span><strong>2,950,000đ</strong></span>
-                        </div>
-
-                        <div class="product-btn">
-                            <button class="btn btn-outline-dark text-center"><i class="fa-solid fa-cart-shopping"></i> ADD</button>
-                            <button class="btn btn-outline-light"><i class="fa-solid fa-circle-info"></i> BUY</button>
-                        </div>
-
-                    </a>
-                    <a class="product-item text-decoration-none" href="#">
-                        <img src="public/imgs/product/product3.png" alt="">
-                        <div class="infor d-grid py-3">
-                            <span><strong>Nike Air Force 1'07</strong></span>
-                            <span>Men's Shose</span>
-                            <span><strong>2,950,000đ</strong></span>
-                        </div>
-
-                        <div class="product-btn">
-                            <button class="btn btn-outline-dark text-center"><i class="fa-solid fa-cart-shopping"></i> ADD</button>
-                            <button class="btn btn-outline-light"><i class="fa-solid fa-circle-info"></i> BUY</button>
-                        </div>
-
-                    </a>
-                    <a class="product-item text-decoration-none" href="#">
-                        <img src="public/imgs/product/product4.png" alt="">
-                        <div class="infor d-grid py-3">
-                            <span><strong>Nike Air Force 1'07</strong></span>
-                            <span>Men's Shose</span>
-                            <span><strong>2,950,000đ</strong></span>
-                        </div>
-
-                        <div class="product-btn">
-                            <button class="btn btn-outline-dark text-center"><i class="fa-solid fa-cart-shopping"></i> ADD</button>
-                            <button class="btn btn-outline-light"><i class="fa-solid fa-circle-info"></i> BUY</button>
-                        </div>
-
-                    </a>
-                    <a class="product-item text-decoration-none" href="#">
-                        <img src="public/imgs/product/product5.png" alt="">
-                        <div class="infor d-grid py-3">
-                            <span><strong>Nike Air Force 1'07</strong></span>
-                            <span>Men's Shose</span>
-                            <span><strong>2,950,000đ</strong></span>
-                        </div>
-
-                        <div class="product-btn">
-                            <button class="btn btn-outline-dark text-center"><i class="fa-solid fa-cart-shopping"></i> ADD</button>
-                            <button class="btn btn-outline-light"><i class="fa-solid fa-circle-info"></i> BUY</button>
-                        </div>
-
-                    </a>
-                    <a class="product-item text-decoration-none" href="#">
-                        <img src="public/imgs/product/product6.png" alt="">
-                        <div class="infor d-grid py-3">
-                            <span><strong>Nike Air Force 1'07</strong></span>
-                            <span>Men's Shose</span>
-                            <span><strong>2,950,000đ</strong></span>
-                        </div>
-
-                        <div class="product-btn">
-                            <button class="btn btn-outline-dark text-center"><i class="fa-solid fa-cart-shopping"></i> ADD</button>
-                            <button class="btn btn-outline-light"><i class="fa-solid fa-circle-info"></i> BUY</button>
-                        </div>
-
-                    </a>
-                    <a class="product-item text-decoration-none" href="#">
-                        <img src="public/imgs/product/product6.png" alt="">
-                        <div class="infor d-grid py-3">
-                            <span><strong>Nike Air Force 1'07</strong></span>
-                            <span>Men's Shose</span>
-                            <span><strong>2,950,000đ</strong></span>
-                        </div>
-
-                        <div class="product-btn">
-                            <button class="btn btn-outline-dark text-center"><i class="fa-solid fa-cart-shopping"></i> ADD</button>
-                            <button class="btn btn-outline-light"><i class="fa-solid fa-circle-info"></i> BUY</button>
-                        </div>
-
-                    </a>
-                    <a class="product-item text-decoration-none" href="#">
-                        <img src="public/imgs/product/product6.png" alt="">
-                        <div class="infor d-grid py-3">
-                            <span><strong>Nike Air Force 1'07</strong></span>
-                            <span>Men's Shose</span>
-                            <span><strong>2,950,000đ</strong></span>
-                        </div>
-
-                        <div class="product-btn">
-                            <button class="btn btn-outline-dark text-center"><i class="fa-solid fa-cart-shopping"></i> ADD</button>
-                            <button class="btn btn-outline-light"><i class="fa-solid fa-circle-info"></i> BUY</button>
-                        </div>
-
-                    </a>
-                    <a class="product-item text-decoration-none" href="#">
-                        <img src="public/imgs/product/product6.png" alt="">
-                        <div class="infor d-grid py-3">
-                            <span><strong>Nike Air Force 1'07</strong></span>
-                            <span>Men's Shose</span>
-                            <span><strong>2,950,000đ</strong></span>
-                        </div>
-
-                        <div class="product-btn">
-                            <button class="btn btn-outline-dark text-center"><i class="fa-solid fa-cart-shopping"></i> ADD</button>
-                            <button class="btn btn-outline-light"><i class="fa-solid fa-circle-info"></i> BUY</button>
-                        </div>
-
-                    </a>
-                    <a class="product-item text-decoration-none" href="#">
-                        <img src="public/imgs/product/product6.png" alt="">
-                        <div class="infor d-grid py-3">
-                            <span><strong>Nike Air Force 1'07</strong></span>
-                            <span>Men's Shose</span>
-                            <span><strong>2,950,000đ</strong></span>
-                        </div>
-
-                        <div class="product-btn">
-                            <button class="btn btn-outline-dark text-center"><i class="fa-solid fa-cart-shopping"></i> ADD</button>
-                            <button class="btn btn-outline-light"><i class="fa-solid fa-circle-info"></i> BUY</button>
-                        </div>
-
-                    </a>
-                    
-                    
 
                 </div>
             </div>

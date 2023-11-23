@@ -4,7 +4,7 @@
 <style>
     <?php include_once'public/css/product/productdetail.css'; ?>
 </style>
-<div class="container-fluid">   
+<div class="container-fluid ">   
     <!-- mã sản phẩm  -->
     <input id="product_id" type="hidden" value="<?php echo $p_id ?>">
 
@@ -14,7 +14,7 @@
        <div class="row pt-4">
             <!-- left -->
             <div class="col-md-7 d-grid">
-                <div class="d_left p-4 pt-5">
+                <div class="d_left p-4 pt-5 ">
                     <div class="d_left_box1 ms-5">
                         <!--  -->
                         <?php if(!empty($dataImg)) foreach($dataImg as $value): ?>
@@ -50,7 +50,7 @@
 
             <!-- right -->
             <div class="col-md-5">
-                <div class="d_right py-5">
+                <div class="d_right py-5 ">
                     <!--  -->
                     <?php if(!empty($dataProduct)) foreach($dataProduct as $value): ?>
                         <h1 class="h2"><?php echo $value['product_name'] ?></h1>

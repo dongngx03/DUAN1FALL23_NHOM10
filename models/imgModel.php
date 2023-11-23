@@ -6,7 +6,7 @@
         $stmt->execute();
     }
     // lấy ảnh cảu sản phẩm 
-    function getImgid($p_id) {
+    function getImgId($p_id) {
         $query = "SELECT * FROM imgs WHERE product_id = '$p_id'";
         $stmt = connect()->prepare($query);
         $stmt->execute();

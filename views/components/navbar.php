@@ -1,7 +1,7 @@
  <!-- navbar top -->
- <div class="h-nav2">
+ <div class="h-nav2 shadow-sm p-3 mb-5 bg-body rounded">
             <ul>
-                <li><a href="">Navbar</a></li>
+                <li><a href="?act=product1">Nike</a></li>
                 <li><a href="">addproduct</a></li>
                 <li><a href="">Link</a></li>
                 <li><a href="">Dropdown</a></li>
@@ -21,6 +21,7 @@
                 <a href="?act=product&&checkcart=<?php echo(isset($_SESSION['user_id'])?$_SESSION['user_id']: 0) ?>" class="h-btn-user"><i class="ti-shopping-cart"></i></a>
             </div>
 </div>
+
 <script>
      const inputseah = document.querySelector('#inputseah');
 const width1 = inputseah.offsetWidth;
@@ -34,4 +35,5 @@ const width1 = inputseah.offsetWidth;
     inputseah.style.width = `${width1}px`;
     inputseah.style.transition = '0.5s all';
   })
+
 </script>
