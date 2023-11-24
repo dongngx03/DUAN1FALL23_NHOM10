@@ -13,14 +13,9 @@
     }
     // lấy tất cả sản phẩm trong giỏ hàng của 1 khách hàng 
     $dataCart = getCartOneUser($_SESSION['user_id']);
-
-   
     // echo "<pre>";
     // print_r($dataCart);
     // echo "<pre>";
     
-   
-   
-
 
 ?>
