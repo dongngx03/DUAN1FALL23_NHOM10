@@ -3,7 +3,7 @@
     <?php include_once 'public/css/product/order.css' ?>
 </style>
 
-<?php include'./controllers/product/cartController.php' ?>
+<?php include'./controllers/product/orderController.php' ?>
  <div class="container-flud bg-light">
     
     <div class="row mt-2">
@@ -149,5 +149,5 @@
 
  </div>
 <script>
-    <?php include'public/js/product/cart.js'?>
+    <?php include'public/js/product/order.js'?>
 </script>
