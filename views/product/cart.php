@@ -60,7 +60,7 @@
             <div class="c-total"><p><span><?php echo number_format($value['product_price']) ?> đ</span></p></div>
         </div>
 
-        <button class="btntotal" type="button">Thêm Vào Túi </button>
+        <a href="?act=order&&pv_id=<?php echo $value['pv_id'] ?>" class="btntotal">Thêm Vào Túi </a>
     </form>
     <?php endforeach; ?>
 </div>
