@@ -5,7 +5,7 @@
  <!-- navbar top -->
  <?php include'./views/components/navbar.php' ?>
 
-<div class="cart bg-light">
+<div class="cart">
     <h2 class="title">Cart <i class="fa-solid fa-cart-shopping"></i></h2>
     <!-- <> -->
     <!-- nếu như người dùng chưa có đồ dùng nào trong giỏ hàng  -->

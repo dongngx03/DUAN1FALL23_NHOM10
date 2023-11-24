@@ -101,10 +101,6 @@ formCheckInput.forEach(e => {
 
                 r_box.appendChild(newItem);
             })
-        }else{
-            r_box.innerHTML = `
-                <h1 class='text-secondary text-center'> Rất tiếc chúng tôi chưa có sản phẩm này </h1>
-            `;
         }
     } catch (error) {
         console.log(error);

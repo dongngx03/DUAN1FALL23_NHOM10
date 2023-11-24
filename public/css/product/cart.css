@@ -1,68 +1,68 @@
 .c-product{
-    display: flex;
-    width: 70%;
-    margin: 0 auto;
-    margin-bottom: 30px;
-    border-bottom: 2px solid #ebebeb;   
-    padding-bottom: 30px;
-    justify-content: space-between;
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #ebebeb;   
+  padding-bottom: 30px;
+  justify-content: space-between;
 }
 .c-product-img {
-    width: 140px;
-    height: 150px;
-    margin-right: 30px;
+  width: 140px;
+  height: 150px;
+  margin-right: 30px;
 }
 .cart .title{
-    padding: 10px 0 20px 15%;
+  padding: 10px 0 20px 15%;
 }
 .c-size-color{
-    display: flex;
+  display: flex;
 }
 .c-color-product{
-    padding: 5px 0;
+  padding: 5px 0;
 }
 .c-quantity-product,
 .c-size-product{
-    display: flex;
-    padding: 5px 10px 5px 0;
+  display: flex;
+  padding: 5px 10px 5px 0;
 }
 
 .c-heart,
 .c-ti-trash{
-    border: none;
-    background: none;
-    padding: 30px 10px 0px 0px;
-    font-size: 20px;
+  border: none;
+  background: none;
+  padding: 30px 10px 0px 0px;
+  font-size: 20px;
 }
 .btntotal{
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    height: 40%;
-    padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  height: 40%;
+  padding: 10px 20px;
 }
 .c-total{
-    padding-right: 50px;
+  padding-right: 50px;
 }
 .c-color-product,
 .c-size,
 .c-quantity{
-    color: #909090;
+  color: #909090;
 }
 .c-product select{
-    border: none;
-    color: #909090;
-    outline: none;
+  border: none;
+  color: #909090;
+  outline: none;
 }
 .c-left{
-    display: flex;
+  display: flex;
 }
 .c-total-product sup{
-    font-size: 15px;
-    color: #909090;
+  font-size: 15px;
+  color: #909090;
 }
 .c-total-product,
 .c-name-product{
-    font-weight: 600;
+  font-weight: 600;
 }

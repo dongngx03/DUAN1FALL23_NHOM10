@@ -54,7 +54,7 @@
         if(!empty($data)) {
             echo  json_encode($data);
         }else{
-            echo json_encode('không tìm thấy sản phẩm nào với điều kiện như vậy');
+            echo json_encode('không tìm thấy sản phẩm này ');
         }
         
        

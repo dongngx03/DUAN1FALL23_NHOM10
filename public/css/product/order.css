@@ -1,188 +1,375 @@
-.u-avt img{
-    display: block;
-    width: 50px;
-    border-radius: 50%;
-    margin-left: 20px; 
-    border: 0.5px solid black;
-    object-fit: contain;
-}
-.u-name span{
-    display: block;
-    padding-top: 8px;
-}
-.u-name span,
-.u-settiing{
-    padding-left: 15px;
-}
-.fuc a:hover{
-    color: red;
-}
-.u-settiing a{
-    text-decoration: none;
-    color: darkgrey;
-}
-.u-settiing i{
-    padding-right: 5px;
-}
-.u-profile{
-    padding-top: 25px;
-}
-.fuc{
-    display: grid;
-    padding: 50px 0 0 20px;
-}
-.u-form-user ,
-.u-profile,
-.user{
-    display: flex;
-    padding-bottom: 20px;
-}
-.user{
-    background-color: #f6f6f6;
-    justify-content: center;
-    gap: 50px;
-}
-.user,
-.u-fuc{
-    padding-top: 20px;
-}
-.u-fuc i{
-    padding-right: 10px;
-}
-.fuc a{
-    text-decoration: none;
-    color: black;
-}
-.fuc .ti-shopping-cart{
-    color: orange;
-}
-.fuc .ti-shopping-cart{
-    color: orange;
-}
-.fuc .ti-clipboard{
-    color: blue;
-}
-.fuc .ti-shift-right,
-.fuc .ti-announcement{
-    color: red;
-}
-.fuc .ti-receipt{
-    color: chocolate;
-}
-.dh-nav{
-    margin-top: 2rem;
-    width: 60%;
-}
-.dh-nav-order li{
-    list-style: none;
-}
-.dh-nav-order ul{
-    display: flex;
-    gap: 3rem;
-   width: 100%;
-   height: 100%;
-   line-height: 3rem;
-   font-size: 16px;
-   background-color: white;
-}
-.dh-nav-order li a{
-    text-decoration: none;
-    color: black;
-    padding-left: 2rem;
-}
-.form-sp{
-    background-color: white;
-}
-.h-form-sp{
-    padding-top: 0.8rem;
-    margin-left: 2rem;
-}
-.h-form-sp a{
-   margin-left: 14rem;
-   color: black;
-   text-decoration: none;
-   opacity: 25%;
-}
-.dh-tk{
-    padding-bottom: 2rem;
-    
-}
-.dh-tk form input{
+.cart-top{
     width: 100%;
-    height: 2rem;
-    background-color: rgb(207, 201, 201);
-    padding-left: 2rem;
-    border: 1px solid black;
-}
-.dh-tk form{
-    position: relative;
-}
-.dh-tk form button{
-    position: absolute;
-    background-color:rgb(207, 201, 201) ;
-    border: 0.2rem rgb(207, 201, 201) solid;
-    left: 0.1rem;
-    top: 0.1rem;
-    height: 1.5rem;
-}
-.dh-img img{
-    width: 10rem;
-    height: auto;
-    object-fit: cover;
-}
-.dh-body{
+    height: 5rem;
+    background-color: #ffff;
     display: flex;
-    padding: 0.7rem;
+    justify-content: start;
+    align-items: center;
 }
-.dh-text{
-    padding: 0.7rem;
+
+.cart__product img{
+    width:35%;
+    height: auto;
 }
-.dh-text p{
-    opacity: 50%;
-    padding-top: 0.5rem;
+.cart__product__deatil{
+    display: flex;
+    flex-direction: column;
 }
-.dh-text a{
-    color: black;
-    text-decoration: none;
+
+.cart__price{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.dh-price{
-    color: black;
+
+.d_quantity{
+    width: 70%;
+    display: flex;
+
 }
-.dh-complete{
-    background-color: white;
-    margin-top: 0.3rem;
-    height: 8rem;
+.d_quantity button{
+    width: 30%;
+    height: 40%;
+    border: 1px solid #E5E5E5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.d_quantity button span{
+    font-size: 28px;
+    color: #111111;
     
 }
-.dg-complete-span{
-    text-align: right;
-    padding: 0.8rem;
-    margin-right: 1.5rem;
+.d_quantity input{
+    width: 30%;
+    height: 40%;
+    border: 1px solid #E5E5E5;
+    
+    
 }
-.dg-complete{
-    padding-top: 1rem;
+.d_quantity input[type="number"]{
+  text-align: center;
+  color: red;
+}
+.price{
+    font-size: 13px;
+}
+
+/* xóa  */
+.button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
+    border: none;
+    font-weight: 600;
     display: flex;
-}
-.dg-complete-text{
-    font-size: 0.8rem;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+    cursor: pointer;
+    transition-duration: .3s;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .svgIcon {
+    width: 12px;
+    transition-duration: .3s;
+  }
+  
+  .svgIcon path {
+    fill: white;
+  }
+  
+  .button:hover {
+    width: 140px;
+    border-radius: 50px;
+    transition-duration: .3s;
+    background-color: rgb(255, 69, 69);
+    align-items: center;
+  }
+  
+  .button:hover .svgIcon {
+    width: 50px;
+    transition-duration: .3s;
+    transform: translateY(60%);
+  }
+  
+  .button::before {
+    position: absolute;
+    top: -20px;
+    content: "Delete";
+    color: white;
+    transition-duration: .3s;
+    font-size: 2px;
+  }
+  
+  .button:hover::before {
+    font-size: 13px;
+    opacity: 1;
+    transform: translateY(30px);
+    transition-duration: .3s;
+  }
+
+  /* input */
+  .custom-checkbox {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    font-size: 16px;
+    color: #333;
+    transition: color 0.3s;
+  }
+  
+  .custom-checkbox input[type="checkbox"] {
+    display: none;
+  }
+  
+  .custom-checkbox .checkmark {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #333;
+    border-radius: 4px;
     display: flex;
-   padding-left: 2.1rem;
-}
-.dg-complete-a{
-   font-size: 0.8rem;
-   padding-top: 1.5rem;
-   margin-left: 0.5rem;
-}
-.dg-complete-b{
-    background-color: rgb(204, 196, 196);
-    width: 7rem;
-    height: 2rem; 
-    line-height: 2rem;
-    margin: 1rem;
-    text-align: center;
-}
-.dg-complete-b a{
-    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+    transform-style: preserve-3d;
+  }
+  
+  .custom-checkbox .checkmark::before {
+    content: "\2713";
+    font-size: 16px;
+    color: transparent;
+    transition: color 0.3s, transform 0.3s;
+  }
+  
+  .custom-checkbox input[type="checkbox"]:checked + .checkmark {
+    background-color: #333;
+    border-color: #333;
+    transform: scale(1.1) rotateZ(360deg) rotateY(360deg);
+  }
+  
+  .custom-checkbox input[type="checkbox"]:checked + .checkmark::before {
+    color: #fff;
+  }
+  
+  .custom-checkbox:hover {
+    color: #666;
+  }
+  
+  .custom-checkbox:hover .checkmark {
+    border-color: #666;
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+  }
+  
+  .custom-checkbox input[type="checkbox"]:focus + .checkmark {
+    box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.2);
+    outline: none;
+  }
+  
+  .custom-checkbox .checkmark,
+  .custom-checkbox input[type="checkbox"]:checked + .checkmark {
+    transition: background-color 1.3s, border-color 1.3s, color 1.3s, transform 0.3s;
+  }
+/*  */
+  .thanhtoan {
+    outline: none;
+    cursor: pointer;
+    border: none;
+    padding: 0.9rem 2rem;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 0.05rem;
+    font-weight: 700;
+    font-size: 17px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #cccccc;
+    color: ghostwhite;
+   }
+   
+   .thanhtoan span {
+    position: relative;
+    z-index: 10;
+    transition: color 0.4s;
+   }
+   
+   .thanhtoan:hover span {
     color: black;
-    text-align: center;
+   }
+   
+   .thanhtoan::before,
+   .thanhtoan::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+   }
+   
+   .thanhtoan::before {
+    content: "";
+    background: #000;
+    width: 120%;
+    left: -10%;
+    transform: skew(30deg);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+   }
+   
+   .thanhtoan:hover::before {
+    transform: translate3d(100%, 0, 0);
+   }
+
+
+
+
+   /*  */
+   .spinner {
+  font-size: 28px;
+  position: relative;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
 }
+
+.spinner.center {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.spinner .spinner-blade {
+  position: absolute;
+  left: 0.4629em;
+  bottom: 0;
+  width: 0.074em;
+  height: 0.2777em;
+  border-radius: 0.0555em;
+  background-color: transparent;
+  -webkit-transform-origin: center -0.2222em;
+  -ms-transform-origin: center -0.2222em;
+  transform-origin: center -0.2222em;
+  animation: spinner-fade9234 1s infinite linear;
+}
+
+.spinner .spinner-blade:nth-child(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.spinner .spinner-blade:nth-child(2) {
+  -webkit-animation-delay: 0.083s;
+  animation-delay: 0.083s;
+  -webkit-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+.spinner .spinner-blade:nth-child(3) {
+  -webkit-animation-delay: 0.166s;
+  animation-delay: 0.166s;
+  -webkit-transform: rotate(60deg);
+  -ms-transform: rotate(60deg);
+  transform: rotate(60deg);
+}
+
+.spinner .spinner-blade:nth-child(4) {
+  -webkit-animation-delay: 0.249s;
+  animation-delay: 0.249s;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.spinner .spinner-blade:nth-child(5) {
+  -webkit-animation-delay: 0.332s;
+  animation-delay: 0.332s;
+  -webkit-transform: rotate(120deg);
+  -ms-transform: rotate(120deg);
+  transform: rotate(120deg);
+}
+
+.spinner .spinner-blade:nth-child(6) {
+  -webkit-animation-delay: 0.415s;
+  animation-delay: 0.415s;
+  -webkit-transform: rotate(150deg);
+  -ms-transform: rotate(150deg);
+  transform: rotate(150deg);
+}
+
+.spinner .spinner-blade:nth-child(7) {
+  -webkit-animation-delay: 0.498s;
+  animation-delay: 0.498s;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.spinner .spinner-blade:nth-child(8) {
+  -webkit-animation-delay: 0.581s;
+  animation-delay: 0.581s;
+  -webkit-transform: rotate(210deg);
+  -ms-transform: rotate(210deg);
+  transform: rotate(210deg);
+}
+
+.spinner .spinner-blade:nth-child(9) {
+  -webkit-animation-delay: 0.664s;
+  animation-delay: 0.664s;
+  -webkit-transform: rotate(240deg);
+  -ms-transform: rotate(240deg);
+  transform: rotate(240deg);
+}
+
+.spinner .spinner-blade:nth-child(10) {
+  -webkit-animation-delay: 0.747s;
+  animation-delay: 0.747s;
+  -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+
+.spinner .spinner-blade:nth-child(11) {
+  -webkit-animation-delay: 0.83s;
+  animation-delay: 0.83s;
+  -webkit-transform: rotate(300deg);
+  -ms-transform: rotate(300deg);
+  transform: rotate(300deg);
+}
+
+.spinner .spinner-blade:nth-child(12) {
+  -webkit-animation-delay: 0.913s;
+  animation-delay: 0.913s;
+  -webkit-transform: rotate(330deg);
+  -ms-transform: rotate(330deg);
+  transform: rotate(330deg);
+}
+
+@keyframes spinner-fade9234 {
+  0% {
+    background-color: #69717d;
+  }
+
+  100% {
+    background-color: transparent;
+  }
+}
+   
+  
