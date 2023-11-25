@@ -44,6 +44,15 @@
       if($_GET['checkcart'] == 0) {
          header('location: ?act=dangnhap');
       }else{
+         header('location: ?act=order');
+      }
+   }
+
+   // xử lyc người dùng đến với favorite
+   if(isset($_GET['checkfavorite'])) {
+      if($_GET['checkfavorite'] == 0) {
+         header('location: ?act=dangnhap');
+      }else{
          header('location: ?act=cart');
       }
    }

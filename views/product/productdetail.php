@@ -113,10 +113,10 @@
                     <!-- Thêm vào giỏ hàng và mua hàng  -->
                     <form class="d_option" method="post">
                         <button id="add_Cart" class="btn btn-dark rounded-pill">
-                            <span>Add To Cart <i class="fa-regular fa-heart"></i></span>
+                            <span> Favourite <i class="fa-regular fa-heart"></i></span>
                         </button>
-                        <button class="btn btn-outline-dark rounded-pill">
-                            <span>Buy Now</span>
+                        <button id="buy_now" class="btn btn-outline-dark rounded-pill">
+                            <span>Add My Cart</span>
                         </button>
                     </form>
                     <!-- Mô tả về sản phẩm  -->

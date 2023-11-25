@@ -279,9 +279,9 @@ const addCart = document.getElementById('add_Cart');
             case 'success':
                 Swal.fire({
                     icon: 'success',
-                    title: 'Thêm giỏ hàng thành công',
+                    title: 'Thêm sản phẩm vào mục yêu thích thành công ',
                     showCancelButton: true,
-                    confirmButtonText: 'Xem giỏ hàng',
+                    confirmButtonText: 'Xem mục yêu thích',
                     cancelButtonText: 'Đóng',
                 }).then((result) => {
                     if (result.isConfirmed) {
@@ -296,6 +296,71 @@ const addCart = document.getElementById('add_Cart');
         console.error('Error:', error);
     }
   })
+
+  // khi ấn mua ngày 
+  const buyNow = document.querySelector('#buy_now');
+  buyNow.addEventListener('click', async (e) => {
+        e.preventDefault();
+        // gửi dữ liệu 
+        try {
+            const url = `controllers/product/api/buyNow.php?buynow`;
+            const response = await fetch(url);
+
+            if (!response.ok) {
+                throw new Error('Request failed');
+            }
+
+            const data = await response.json();
+            console.log(data);
+
+            // gửi thông báo đến thẻ chứa thông báo bên trên nút thêm giỏ hàng 
+            const mess = document.getElementById('mess_cart');
+            // phân loại thông báo 
+            switch (data) {
+                // trường hợp không đăng nhập 
+                case 'user_id':
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Bạn hãy đăng nhập để thực hiện thao tác',
+                        showCancelButton: true,
+                        confirmButtonText: 'Đăng nhập',
+                        cancelButtonText: 'Để sau',
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = '?act=dangnhap';
+                        }
+                    });
+                    break;
+                // trường hợp chưa chọn màu 
+                case 'color_id':
+                        mess.innerHTML=`Vui Lòng Chọn Màu`;
+                    break;
+                // trường hợp chưa chọn size
+                case 'size_id':
+                        mess.innerHTML=`Vui Lòng Chọn Size`;
+                    break;
+                // trường hợp thêm giỏ hàng thành công 
+                case 'success':
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Thêm sản phẩm vào giỏ hàng thành công',
+                        showCancelButton: true,
+                        confirmButtonText: 'Xem giỏ hàng',
+                        cancelButtonText: 'Đóng',
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = '?act=order';
+                        }
+                    });
+                    break;
+            
+            }
+        } catch (error) {
+            console.log(error);
+        }
+  });
+
+ 
 
  
 

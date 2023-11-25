@@ -58,6 +58,13 @@ function seahProductVariant($p_id, $color_id, $size_id) {
     return $data;
 }
 
+// thêm sản phẩm vào hàng chờ để mua nhiều sản phẩm 
+function addOrder($user_id, $pv_id) {
+    $query = "INSERT INTO order_items(user_id, pv_id) VALUE('$user_id', '$pv_id')";
+    $stmt = connect()->prepare($query);
+    $stmt->execute();
+}
+
 
 
 ?>

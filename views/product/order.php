@@ -11,7 +11,6 @@
             <div class="cart-top__title d-flex ms-5">
                 <h4 class="ps-3">DLQ Shop |</h4>
                 <h4 class="text-secondary ps-3 ">Giỏ Hàng <i class="ti-shopping-cart text-secondary"></i></h4>
-                
             </div>
         </div>
         <hr>
@@ -42,7 +41,7 @@
 
             <!-- Nội dung -->
             <?php
-                if(empty($dataCart)) {
+                if(empty($dataOrder_item)) {
                     echo '
                         <div class="row shadow-sm rounded px-3 py-5 mb-3 bg-white">
                             <div class="col-md-12 d-flex justity-content-center p-5">
@@ -66,13 +65,13 @@
                     ';
                 }
             ?>
-            <?php if(!empty($dataCart)) foreach($dataCart as $value):  ?>
+            <?php if(!empty($dataOrder_item)) foreach($dataOrder_item as $value):  ?>
             <div class="row bg-white shadow-sm rounded px-3 py-4 mb-3">
-                <input class="cart_id" type="hidden" value="<?php echo $value['cart_id'] ?>">
+                <input class="cart_id" type="hidden" value="<?php echo $value['oi_id'] ?>">
                 <div class="col-md-1 d-flex justity-content-center">
                     <div class="cart__input  d-flex justify-content-center align-items-center">
                         <label class="custom-checkbox">
-                            <input name="dummy" type="checkbox">
+                            <input name="dummy" type="checkbox" value="<?php echo $value['oi_id'] ?>">
                             <span class="checkmark"></span>
                         </label>
                     </div>

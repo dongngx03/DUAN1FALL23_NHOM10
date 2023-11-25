@@ -19,6 +19,8 @@
                 </a>
                 <!-- thẻ user phân quyền  -->
                 <a href="?act=product&&checkcart=<?php echo(isset($_SESSION['user_id'])?$_SESSION['user_id']: 0) ?>" class="h-btn-user"><i class="ti-shopping-cart"></i></a>
+                <!-- yêu thích  -->
+                <a href="?act=product&&checkfavorite=<?php echo(isset($_SESSION['user_id'])?$_SESSION['user_id']: 0) ?>" class="h-btn-user"><i class="fa-regular fa-heart text-dark"></i></a>
             </div>
 </div>
 

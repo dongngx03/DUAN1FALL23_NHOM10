@@ -140,11 +140,15 @@ for (let i = 0; i < btnDelete.length; i++) {
             cancelButtonText: 'Thoát',
         }).then((result) => {
             if (result.isConfirmed) {
-                window.location.href = `?act=cart&&delete=${id1}`;
+                window.location.href = `?act=order&&delete=${id1}`;
             }
         });
     })
     
 }
+
+// xử lý xóa trong giỏ 
+
+
 
 

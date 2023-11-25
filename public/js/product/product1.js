@@ -55,10 +55,11 @@ formCheckInput.forEach(e => {
     const brand = typeof selectedBrands[0] !== 'undefined' ? selectedBrands[0] : "";
     const price = typeof selectedPrices[0] !== 'undefined' ? selectedPrices[0] : "";
     
-
-    console.log(color);
+    
+    
     
     const url = `controllers/product/api/fillterProduct.php?brand=${brand}&&price=${price}&&color=${color}`;
+    
     try {
         const response = await fetch(url)
 

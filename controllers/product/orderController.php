@@ -4,23 +4,23 @@
     // kiết nối với model
     include'./models/productModel.php';
     // kết nối với bảng giỏ hàng 
-    include'./models/cartModel.php';
+    include'./models/order_itemsModel.php';
 
-     // xóa giỏ hàng 
-     if(isset($_GET['delete']) && $_GET['delete']!='') {
-        $cart_id = $_GET['delete'];
-        deleteCart($cart_id);
+    
+    // xóa hàng trong giỏ 
+    if(isset($_GET['delete'])) {
+        $oi_id = $_GET['delete'];
+        deleteOrder_items($oi_id);
     }
+    
     // lấy tất cả sản phẩm trong giỏ hàng của 1 khách hàng 
-    $dataCart = getCartOneUser($_SESSION['user_id']);
+    $dataOrder_item = readOrder_items($_SESSION['user_id']);
 
-   
-    // echo "<pre>";
-    // print_r($dataCart);
-    // echo "<pre>";
     
    
-   
-
+    // echo "<pre>";
+    // print_r($dataOrder_item);
+    // echo "<pre>";
+    
 
 ?>
