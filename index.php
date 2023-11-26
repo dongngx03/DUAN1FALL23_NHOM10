@@ -72,6 +72,9 @@ if (isset($_GET['act']) && $_GET['act']!= null) {
         case 'order':
             include_once './views/product/order.php';
             break;
+        case 'checkout':
+            include_once './views/product/checkout.php';
+            break;
 
         // trường hợp không hợp lệ
         default:
