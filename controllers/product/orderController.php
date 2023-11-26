@@ -17,9 +17,9 @@
     $dataOrder_item = readOrder_items($_SESSION['user_id']);
 
     
-   
+    
     // echo "<pre>";
-    // print_r($dataOrder_item);
+    // print_r($_SESSION);
     // echo "<pre>";
     
 

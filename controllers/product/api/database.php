@@ -67,4 +67,22 @@ function addOrder($user_id, $pv_id) {
 
 
 
+// phần của bảng order
+
+// tạo 1 cái hóa đơn lớn 
+function addOrder_tottals($ot_amout, $user_id, $handle_id= 1) {
+    // Sử dụng kết nối đã tạo trước đó, không cần tạo kết nối mới
+    $conn = connect();
+
+    $query = "INSERT INTO order_totals(ot_amout, user_id, handle_id) VALUES (:ot_amout, :user_id, :handle_id)";
+    $stmt = $conn->prepare($query);
+    $stmt->bindParam(':ot_amout', $ot_amout);
+    $stmt->bindParam(':user_id', $user_id);
+    $stmt->bindParam(':handle_id', $handle_id);
+    $stmt->execute();
+
+    // gán lại giá trị cái đơn hagf vừa rồi vào ssession 
+    $lastInsertedId = $conn->lastInsertId();
+    $_SESSION['ot_id'] = $lastInsertedId;
+}
 ?>

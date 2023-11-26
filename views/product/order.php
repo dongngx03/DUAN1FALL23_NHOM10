@@ -66,12 +66,12 @@
                 }
             ?>
             <?php if(!empty($dataOrder_item)) foreach($dataOrder_item as $value):  ?>
-            <div class="row bg-white shadow-sm rounded px-3 py-4 mb-3">
+            <div class="parent row bg-white shadow-sm rounded px-3 py-4 mb-3">
                 <input class="cart_id" type="hidden" value="<?php echo $value['oi_id'] ?>">
                 <div class="col-md-1 d-flex justity-content-center">
                     <div class="cart__input  d-flex justify-content-center align-items-center">
                         <label class="custom-checkbox">
-                            <input name="dummy" type="checkbox" value="<?php echo $value['oi_id'] ?>">
+                            <input class="chose_pv" name="dummy" type="checkbox" value="<?php echo $value['oi_id'] ?>">
                             <span class="checkmark"></span>
                         </label>
                     </div>
@@ -89,7 +89,7 @@
                 </div>
                 <div class="col-md-2 d-flex align-items-center justify-content-center ">
                     <div class="cart__price">
-                        <strong><span class="text-danger price_real"><?php echo number_format($value['product_price']) ?><span>đ</span></span></strong>
+                        <strong><span class="text-danger price_real"><?php echo number_format($value['product_price']) ?></span><span class="text-danger"> đ</span></strong>
                         <span class="price text-secondary">Kho:<span class="price_item"><?php echo $value['quantity'] ?></span> chiếc</span>
                     </div>
                 </div>
@@ -124,7 +124,7 @@
                         </label>
                         <a class="text-secondary text-decoration-none">Chọn Tất Cả</a>
                     </div>
-                    <div class="col-md-3 d-flex justify-content-start align-items-center">
+                    <div class="col-md-2 d-flex justify-content-start align-items-center">
                         <label class="custom-checkbox">
                             <input name="dummy" type="checkbox">
                             <span class="checkmark"></span>
@@ -134,7 +134,7 @@
                     <div class="col-md-1 d-flex justify-content-start align-items-center">
                         <a href="" class="text-danger text-decoration-none">Xóa</a>
                     </div>
-                    <div class="col-md-2 d-flex justify-content-end align-items-center">Tổng Thanh thoán: ...... </div>
+                    <div class="col-md-3 d-flex justify-content-end align-items-center"><span class="text-danger fw-bold fs-4">Tổng tiền: <span id="price_sum"></span></div>
                     <div class="col-md-3 d-flex justify-content-end">
                         <button class="thanhtoan"> <span>MUA NGAY <i class="ti-shopping-cart text-secondary"></i></span></button>
                     </div>

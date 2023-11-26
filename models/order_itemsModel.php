@@ -14,7 +14,7 @@
                             join products as p on pv.product_id = p.product_id
                             join sizes  on pv.size_id = sizes.size_id
                             join colors on pv.color_id = colors.color_id
-                            WHERE user_id = '$user_id'
+                            WHERE user_id = '$user_id' and oi_status = 0
         ";
         $stmt = connect()->prepare($query);
         $stmt->execute();
@@ -23,7 +23,7 @@
     }
     // xóa hàng trong giỏ 
     function deleteOrder_items($oi_id) {
-        $query = "DELETE FROM order_items WHERE oi_id = '$oi_id'";
+        $query = "UPDATE order_items SET oi_status = 1 WHERE oi_id = '$oi_id'";
         $stmt = connect()->prepare($query);
         $stmt->execute();
     }

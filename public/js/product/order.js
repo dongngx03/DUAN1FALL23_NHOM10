@@ -150,5 +150,176 @@ for (let i = 0; i < btnDelete.length; i++) {
 // xử lý xóa trong giỏ 
 
 
+// const chose_pv = document.querySelectorAll('.chose_pv');
+// const product_quantity = document.querySelectorAll('.input');
+// const arr = [];
+// for (let i = 0; i < chose_pv.length; i++) {
+//     chose_pv[i].addEventListener('change', () => {
+//         const product_id = Array.from(document.querySelectorAll('input[type=checkbox][name=dummy]:checked')).map(checkbox => checkbox.value);
+//         console.log(product_id);
+//         const qunatity = Array.from(product_quantity[i].value).map(value => value);
+        
+//     })
+    
+// }
+// input check
+
+
+// const chose_pv = document.querySelectorAll('.chose_pv');
+// // số lượng tương ứng với chúng 
+// const product_quantity = document.querySelectorAll('.input');
+// // giá tương ứng với chúng 
+// const product_price = document.querySelectorAll('.price_real');
+// const arr = [];
+// const price_sum = document.getElementById('price_sum');
+
+// for (let i = 0; i < chose_pv.length; i++) {
+//     chose_pv[i].addEventListener('change', () => {
+//         // mảng chứa các đơn hàng 
+//         const product_id = Array.from(document.querySelectorAll('input[type=checkbox][name=dummy]:checked')).map(checkbox => checkbox.value);
+//         const quantities = [];
+//         const prices = [];
+//         const totalPriceNew = [];
+
+//         for (let j = 0; j < product_quantity.length; j++) {
+//             if (chose_pv[j].checked) {
+//                 // mảng chứ số lượng tương ứng với sản phẩm 
+//                 quantities.push(product_quantity[j].value);
+//                 // mảng chứa giá tiền tương ứng với sản phẩm 
+//                 prices.push(product_price[j].textContent.replace(/,/g, ""));
+//                 // tổng tiền pahir trả  (gán nó vào 1 mảng )
+//                 totalPriceNew.push(parseInt(totalPrice[j].textContent.replace(/,/g,"")));
+//             }
+//         }
+
+//         const priceSumAll = numberFormat(sumAll(totalPriceNew));
+//         // gán tổng tiền tất cả món hàng đã đặt vào phần tổng tiền bên dưới 
+//         price_sum.textContent = numberFormat(sumAll(totalPriceNew)) + ' Đ';
+
+        
+
+//                 // khi bấm vao thanh toán 
+//         const ThanhToan = document.querySelector('.thanhtoan');
+//         ThanhToan.addEventListener('click', async (e) => {
+//             e.preventDefault();
+//             //console.log(product_id);
+//             // console.log(quantities);
+//             // console.log(prices);
+//             // console.log(totalPriceNew);  
+
+//             const data = {
+//                 product_id : product_id,
+//                 quantities : quantities,
+//                 prices : prices,
+//                 priceSumAll : priceSumAll
+//             }
+//             console.log(data);
+            
+//         })  
+
+
+//     });
+// }
+
+
+const chose_pv = document.querySelectorAll('.chose_pv');
+const product_quantity = document.querySelectorAll('.input');
+const product_price = document.querySelectorAll('.price_real');
+let product_id = [];
+let quantities = [];
+let prices = [];
+let totalPriceNew = [];
+const price_sum = document.getElementById('price_sum');
+
+for (let i = 0; i < chose_pv.length; i++) {
+    chose_pv[i].addEventListener('change', () => {
+        product_id = Array.from(document.querySelectorAll('input[type=checkbox][name=dummy]:checked')).map(checkbox => checkbox.value);
+        quantities = [];
+        prices = [];
+        totalPriceNew = [];
+
+        for (let j = 0; j < product_quantity.length; j++) {
+            if (chose_pv[j].checked) {
+                quantities.push(product_quantity[j].value);
+                prices.push(product_price[j].textContent.replace(/,/g, ""));
+                totalPriceNew.push(parseInt(totalPrice[j].textContent.replace(/,/g,"")));
+            }
+        }
+
+        price_sum.textContent = numberFormat(sumAll(totalPriceNew)) + ' Đ';
+    });
+}
+
+const ThanhToan = document.querySelector('.thanhtoan');
+ThanhToan.addEventListener('click', async (e) => {
+    e.preventDefault();
+
+    const priceSumAll = parseInt(sumAll(totalPriceNew));
+    if(priceSumAll == 0) {
+        alert('bạn chưa chọn sản phẩm nào cả ')
+
+    }else{
+        const data = {
+            product_id: product_id,
+            quantities: quantities,
+            prices: prices,
+            priceSumAll: priceSumAll
+        };
+        console.log(data);
+
+        try {
+            const url = 'controllers/product/api/addOrder_totals.php';
+
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+
+            if (response.ok) {
+                // Xử lý khi gửi thành công
+                console.log('Dữ liệu đã được gửi thành công!');
+            } else {
+                // Xử lý khi gửi không thành công
+                console.error('Có lỗi xảy ra khi gửi dữ liệu.');
+            }
+
+            const rpdata = await response.json();
+            console.log(rpdata);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    
+});
+
+
+// viết 1 hàm tính tổng tất cả các giá trị bên trong mảng 
+function sumAll (arr) {
+    let sumArr = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sumArr += arr[i]
+    }
+    return sumArr;
+}
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
