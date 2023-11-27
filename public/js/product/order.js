@@ -222,9 +222,17 @@ for (let i = 0; i < btnDelete.length; i++) {
 // }
 
 
-const chose_pv = document.querySelectorAll('.chose_pv');
-const product_quantity = document.querySelectorAll('.input');
-const product_price = document.querySelectorAll('.price_real');
+const chose_pv = document.querySelectorAll('.chose_pv');// input check
+const product_quantity = document.querySelectorAll('.input');// số lượng 
+const product_price = document.querySelectorAll('.price_real');// giá 
+const product_name = document.querySelectorAll('.p_name');
+const product_img = document.querySelectorAll('.p_img');
+const product_size = document.querySelectorAll('.p_size');
+const product_color = document.querySelectorAll('.p_color');
+let p_name = [];
+let p_img = [];
+let p_size = [];
+let p_color = [];
 let product_id = [];
 let quantities = [];
 let prices = [];
@@ -237,16 +245,24 @@ for (let i = 0; i < chose_pv.length; i++) {
         quantities = [];
         prices = [];
         totalPriceNew = [];
+        p_name = [];
+        p_img = [];
+        p_size = [];
+        p_color = [];
 
         for (let j = 0; j < product_quantity.length; j++) {
             if (chose_pv[j].checked) {
-                quantities.push(product_quantity[j].value);
-                prices.push(product_price[j].textContent.replace(/,/g, ""));
-                totalPriceNew.push(parseInt(totalPrice[j].textContent.replace(/,/g,"")));
+                quantities.push(product_quantity[j].value);// số lượng 
+                prices.push(product_price[j].textContent.replace(/,/g, ""));// giắ tưng loại của sản phẩm 
+                totalPriceNew.push(parseInt(totalPrice[j].textContent.replace(/,/g,""))); // giá tổng thể sau khi nhân với số lượng của từng sản phẩm 
+                p_name.push(product_name[j].value); // tên sp 
+                p_img.push(product_img[j].value); // ảnh 
+                p_size.push(product_size[j].value);// size
+                p_color.push(product_color[j].value);// màu 
             }
         }
 
-        price_sum.textContent = numberFormat(sumAll(totalPriceNew)) + ' Đ';
+        price_sum.textContent = numberFormat(sumAll(totalPriceNew)) + ' Đ'; // hiển thị ta tổng tiền ở phần tổng tiền 
     });
 }
 
@@ -256,17 +272,28 @@ ThanhToan.addEventListener('click', async (e) => {
 
     const priceSumAll = parseInt(sumAll(totalPriceNew));
     if(priceSumAll == 0) {
-        alert('bạn chưa chọn sản phẩm nào cả ')
+        Swal.fire({
+            icon: 'warning',
+            title: 'Vui Lòng Chọn Ít Nhất Một Sản Phẩm Để Tiếp Tục',
+            showCancelButton: true,
+        })
 
     }else{
         const data = {
             product_id: product_id,
             quantities: quantities,
             prices: prices,
-            priceSumAll: priceSumAll
+            priceSumAll: priceSumAll,
+            totalPriceNew: totalPriceNew,
+            p_name:p_name,
+            p_img:p_img,
+            p_color:p_color,
+            p_size:p_size
+
         };
         console.log(data);
 
+        // thực hiện gửi yêu cầu 
         try {
             const url = 'controllers/product/api/addOrder_totals.php';
 
@@ -287,7 +314,22 @@ ThanhToan.addEventListener('click', async (e) => {
             }
 
             const rpdata = await response.json();
-            console.log(rpdata);
+            if(rpdata == 1) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Thành Công ! Vui Lòng thanh toán bước cuối ',
+                    showCancelButton: true,
+                    confirmButtonText: 'Tiếp Theo',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // dữ liệu cần chuyển 
+                        const jsonData = JSON.stringify(data);
+                        // tạo url 
+                        const url = `?act=checkout&&data=${encodeURIComponent(jsonData)}`;
+                        window.location.href = url;
+                    }
+                });
+            }
         } catch (error) {
             console.log(error);
         }

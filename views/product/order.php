@@ -44,30 +44,26 @@
                 if(empty($dataOrder_item)) {
                     echo '
                         <div class="row shadow-sm rounded px-3 py-5 mb-3 bg-white">
-                            <div class="col-md-12 d-flex justity-content-center p-5">
-                                    <h4 class="text-secondary text-center">Hiện tại bạn chưa có sản phẩm nào trong giỏ hàng, hãy thêm những sản phẩm yêu thích nhất của bạn vào đây </h4>
-                                    <div class="spinner center">
-                                        <div class="spinner-blade"></div>
-                                        <div class="spinner-blade"></div>
-                                        <div class="spinner-blade"></div>
-                                        <div class="spinner-blade"></div>
-                                        <div class="spinner-blade"></div>
-                                        <div class="spinner-blade"></div>
-                                        <div class="spinner-blade"></div>
-                                        <div class="spinner-blade"></div>
-                                        <div class="spinner-blade"></div>
-                                        <div class="spinner-blade"></div>
-                                        <div class="spinner-blade"></div>
-                                        <div class="spinner-blade"></div>
-                                    </div>
+                            <div class="col-md-12 d-flex justify-content-center align-items-center p-5">
+                                <div class="mess p-5 d-flex flex-column gap-3 align-items-center">
+                                    <img style="width: 120px;height:auto;" src="public/imgs/user/checkout.png" alt="">
+                                    <span class="text-secondary">Chưa có sản phẩm</span>
+                                </div>
                             </div>
                         </div>
                     ';
                 }
             ?>
+          
             <?php if(!empty($dataOrder_item)) foreach($dataOrder_item as $value):  ?>
             <div class="parent row bg-white shadow-sm rounded px-3 py-4 mb-3">
                 <input class="cart_id" type="hidden" value="<?php echo $value['oi_id'] ?>">
+
+                <input class="p_name" type="hidden" value="<?php echo $value['product_name'] ?>">
+                <input class="p_img" type="hidden" value="<?php echo $value['img_avatar'] ?>">
+                <input class="p_size" type="hidden" value="<?php echo $value['size_name'] ?>">
+                <input class="p_color" type="hidden" value="<?php echo $value['color_name'] ?>">
+
                 <div class="col-md-1 d-flex justity-content-center">
                     <div class="cart__input  d-flex justify-content-center align-items-center">
                         <label class="custom-checkbox">
@@ -134,7 +130,7 @@
                     <div class="col-md-1 d-flex justify-content-start align-items-center">
                         <a href="" class="text-danger text-decoration-none">Xóa</a>
                     </div>
-                    <div class="col-md-3 d-flex justify-content-end align-items-center"><span class="text-danger fw-bold fs-4">Tổng tiền: <span id="price_sum"></span></div>
+                    <div class="col-md-3 d-flex justify-content-end align-items-center"><span class="text-dark fs-5">Tổng tiền: <span id="price_sum"></span></div>
                     <div class="col-md-3 d-flex justify-content-end">
                         <button class="thanhtoan"> <span>MUA NGAY <i class="ti-shopping-cart text-secondary"></i></span></button>
                     </div>

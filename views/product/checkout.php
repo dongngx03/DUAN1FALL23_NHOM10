@@ -1,4 +1,6 @@
-
+<?php 
+    include'controllers/product/checkoutController.php';
+?>
 <style>
     <?php include_once 'public/css/product/checkout.css' ?>
 </style>
@@ -24,11 +26,13 @@
                     </div>
 
                     <!-- thông tin địa trit  -->
+                    <?php if(!empty($dataUser)) foreach($dataUser as $value): ?>
                     <div class="user_infor-main px-2 d-flex gap-3">
-                        <strong ><span>Nguyễn Đông <span class="px-1">0339168183</span></span></strong>
-                        <span>Bến phà then - xã bình phú -huyện phù ninh- tỉnh phú thọ</span>
-                        <a href="">Thay Đổi</a>
+                        <strong ><span><?php echo $value['user_name'] ?><span class="px-1">(+84) <?php echo $value['user_phone'] ?></span></span></strong>
+                        <span><?php echo $value['diatri_chitiet'].'-'.$value['user_xa'].'-'.$value['user_huyen'].'-'.$value['user_tinh'] ?></span>
+                        <a href="?act=user">Thay Đổi</a>
                     </div>
+                    <?php endforeach; ?>
                 </div>
                 
             </div>
@@ -50,91 +54,40 @@
                     </div>
                     <!--  -->
                   
-                    <div class="row py-3" style="border-top: 1px dashed #cccccc">
-                        <div class="col-md-6 d-flex gap-3 align-items-center">
-                            <img style="width:100px; height:auto" src="public/imgs/product/product1.png" alt="">
-                            <div class="product__infor d-flex flex-column gap-1">
-                                <strong><span>Nike air foce 1</span></strong>
-                                <span>Color: blue</span>
-                                <span>size: 41</span>
+                   <?php 
+                        for ($i=0; $i < sizeof($quantities); $i++) { 
+                            echo '
+                            <div class="row py-3" style="border-top: 1px dashed #cccccc">
+                                <div class="col-md-6 d-flex gap-3 align-items-center">
+                                    <img style="width:100px; height:auto" src="public/imgs/product/'.$p_img[$i].'" alt="">
+                                    <div class="product__infor d-flex flex-column gap-1">
+                                        <strong><span>'.$p_name[$i].'</span></strong>
+                                        <span>Color: '.$p_color[$i].'</span>
+                                        <span>size: '.$p_size[$i].'</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 d-flex justify-content-end align-items-center">
+                                    <div class="product__price">
+                                        <span>'.number_format($prices[$i]).' đ</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 d-flex justify-content-end align-items-center">
+                                    <div class="product__quantity">
+                                        <span>'.$quantities[$i].' Chiếc</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 d-flex justify-content-end align-items-center">
+                                    <div class="product__amout">
+                                        <span>'.number_format($totalPriceNew[$i]).' đ</span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-2 d-flex justify-content-end align-items-center">
-                            <div class="product__price">
-                                <span>2.929.000 đ</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 d-flex justify-content-end align-items-center">
-                            <div class="product__quantity">
-                                <span>x1</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 d-flex justify-content-end align-items-center">
-                            <div class="product__amout">
-                                <span>2.929.00 đ</span>
-                            </div>
-                        </div>
-                    </div>
+                            ';
+                        }
+                   ?>
 
                     <!--  -->
-                    <!--  -->
-                    
-                    <div class="row py-3" style="border-top: 1px dashed #cccccc" >
-                        <div class="col-md-6 d-flex gap-3 align-items-center">
-                            <img style="width:100px; height:auto" src="public/imgs/product/product1.png" alt="">
-                            <div class="product__infor d-flex flex-column gap-1">
-                                <strong><span>Nike air foce 1</span></strong>
-                                <span>Color: blue</span>
-                                <span>size: 41</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 d-flex justify-content-end align-items-center">
-                            <div class="product__price">
-                                <span>2.929.000 đ</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 d-flex justify-content-end align-items-center">
-                            <div class="product__quantity">
-                                <span>x1</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 d-flex justify-content-end align-items-center">
-                            <div class="product__amout">
-                                <span>2.929.00 đ</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--  -->
-                    <!--  -->
-                   
-                    <div class="row py-3" style="border-top: 1px dashed #cccccc">
-                        <div class="col-md-6 d-flex gap-3 align-items-center">
-                            <img style="width:100px; height:auto" src="public/imgs/product/product1.png" alt="">
-                            <div class="product__infor d-flex flex-column gap-1">
-                                <strong><span>Nike air foce 1</span></strong>
-                                <span>Color: blue</span>
-                                <span>size: 41</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 d-flex justify-content-end align-items-center">
-                            <div class="product__price">
-                                <span>2.929.000 đ</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 d-flex justify-content-end align-items-center">
-                            <div class="product__quantity">
-                                <span>x1</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 d-flex justify-content-end align-items-center">
-                            <div class="product__amout">
-                                <span>2.929.00 đ</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--  -->
+                  
                 </div>
 
             </div>
@@ -153,7 +106,7 @@
                     <div class="option__amout-item d-flex flex-column gap-3">
                         <div class="item1 d-flex gap-4">
                             <span>Tổng Tiền Hàng: </span>
-                            <span>9.330.000 đ</span>
+                            <span><?php echo number_format($priceSumAll) ?> đ</span>
                         </div>
                         <div class="item2 d-flex gap-4">
                             <span>Phí Vận Chuyển: </span>
@@ -161,7 +114,7 @@
                         </div>
                         <div class="item3 d-flex gap-4">
                             <span>Tổng Thanh Toán: </span>
-                            <span>9.330.000 đ</span>
+                            <span><?php echo number_format($priceSumAll) ?> đ</span>
                         </div>
                     </div>
                 </div>
@@ -169,7 +122,7 @@
                 
                 <div class="checkout py-4 d-flex justify-content-end" style="border-top: 1px dashed #cccccc">
                     <div class="checkout__btn">
-                        <button class="btn btn-dark">Thanh Toán </button>
+                        <button id="checkout" class="btn btn-dark">Thanh Toán</button>
                     </div>
                 </div>
             </div>
@@ -180,3 +133,7 @@
     
 
  </div>
+
+ <script>
+    <?php include'public/js/product/checkout.js' ?>
+ </script>
