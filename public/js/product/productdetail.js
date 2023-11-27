@@ -138,6 +138,7 @@
                 }
 
                 const data = await response.json();
+                console.log(data);
                 var d_size = document.querySelector('.d_size');
                // Kiểm tra xem có dữ liệu hay không
                 if (data.length > 0) {

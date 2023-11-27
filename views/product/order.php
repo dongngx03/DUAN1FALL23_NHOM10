@@ -58,7 +58,7 @@
             <?php if(!empty($dataOrder_item)) foreach($dataOrder_item as $value):  ?>
             <div class="parent row bg-white shadow-sm rounded px-3 py-4 mb-3">
                 <input class="cart_id" type="hidden" value="<?php echo $value['oi_id'] ?>">
-
+                <input class="pv_id" type="hidden" value="<?php echo $value['pv_id'] ?>">
                 <input class="p_name" type="hidden" value="<?php echo $value['product_name'] ?>">
                 <input class="p_img" type="hidden" value="<?php echo $value['img_avatar'] ?>">
                 <input class="p_size" type="hidden" value="<?php echo $value['size_name'] ?>">

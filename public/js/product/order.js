@@ -229,10 +229,12 @@ const product_name = document.querySelectorAll('.p_name');
 const product_img = document.querySelectorAll('.p_img');
 const product_size = document.querySelectorAll('.p_size');
 const product_color = document.querySelectorAll('.p_color');
+const productVariant_id = document.querySelectorAll('.pv_id')
 let p_name = [];
 let p_img = [];
 let p_size = [];
 let p_color = [];
+let pv_id = [];
 let product_id = [];
 let quantities = [];
 let prices = [];
@@ -242,6 +244,7 @@ const price_sum = document.getElementById('price_sum');
 for (let i = 0; i < chose_pv.length; i++) {
     chose_pv[i].addEventListener('change', () => {
         product_id = Array.from(document.querySelectorAll('input[type=checkbox][name=dummy]:checked')).map(checkbox => checkbox.value);
+        console.log(product_id);
         quantities = [];
         prices = [];
         totalPriceNew = [];
@@ -249,6 +252,7 @@ for (let i = 0; i < chose_pv.length; i++) {
         p_img = [];
         p_size = [];
         p_color = [];
+        pv_id = [];
 
         for (let j = 0; j < product_quantity.length; j++) {
             if (chose_pv[j].checked) {
@@ -259,6 +263,7 @@ for (let i = 0; i < chose_pv.length; i++) {
                 p_img.push(product_img[j].value); // ảnh 
                 p_size.push(product_size[j].value);// size
                 p_color.push(product_color[j].value);// màu 
+                pv_id.push(productVariant_id[j].value) // id sản phẩm biến thể 
             }
         }
 
@@ -288,7 +293,8 @@ ThanhToan.addEventListener('click', async (e) => {
             p_name:p_name,
             p_img:p_img,
             p_color:p_color,
-            p_size:p_size
+            p_size:p_size,
+            pv_id:pv_id
 
         };
         console.log(data);
