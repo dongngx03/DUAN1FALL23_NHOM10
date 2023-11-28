@@ -27,4 +27,21 @@
         $stmt = connect()->prepare($query);
         $stmt->execute();
     }
+
+    // lấy hết những đơn hàng item nào nằm trong 1 đơn hàng lớn (chung ot_id)
+    function getOrder_itemsForOt_id($ot_id) {
+        $query = "SELECT * 
+                FROM order_items join productvariants as pv on order_items.pv_id = pv.pv_id
+                                join products as p on pv.product_id = p.product_id 
+                                join colors on pv.color_id = colors.color_id
+                                join sizes on pv.size_id = sizes.size_id
+                WHERE ot_id = :ot_id
+        ";
+        $stmt = connect()->prepare($query);
+        $stmt->bindParam(':ot_id', $ot_id);
+        $stmt->execute();
+
+        $data = $stmt->fetchAll();
+        return $data;    
+    }
 ?>

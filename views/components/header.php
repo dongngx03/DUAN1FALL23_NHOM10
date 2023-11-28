@@ -13,7 +13,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- icon -->
     <link rel="stylesheet" href="icon/themify-icons/themify-icons.css">
-    
     <title>Shop Lừa Đảo</title>
     <style>
         <?php include_once'public/css/index.css' ?>

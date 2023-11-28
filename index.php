@@ -2,6 +2,7 @@
 // session 
 session_start();
 
+
 // phần web 
 include_once './views/components/header.php';
 
@@ -9,6 +10,7 @@ include_once './views/components/header.php';
 if(isset($_GET['admin']) && $_GET['admin']!= null && isset($_SESSION['role_id']) && $_SESSION['role_id']==2) {
     $admin = $_GET['admin'];
     switch ($admin) {
+        // sản phẩm 
         case 'addproduct':
             include'./views/admin/product/addproduct.php';
             break;
@@ -24,7 +26,23 @@ if(isset($_GET['admin']) && $_GET['admin']!= null && isset($_SESSION['role_id'])
         case 'addproductvariant':
             include'./views/admin/product/addproductvariant.php';
             break;
-        
+        /// mua hàng 
+        case 'orderwaitting':
+            include'./views/admin/order/orderWaitting.php';
+            break;
+        // chi tiết 1 đơn hàng 
+        case 'orderdetail':
+            include'./views/admin/order/orderDetail.php';
+            break;
+        case 'orderdanggiao':
+            include'./views/admin/order/orderDanggiao.php';
+            break;
+        case 'orderthanhcong':
+            include'./views/admin/order/orderThanhcong.php';
+            break;
+        case 'orderhuy':
+            include'./views/admin/order/orderHuy.php';
+            break;
         default:
             include'./views/404/404.php';
             break;

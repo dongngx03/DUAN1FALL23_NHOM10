@@ -21,11 +21,8 @@ if(isset($_GET['data'])) {
     // echo "<pre>";
     // print_r($data);
     // echo "<pre>";
-
     extract($data);
-  
 }
-
 // mua 
 if(isset($_GET['buy'])) {
     $data = $_SESSION['data'];
@@ -82,16 +79,9 @@ if(isset($_GET['buy'])) {
        $stmt->execute(); // cập nhật lại số lương hàng 
       
     }
-
    
    header('location: ?act=product');
 }
-
-
-
-
-
-
 
 
 ?>
