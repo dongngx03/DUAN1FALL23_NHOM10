@@ -31,6 +31,7 @@
                         <strong ><span><?php echo $value['user_name'] ?><span class="px-1">(+84) <?php echo $value['user_phone'] ?></span></span></strong>
                         <span><?php echo $value['diatri_chitiet'].'-'.$value['user_xa'].'-'.$value['user_huyen'].'-'.$value['user_tinh'] ?></span>
                         <a href="?act=user">Thay Đổi</a>
+                        <input type="hidden" id="check_address" value="<?php echo $value['user_tinh'] ?>">
                     </div>
                     <?php endforeach; ?>
                 </div>

@@ -290,6 +290,11 @@ const addCart = document.getElementById('add_Cart');
                     }
                 });
                 break;
+            // trường hợp đã tồn tại sản phẩm trong giỏ hàng 
+            case 'false':
+                mess.innerHTML=`Sản Phẩm Đã Có Trong Giỏ Hàng `;
+                break;
+            
            
         }
        

@@ -17,7 +17,6 @@
                         <th scope="col">Tên</th>
                         <th scope="col">Giá</th>
                         <th scope="col">Ảnh</th>
-                      
                         <th scope="col">Chức năng khác</th>
                     </tr>
                 </thead>

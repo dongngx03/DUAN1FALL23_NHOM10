@@ -1,7 +1,7 @@
 <?php
 // session 
 session_start();
-
+ob_start();
 
 // phần web 
 include_once './views/components/header.php';
@@ -106,5 +106,5 @@ if (isset($_GET['act']) && $_GET['act']!= null) {
 
 include_once './views/components/footer.php';
 
-
+ob_flush();
 ?>

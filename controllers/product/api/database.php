@@ -85,4 +85,17 @@ function addOrder_tottals($ot_amout, $user_id, $handle_id= 1) {
     $lastInsertedId = $conn->lastInsertId();
     $_SESSION['ot_id'] = $lastInsertedId;
 }
+
+// hàm tìm xem sản phẩm đã có trong giỏ hàng của 1 1 người hay chưa để tránh trùng sản phẩm 
+function check_product_order($user_id, $pv_id, $oi_status = 0) {
+    $query = "SELECT * FROM order_items WHERE user_id= :user_id and pv_id = :pv_id and oi_status = :oi_status ";
+    $stmt = connect()->prepare($query);
+    $stmt->bindParam(':user_id', $user_id);
+    $stmt->bindParam(':pv_id', $pv_id);
+    $stmt->bindParam(':oi_status', $oi_status);
+    $stmt->execute();
+
+    $data = $stmt->rowCount();
+    return $data;
+}
 ?>
