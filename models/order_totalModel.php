@@ -1,0 +1,34 @@
+<?php 
+    // lấy hết tất cả các đơn hàng chưa được chấp nhận (handle_id =1, 2, 3, 4)
+    function getAllOrder_totals($handle_id) {
+        $query = 'SELECT * FROM order_totals WHERE handle_id = :handle_id';
+        $stmt = connect()->prepare($query);
+        $stmt->bindParam(':handle_id', $handle_id);
+        $stmt->execute();
+
+        $data = $stmt->fetchAll();
+        return $data;
+    }
+
+    // lấy thông tin của 1 đơn hàng lớn 
+    function getOneOrrder_total($ot_id) {
+        $quuery = "SELECT * FROM order_totals WHERE ot_id = :ot_id ";
+        $stmt = connect()->prepare($quuery);
+        $stmt->bindParam(':ot_id', $ot_id);
+        $stmt->execute();
+
+        $data = $stmt->fetch();
+        return $data;
+    }
+
+    // cuyển trạng thái của một đơn hàng 1:đang xủa lý 2:Đang giao 3:Thành công , 4:hủy
+    function handleOrder_total($ot_id, $handle_id) {
+        $query = "UPDATE order_totals SET handle_id = :handle_id 
+                WHERE ot_id = :ot_id
+        ";
+        $stmt = connect()->prepare($query);
+        $stmt->bindParam(':handle_id', $handle_id);
+        $stmt->bindParam(':ot_id', $ot_id);
+        $stmt->execute();
+    }
+?>

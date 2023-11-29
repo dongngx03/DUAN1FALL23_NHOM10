@@ -1,6 +1,7 @@
 <?php
 // session 
 session_start();
+ob_start();
 
 // phần web 
 include_once './views/components/header.php';
@@ -9,12 +10,8 @@ include_once './views/components/header.php';
 if(isset($_GET['admin']) && $_GET['admin']!= null && isset($_SESSION['role_id']) && $_SESSION['role_id']==2) {
     $admin = $_GET['admin'];
     switch ($admin) {
-        case 'commentlist':
-            include'./views/admin/comment/commentList.php';
-            break;
-        case 'commentdetail':
-            include'./views/admin/comment/commentDetail.php';
-            break;
+        // sản phẩm 
+
         case 'addproduct':
             include'./views/admin/product/addproduct.php';
             break;
@@ -26,8 +23,29 @@ if(isset($_GET['admin']) && $_GET['admin']!= null && isset($_SESSION['role_id'])
             break;
         case 'seahproduct':
             include'./views/admin/product/seahproduct.php';
+
             break;
-        
+        case 'addproductvariant':
+            include'./views/admin/product/addproductvariant.php';
+            break;
+        /// mua hàng 
+        case 'orderwaitting':
+            include'./views/admin/order/orderWaitting.php';
+            break;
+        // chi tiết 1 đơn hàng 
+        case 'orderdetail':
+            include'./views/admin/order/orderDetail.php';
+            break;
+        case 'orderdanggiao':
+            include'./views/admin/order/orderDanggiao.php';
+            break;
+        case 'orderthanhcong':
+            include'./views/admin/order/orderThanhcong.php';
+            break;
+        case 'orderhuy':
+            include'./views/admin/order/orderHuy.php';
+
+            break;
         default:
             include'./views/404/404.php';
             break;
@@ -75,6 +93,9 @@ if (isset($_GET['act']) && $_GET['act']!= null) {
         case 'order':
             include_once './views/product/order.php';
             break;
+        case 'checkout':
+            include_once './views/product/checkout.php';
+            break;
 
         // trường hợp không hợp lệ
         default:
@@ -88,5 +109,5 @@ if (isset($_GET['act']) && $_GET['act']!= null) {
 
 include_once './views/components/footer.php';
 
-
+ob_flush();
 ?>

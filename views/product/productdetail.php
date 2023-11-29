@@ -86,44 +86,31 @@ include_once './controllers/product/productdetailController.php';
                         <span class="text-center p-3 text-secondary ">Bạn vui lòng chọn màu để tìm size</span>
                     </div>
 
-                </div>
 
-                <!-- SIZE -->
-
-                <!-- số lượng  -->
-                <div class="d_right_size pt-3 d-flex gap-1">
-                    <div id="gioihan" class="selectcolor text-danger"></div>
-                </div>
-                <!-- số lượng  -->
-
-                <div class="d_right_size pt-4 d-flex">
-                    <span class="selectcolor">Quantity </span>
-                </div>
-
-                <div class="d_quantity">
-                    <button id="tang" class="btn btn-outline-dark bg-light"><span>+</span></button>
-                    <input id="quantity" type="number" class="input" value="1">
-                    <button id="giam" class="btn btn-outline-dark bg-light"><span>-</span></button>
-                </div>
-
-                <!-- thông báo từ sever khi ta thêm vào giỏ hàng  -->
-                <div class="err">
-                    <span id="mess_cart" class="text-danger"></span>
-                </div>
-                <!-- Thêm vào giỏ hàng và mua hàng  -->
-                <form class="d_option" method="post">
-                    <button id="add_Cart" class="btn btn-dark rounded-pill">
-                        <span>Add To Cart <i class="fa-regular fa-heart"></i></span>
-                    </button>
-                    <button class="btn btn-outline-dark rounded-pill">
-                        <span>Buy Now</span>
-                    </button>
-                </form>
-                <!-- Mô tả về sản phẩm  -->
-                <div class="d_desc pt-3">
-                    <hr>
-                    <!--  -->
-                    <?php if (!empty($dataProduct)) foreach ($dataProduct as $value) : ?>
+                    <div class="d_quantity">
+                        <button id="tang" class="btn btn-outline-dark bg-light"><span>+</span></button>
+                        <input id="quantity" type="number" class="input" value="1">
+                        <button id="giam" class="btn btn-outline-dark bg-light"><span>-</span></button>
+                    </div>
+                    
+                    <!-- thông báo từ sever khi ta thêm vào giỏ hàng  -->
+                    <div class="err">
+                        <span id="mess_cart" class="text-danger"></span>
+                    </div>
+                    <!-- Thêm vào giỏ hàng và mua hàng  -->
+                    <form class="d_option" method="post">
+                        <button id="add_Cart" class="btn btn-dark rounded-pill">
+                            <span> Favourite <i class="fa-regular fa-heart"></i></span>
+                        </button>
+                        <button id="buy_now" class="btn btn-outline-dark rounded-pill">
+                            <span>Add My Cart</span>
+                        </button>
+                    </form>
+                    <!-- Mô tả về sản phẩm  -->
+                    <div class="d_desc pt-3">
+                        <hr>
+                        <!--  -->
+                        <?php if(!empty($dataProduct)) foreach($dataProduct as $value): ?>
                         <span>
                             <?php echo $value['product_desc'] ?>
                         </span>

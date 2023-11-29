@@ -11,7 +11,6 @@
             <div class="cart-top__title d-flex ms-5">
                 <h4 class="ps-3">DLQ Shop |</h4>
                 <h4 class="text-secondary ps-3 ">Giỏ Hàng <i class="ti-shopping-cart text-secondary"></i></h4>
-                
             </div>
         </div>
         <hr>
@@ -42,37 +41,33 @@
 
             <!-- Nội dung -->
             <?php
-                if(empty($dataCart)) {
+                if(empty($dataOrder_item)) {
                     echo '
                         <div class="row shadow-sm rounded px-3 py-5 mb-3 bg-white">
-                            <div class="col-md-12 d-flex justity-content-center p-5">
-                                    <h4 class="text-secondary text-center">Hiện tại bạn chưa có sản phẩm nào trong giỏ hàng, hãy thêm những sản phẩm yêu thích nhất của bạn vào đây </h4>
-                                    <div class="spinner center">
-                                        <div class="spinner-blade"></div>
-                                        <div class="spinner-blade"></div>
-                                        <div class="spinner-blade"></div>
-                                        <div class="spinner-blade"></div>
-                                        <div class="spinner-blade"></div>
-                                        <div class="spinner-blade"></div>
-                                        <div class="spinner-blade"></div>
-                                        <div class="spinner-blade"></div>
-                                        <div class="spinner-blade"></div>
-                                        <div class="spinner-blade"></div>
-                                        <div class="spinner-blade"></div>
-                                        <div class="spinner-blade"></div>
-                                    </div>
+                            <div class="col-md-12 d-flex justify-content-center align-items-center p-5">
+                                <div class="mess p-5 d-flex flex-column gap-3 align-items-center">
+                                    <img style="width: 120px;height:auto;" src="public/imgs/user/checkout.png" alt="">
+                                    <span class="text-secondary">Chưa có sản phẩm</span>
+                                </div>
                             </div>
                         </div>
                     ';
                 }
             ?>
-            <?php if(!empty($dataCart)) foreach($dataCart as $value):  ?>
-            <div class="row bg-white shadow-sm rounded px-3 py-4 mb-3">
-                <input class="cart_id" type="hidden" value="<?php echo $value['cart_id'] ?>">
+          
+            <?php if(!empty($dataOrder_item)) foreach($dataOrder_item as $value):  ?>
+            <div class="parent row bg-white shadow-sm rounded px-3 py-4 mb-3">
+                <input class="cart_id" type="hidden" value="<?php echo $value['oi_id'] ?>">
+                <input class="pv_id" type="hidden" value="<?php echo $value['pv_id'] ?>">
+                <input class="p_name" type="hidden" value="<?php echo $value['product_name'] ?>">
+                <input class="p_img" type="hidden" value="<?php echo $value['img_avatar'] ?>">
+                <input class="p_size" type="hidden" value="<?php echo $value['size_name'] ?>">
+                <input class="p_color" type="hidden" value="<?php echo $value['color_name'] ?>">
+
                 <div class="col-md-1 d-flex justity-content-center">
                     <div class="cart__input  d-flex justify-content-center align-items-center">
                         <label class="custom-checkbox">
-                            <input name="dummy" type="checkbox">
+                            <input class="chose_pv" name="dummy" type="checkbox" value="<?php echo $value['oi_id'] ?>">
                             <span class="checkmark"></span>
                         </label>
                     </div>
@@ -90,7 +85,7 @@
                 </div>
                 <div class="col-md-2 d-flex align-items-center justify-content-center ">
                     <div class="cart__price">
-                        <strong><span class="text-danger price_real"><?php echo number_format($value['product_price']) ?><span>đ</span></span></strong>
+                        <strong><span class="text-danger price_real"><?php echo number_format($value['product_price']) ?></span><span class="text-danger"> đ</span></strong>
                         <span class="price text-secondary">Kho:<span class="price_item"><?php echo $value['quantity'] ?></span> chiếc</span>
                     </div>
                 </div>
@@ -125,7 +120,7 @@
                         </label>
                         <a class="text-secondary text-decoration-none">Chọn Tất Cả</a>
                     </div>
-                    <div class="col-md-3 d-flex justify-content-start align-items-center">
+                    <div class="col-md-2 d-flex justify-content-start align-items-center">
                         <label class="custom-checkbox">
                             <input name="dummy" type="checkbox">
                             <span class="checkmark"></span>
@@ -135,7 +130,7 @@
                     <div class="col-md-1 d-flex justify-content-start align-items-center">
                         <a href="" class="text-danger text-decoration-none">Xóa</a>
                     </div>
-                    <div class="col-md-2 d-flex justify-content-end align-items-center">Tổng Thanh thoán: ...... </div>
+                    <div class="col-md-3 d-flex justify-content-end align-items-center"><span class="text-dark fs-5">Tổng tiền: <span id="price_sum"></span></div>
                     <div class="col-md-3 d-flex justify-content-end">
                         <button class="thanhtoan"> <span>MUA NGAY <i class="ti-shopping-cart text-secondary"></i></span></button>
                     </div>

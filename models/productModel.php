@@ -26,6 +26,13 @@
         return $checkName;
     }
 
-   
+   // lấy ra sản phẩm có loại là gì đó 
+   function getProductFromType($type_id) {
+        $query = "SELECT * FROM products where type_id = '$type_id' ";
+        $stmt = connect()->prepare($query);
+        $stmt->execute();
+        $data = $stmt->fetchAll();
+        return $data;
+   }
 
 ?>

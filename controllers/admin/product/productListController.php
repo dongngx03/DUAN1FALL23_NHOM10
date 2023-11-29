@@ -8,8 +8,8 @@
     // kết nối với bảng img
     include'./models/imgModel.php';
 
-    // lấy tất cả dữ liệu bảng sản phẩm 
-    $dataProduct = readTable('products');
+    // lấy tất cả dữ liệu bảng sản phẩm là giày 
+    $dataProduct = getProductFromType(1);
     
     // echo "<pre>"; 
     // print_r($dataProduct);

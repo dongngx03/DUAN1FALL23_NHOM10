@@ -1,7 +1,4 @@
-/* tailwwind  */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 /* TỔNG CHUNG */
 *{
     margin: 0;
@@ -99,8 +96,7 @@
     display: flex;
     justify-content: space-between;
     height: 3rem;
-    
-   
+    position: relative;
 }
 .h-nav2 ul{
     display: flex;
@@ -120,6 +116,39 @@
 .h-nav2 ul li a:hover{
     opacity: calc(0.2);
 }
+.seah__over{
+    position: absolute;
+    width: 100%;
+    height: 0vh;
+    background-color: white;
+    z-index: 999;
+    right: 0;
+    top: 100%;
+    opacity: 0;
+    transition: 0.5s all;
+    overflow: auto;
+}
+.seah__over1{
+    position: absolute;
+    width: 100%;
+    height: 70vh;
+    background-color: white;
+    z-index: 999;
+    right: 0;
+    top: 105%;
+    opacity: 1;
+    transition: 0.5s all;
+    overflow: auto;
+}
+.seah__over::-webkit-scrollbar{
+    width: 5px;
+}
+.seah__over1::-webkit-scrollbar{
+    width: 5px;
+    
+}
+
+
 /* hết  */
 /* END HEADER */
 

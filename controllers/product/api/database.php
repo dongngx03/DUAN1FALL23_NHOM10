@@ -28,7 +28,7 @@ function connect() {
 
  // lấy hết màu cảu một sản phẩm 
  function getSizeId($p_id, $color_id) {
-    $query = "SELECT sizes.size_id as size_id , GROUP_CONCAT(DISTINCT size_name) as size_name, quantity
+    $query = "SELECT sizes.size_id as size_id , GROUP_CONCAT(DISTINCT size_name) as size_name, quantity, productvariants.pv_id, colors.color_id
             FROM products join productvariants on products.product_id = productvariants.product_id
                             join colors on productvariants.color_id = colors.color_id
                             join sizes on productvariants.size_id = sizes.size_id
@@ -58,6 +58,57 @@ function seahProductVariant($p_id, $color_id, $size_id) {
     return $data;
 }
 
+// thêm sản phẩm vào hàng chờ để mua nhiều sản phẩm 
+function addOrder($user_id, $pv_id) {
+    $query = "INSERT INTO order_items(user_id, pv_id) VALUE('$user_id', '$pv_id')";
+    $stmt = connect()->prepare($query);
+    $stmt->execute();
+}
 
 
+
+// phần của bảng order
+
+// tạo 1 cái hóa đơn lớn 
+function addOrder_tottals($ot_amout, $user_id, $handle_id= 1) {
+    // Sử dụng kết nối đã tạo trước đó, không cần tạo kết nối mới
+    $conn = connect();
+
+    $query = "INSERT INTO order_totals(ot_amout, user_id, handle_id) VALUES (:ot_amout, :user_id, :handle_id)";
+    $stmt = $conn->prepare($query);
+    $stmt->bindParam(':ot_amout', $ot_amout);
+    $stmt->bindParam(':user_id', $user_id);
+    $stmt->bindParam(':handle_id', $handle_id);
+    $stmt->execute();
+
+    // gán lại giá trị cái đơn hagf vừa rồi vào ssession 
+    $lastInsertedId = $conn->lastInsertId();
+    $_SESSION['ot_id'] = $lastInsertedId;
+}
+
+// hàm tìm xem sản phẩm đã có trong giỏ hàng của 1 1 người hay chưa để tránh trùng sản phẩm 
+function check_product_order($user_id, $pv_id, $oi_status = 0) {
+    $query = "SELECT * FROM order_items WHERE user_id= :user_id and pv_id = :pv_id and oi_status = :oi_status ";
+    $stmt = connect()->prepare($query);
+    $stmt->bindParam(':user_id', $user_id);
+    $stmt->bindParam(':pv_id', $pv_id);
+    $stmt->bindParam(':oi_status', $oi_status);
+    $stmt->execute();
+
+    $data = $stmt->rowCount();
+    return $data;
+}
+
+// tìm kiếm 
+// tìm kiếm sản phẩm theo tên 
+function searhPforname($key) {
+    $query = "SELECT * FROM products where product_name like :key";
+    $key = '%' . $key . '%'; // Thêm dấu % cho tìm kiếm phù hợp với LIKE trong SQL
+    $stmt = connect()->prepare($query);
+    $stmt->bindParam(':key', $key);
+    $stmt->execute();
+
+    $data = $stmt->fetchAll();
+    return $data;
+}
 ?>
