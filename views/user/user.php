@@ -22,8 +22,8 @@
         </div>
         <div class="fuc">
             <a href="#" class="u-fuc"><i class="ti-announcement"></i>20/11 Free Ship All</a>
-            <a href="?act=cart" class="u-fuc"><i class="ti-shopping-cart"></i> Giỏ hàng</a>
-            <a href="#" class="u-fuc"><i class="ti-clipboard"></i>Đơn mua</a>
+            <a href="?act=order" class="u-fuc"><i class="ti-shopping-cart"></i> Giỏ hàng</a>
+            <a href="?act=orderhistory" class="u-fuc"><i class="ti-clipboard"></i>Đơn mua</a>
             <a href="#" class="u-fuc"><i class="ti-receipt"></i>Voucher của bạn</a>
             <a id="login" href="" class="u-fuc"><i class="ti-shift-right"></i>Đăng xuất</a>
         </div>

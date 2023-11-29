@@ -106,14 +106,14 @@
         // tạo thẻ 
         data.map(dataItem => {
           const newItem = document.createElement('div')
-          newItem.classList.add('col-md-3')
+          newItem.classList.add('col-md-2')
           newItem.classList.add('d-flex')
           newItem.classList.add('justify-content-center')
 
           newItem.innerHTML = `
                         <a href="?act=product&&detail=${dataItem.product_id}" class="d-flex flex-column text-decoration-none text-dark">
-                            <img style="width:100%; height:auto" src="public/imgs/product/${dataItem.img_avatar}" alt="">
-                            <span class="fs-5 fw-bold text-secondary">${dataItem.product_name}</span>
+                            <img class="rounded" style="width:100%; height:auto" src="public/imgs/product/${dataItem.img_avatar}" alt="">
+                            <span class="fs-6 fw-bold text-secondary">${dataItem.product_name}</span>
                             <span>Men/women's shose</span>
                             <span class="fs-6 text-secondary" >${dataItem.product_price} đ</span>
                         </a>

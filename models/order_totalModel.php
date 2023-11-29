@@ -31,4 +31,16 @@
         $stmt->bindParam(':ot_id', $ot_id);
         $stmt->execute();
     }
+
+    // lấy tất cả đơn hàng trạng thái tùy chọn của một người 
+    function getOrder_totalOneUser($user_id, $handle_id) {
+        $query = "SELECT * FROM order_totals where user_id = :user_id and handle_id = :handle_id";
+        $stmt = connect()->prepare($query);
+        $stmt->bindParam(':user_id', $user_id);
+        $stmt->bindParam(':handle_id', $handle_id);
+        $stmt->execute();
+
+        $data = $stmt->fetchAll();
+        return $data;
+    }
 ?>

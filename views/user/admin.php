@@ -21,9 +21,6 @@
         </div>
         <div class="fuc">
             <a href="?admin=addproduct" class="u-fuc"><i class="ti-home"></i>Trang Quản Trị</a>
-            <a href="#" class="u-fuc"><i class="ti-shopping-cart"></i> Giỏ hàng</a>
-            <a href="#" class="u-fuc"><i class="ti-clipboard"></i>Đơn mua</a>
-            <a href="#" class="u-fuc"><i class="ti-receipt"></i>Voucher của bạn</a>
             <a id="login" href="" class="u-fuc"><i class="ti-shift-right"></i>Đăng xuất</a>
         </div>
 
