@@ -98,4 +98,17 @@ function check_product_order($user_id, $pv_id, $oi_status = 0) {
     $data = $stmt->rowCount();
     return $data;
 }
+
+// tìm kiếm 
+// tìm kiếm sản phẩm theo tên 
+function searhPforname($key) {
+    $query = "SELECT * FROM products where product_name like :key";
+    $key = '%' . $key . '%'; // Thêm dấu % cho tìm kiếm phù hợp với LIKE trong SQL
+    $stmt = connect()->prepare($query);
+    $stmt->bindParam(':key', $key);
+    $stmt->execute();
+
+    $data = $stmt->fetchAll();
+    return $data;
+}
 ?>

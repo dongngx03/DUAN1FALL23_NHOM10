@@ -23,29 +23,21 @@
             </div>
 
             <div class="seah__over shadow-sm ">
-                <div class="row p-5">
+                <div class="row p-4">
                   <div class="col-md-2">
                       <div class="d-flex flex-column gap-1">
-                          <span class="text-secondary h4">Gợi Ý Sản CHo Bạn</span>
-                          <a href="#">nike 1</a>
-                          <a href="#">nike 1</a>
-                          <a href="#">nike 1</a>
-                          <a href="#">nike 1</a>
+                          <span class="text-secondary h5">Có Thể Bạn Thích</span>
+                          <li><a class="text-decoration-inline text-dark" href="?act=product&&detail=14">Air Jordan 1 Zoom CMFT 2</a></li>
+                          <li><a class="text-decoration-inline text-dark" href="?act=product&&detail=16">Nike Air Force 1</a></li>
+                          <li><a class="text-decoration-inline text-dark" href="?act=product&&detail=17">Nike Air VaporMax 2023 Flyknit</a></li>
+                          <li><a class="text-decoration-inline text-dark" href="?act=product&&detail=18">Jumpman Hai Trey</a></li>
                          
                       </div>
                   </div>
                   <!--  -->
                   <div class="col-md-10 mt-5">
-                    <div class="row">
+                    <div id="list" class="row">
                       <!--  -->
-                      <div class="col-md-2 d-flex justify-content-center">
-                          <a href="#" class="d-flex flex-column text-decoration-none text-dark">
-                            <img style="width:100%; height:auto" src="public/imgs/product/product1.png" alt="">
-                            <span class="fs-5 fw-bold text-secondary">nike air force 1</span>
-                            <span>Men/women's shose</span>
-                            <span class="fs-6 text-secondary" >1.000.000 đ</span>
-                          </a>
-                      </div>
                       <!--  -->
           
                     </div>
@@ -89,6 +81,64 @@
     nav_item1.style.transition = '0.5s all';
     h_box_right.style.transform = 'translateX(0)'
     h_box_right.style.transition = '0.5s all';
+  })
+
+  const list = document.querySelector('#list')
+
+
+  // chức năng tìm kiếm 
+  inputseah.addEventListener('input', async () => {
+    const valueSearh = inputseah.value;
+    // gửi dw liệu 
+    console.log(valueSearh);
+    try {
+      const url = `controllers/product/api/searhProduct.php?value=${valueSearh}`;
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error('Request failed');
+      }
+
+      const data = await response.json();
+      console.log(data);
+
+      list.innerHTML = "";
+      if(data !== 'khong tim thay') {
+        // tạo thẻ 
+        data.map(dataItem => {
+          const newItem = document.createElement('div')
+          newItem.classList.add('col-md-3')
+          newItem.classList.add('d-flex')
+          newItem.classList.add('justify-content-center')
+
+          newItem.innerHTML = `
+                        <a href="?act=product&&detail=${dataItem.product_id}" class="d-flex flex-column text-decoration-none text-dark">
+                            <img style="width:100%; height:auto" src="public/imgs/product/${dataItem.img_avatar}" alt="">
+                            <span class="fs-5 fw-bold text-secondary">${dataItem.product_name}</span>
+                            <span>Men/women's shose</span>
+                            <span class="fs-6 text-secondary" >${dataItem.product_price} đ</span>
+                        </a>
+          `
+
+          list.appendChild(newItem);
+          list.style.transition = '2s all';
+        })
+        
+
+      }else{
+        list.innerHTML = `
+                        <div class="row shadow-sm rounded px-3 mb-2 mb-3 bg-white">
+                            <div class="col-md-12 d-flex justify-content-center align-items-center p-5">
+                                <div class="mess p-5 d-flex flex-column gap-3 align-items-center">
+                                    <img style="width: 120px;height:auto;" src="public/imgs/user/checkout.png" alt="">
+                                    <span class="text-secondary">Không Tìm Thấy Sản Phẩm Nào Như Vậy</span>
+                                </div>
+                            </div>
+                        </div>
+        `;
+      }
+    } catch (error) {
+        console.log(error);
+    }
   })
 
 </script>

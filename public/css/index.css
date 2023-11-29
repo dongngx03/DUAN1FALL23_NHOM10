@@ -1,7 +1,4 @@
-/* tailwwind  */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 /* TỔNG CHUNG */
 *{
     margin: 0;
@@ -150,6 +147,8 @@
     width: 5px;
     
 }
+
+
 /* hết  */
 /* END HEADER */
 
