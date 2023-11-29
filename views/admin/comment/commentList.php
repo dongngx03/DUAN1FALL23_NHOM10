@@ -1,5 +1,5 @@
 <?php 
-    include'./controllers/admin/product/productListController.php';
+    include'./controllers/admin/comment/commentListController.php';
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
@@ -29,7 +29,7 @@
             Bình Luận 
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="?admin=commentlist">Danh sách Bình luận </a></li>
+            <li><a class="dropdown-item" href="#">Danh sách Bình luận </a></li>
             <li><a class="dropdown-item" href="#">Tìm Kiếm bình luận </a></li>
             <li><a class="dropdown-item" href="#">Phân loại bình luận </a></li>
             <li><a class="dropdown-item" href="#">Quản lý bình luận </a></li>
@@ -55,36 +55,30 @@
 
 <!-- phần bảng danh sách sản phẩm  -->
 <div class="container-fluid">
-    <h2 class="text-center pt-3 text-secondary">Danh mục sản phẩm </h2>
+    <h2 class="text-center pt-3 text-secondary">Danh sách bình luận</h2>
     <div class="row pt-3">
         <div class="col-md-12">
             <table class="table  bg-white shadow-lg p-2 mb-5 bg-body rounded align-middle text-center">
                 <thead class="table-secondary">
                     <tr>
-                        <th scope="col">ID Sản phẩm </th>
-                        <th scope="col">Tên</th>
-                        <th scope="col">Giá</th>
-                        <th scope="col">Ảnh</th>
-                      
+                        <th scope="col">Tên sản phẩm</th>
+                        <th scope="col">Số bình luận</th>
+                        <th scope="col">Bình luận cũ nhất</th>
+                        <th scope="col">Bình luận mới nhất</th>
                         <th scope="col">Chức năng khác</th>
+
                     </tr>
                 </thead>
                 <tbody>
                    <!-- sản phẩm  -->
-                   <?php if(!empty($dataProduct)) foreach($dataProduct as $value): ?>
+                   <?php if(!empty($dataComments)) foreach($dataComments as $value): ?>
                     <tr>
-                        <td>SP <?php echo $value['product_id'] ?></td>
-                        <td><?php echo $value['product_name'] ?></td>
-                        <td><?php echo number_format($value['product_price']) ?> đ</td>
-                        <td>
-                            <img style="width:100px;height:auto" src="public/imgs/product/<?php echo $value['img_avatar'] ?>" alt="">
-                        </td>
-                       
-                        <td class="">
-                            <a class="btn  btn-primary" href="?admin=productdetail&&product_id=<?php echo $value['product_id'] ?>">Chi tiết</a>
-                            <a class="btn  btn-success" href="?admin=addproductvariant&&product_id=<?php echo $value['product_id'] ?>">Thêm biến thể</a>
-                            <a class="btn btn-danger" href="">Xóa sản phẩm </a>
-                        </td>
+                        <td><?php echo $value['product_name']?></td>
+                        <td><?php echo $value['count']?></td>
+                        <td><?php echo $value['old'] ?></td>
+                        <td><?php echo $value['new'] ?></td>   
+                        <td><a class="btn  btn-primary" href="?admin=commentdetail&&productcmt_id=<?php echo $value['product_id'] ?>">Chi tiết</a></td>
+   
                     </tr>
                     <?php endforeach; ?>
                    

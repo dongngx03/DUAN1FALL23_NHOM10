@@ -29,10 +29,10 @@
             Bình Luận 
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Danh sách Bình luận </a></li>
+            <li><a class="dropdown-item" href="?admin=commentlist">Danh sách Bình luận </a></li>
             <li><a class="dropdown-item" href="#">Tìm Kiếm bình luận </a></li>
             <li><a class="dropdown-item" href="#">Phân loại bình luận </a></li>
-            <li><a class="dropdown-item" href="#">Quản lý bình luận </a></li>
+            <li><a class="dropdown-item" href="">Quản lý bình luận </a></li>
           </ul>
         </li>
         <!-- hết danh sách bình luận   -->

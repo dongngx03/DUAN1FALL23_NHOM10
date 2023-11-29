@@ -1,3 +1,21 @@
+div,label{margin:0;padding:0;}
+body{margin:20px;}
+h1{font-size:1.5em;margin:10px;}
+/****** Style Star Rating Widget *****/
+#rating{border:none;float:left;}
+#rating>input{display:none;}/*ẩn input radio - vì chúng ta đã có label là GUI*/
+#rating>label:before{margin:5px;font-size:1.25em;font-family:FontAwesome;display:inline-block;content:"\f005";}/*1 ngôi sao*/
+#rating>.half:before{content:"\f089";position:absolute;}/*0.5 ngôi sao*/
+#rating>label{color:#ddd;float:right;}/*float:right để lật ngược các ngôi sao lại đúng theo thứ tự trong thực tế*/
+/*thêm màu cho sao đã chọn và các ngôi sao phía trước*/
+#rating>input:checked~label,
+#rating:not(:checked)>label:hover, 
+#rating:not(:checked)>label:hover~label{color:#FFD700;}
+/* Hover vào các sao phía trước ngôi sao đã chọn*/
+#rating>input:checked+label:hover,
+#rating>input:checked~label:hover,
+#rating>label:hover~input:checked~label,
+#rating>input:checked~label:hover~label{color:#FFED85;}
 #p-menu{
     width: 100%;
     height: 3rem;
@@ -269,4 +287,65 @@
     width: 100%;
     height: auto;
     object-fit: cover;
+}
+.fb-filter{
+    display: flex;
+    margin: 0 auto;
+    max-height: max-content;
+    padding: 20px 0 0 30px;
+}
+.fb-star .fb-total-star{
+    font-size: 25px;
+    padding: 0 30px;
+}
+.fb-star .fa-solid{
+    font-size: 20px; 
+    color: #FFD700;  
+}
+.fb-ql-star{
+    padding-left: 35px;
+}
+.fb-filter-star{
+    display: flex;
+}
+.fb-item-filter-star{
+    margin: 7px 30px;
+    justify-content: center;
+}
+.fb-item-filter-star{
+    border: 1px solid rgb(167, 167, 167);
+    padding: 5px 10px;
+    height: max-content;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.title{
+    font-size: 25px;
+}
+.fb-user img{
+    display: block;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-left: 20px; 
+    object-fit: cover;
+}
+.fb-user{
+    display: flex;
+    padding: 30px 30px;
+    border-bottom: 1px solid rgb(220, 220, 220);
+}
+.fb-name{
+    padding-left: 5px;
+    padding-top: 10px;
+}
+.fb-content{
+    padding-left: 20px;
+}
+.fb-date{
+    padding-left: 5px;
+    color: darkgrey;
+}
+.fb-content-user{
+    padding: 10px 0px 0px 5px;
 }

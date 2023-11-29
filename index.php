@@ -9,17 +9,23 @@ include_once './views/components/header.php';
 if(isset($_GET['admin']) && $_GET['admin']!= null && isset($_SESSION['role_id']) && $_SESSION['role_id']==2) {
     $admin = $_GET['admin'];
     switch ($admin) {
+        case 'commentlist':
+            include'./views/admin/comment/commentList.php';
+            break;
+        case 'commentdetail':
+            include'./views/admin/comment/commentDetail.php';
+            break;
         case 'addproduct':
-            include'./views/admin/addproduct.php';
+            include'./views/admin/product/addproduct.php';
             break;
         case 'productlist':
-            include'./views/admin/productList.php';
+            include'./views/admin/product/productList.php';
             break;
         case 'productdetail':
-            include'./views/admin/productDetail.php';
+            include'./views/admin/product/productDetail.php';
             break;
         case 'seahproduct':
-            include'./views/admin/seahproduct.php';
+            include'./views/admin/product/seahproduct.php';
             break;
         
         default:
