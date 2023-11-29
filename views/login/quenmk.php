@@ -1,6 +1,10 @@
 <!-- code -->
 <style>
-    <?php include_once'public/css/login/quenmk.css' ?>
+    <?php 
+        include_once'public/css/login/quenmk.css';
+        include'./controllers/login/quenmkController.php';
+    ?>
+    
 </style>
 
 <div class="container-fluid">
@@ -24,12 +28,16 @@
                             </div>
                             
                             <div class="form-ip px-4">
-                                <input type="email" placeholder="Email">
+                                <input type="email" placeholder="Email" name="email">
                                 <span class="error"> </span>
                             </div>
 
                             <div class="form-ip px-4">
-                                <button class="btn btn-dark">Tìm kiếm </button>
+                                <button name="guiemail" class="btn btn-dark">Tìm kiếm </button>
+                                <br>
+                                <?php if (isset($message) && $message != '') {
+                                        echo $message;
+                                } ?>
                             </div>
                             <div class="mid-item px-4 d-flex justify-content-center">
                                 <p>----------  H</p>

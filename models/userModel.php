@@ -60,5 +60,12 @@
         $stmt = $conn->prepare($query);
         $stmt->execute();  
     }
-    
+    function quenmk($email){
+        $query = "SELECT * FROM users WHERE user_email='$email'";
+        $stmt = connect()->prepare($query);
+        $stmt->execute();
+        $data = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $data;
+    }
+
 ?>
