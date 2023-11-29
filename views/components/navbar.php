@@ -23,13 +23,42 @@
             </div>
 
             <div class="seah__over shadow-sm ">
-
+                <div class="row p-5">
+                  <div class="col-md-2">
+                      <div class="d-flex flex-column gap-1">
+                          <span class="text-secondary h4">Gợi Ý Sản CHo Bạn</span>
+                          <a href="#">nike 1</a>
+                          <a href="#">nike 1</a>
+                          <a href="#">nike 1</a>
+                          <a href="#">nike 1</a>
+                         
+                      </div>
+                  </div>
+                  <!--  -->
+                  <div class="col-md-10 mt-5">
+                    <div class="row">
+                      <!--  -->
+                      <div class="col-md-2 d-flex justify-content-center">
+                          <a href="#" class="d-flex flex-column text-decoration-none text-dark">
+                            <img style="width:100%; height:auto" src="public/imgs/product/product1.png" alt="">
+                            <span class="fs-5 fw-bold text-secondary">nike air force 1</span>
+                            <span>Men/women's shose</span>
+                            <span class="fs-6 text-secondary" >1.000.000 đ</span>
+                          </a>
+                      </div>
+                      <!--  -->
+          
+                    </div>
+                  </div>
+                 
+                </div>
             </div>
 </div>
 
 <script>
      const inputseah = document.querySelector('#inputseah');
      const seah__over = document.querySelector('.seah__over')
+
 
      // div cần ẩn 
      const nav_item1 = document.getElementById('nav_item1');
@@ -39,9 +68,15 @@
 
 
   inputseah.addEventListener('click', () => {
-    inputseah.style.width = `${width1 * 4}px`;
+    inputseah.style.width = `${width1 * 3}px`;
     inputseah.style.transition = '0.5s all';
     seah__over.classList.add('seah__over1');
+    nav_item1.style.opacity= '0';
+    nav_item1.style.transform = 'translateX(-5rem)';
+    nav_item1.style.transition = '0.5s all';
+    h_box_right.style.transform = 'translateX(-60%)'
+    h_box_right.style.transition = '0.5s all';
+    
    
   })
   inputseah.addEventListener('blur', () => {
@@ -49,6 +84,11 @@
     inputseah.style.transition = '0.5s all';
     seah__over.classList.remove('seah__over1');
     seah__over.classList.add('seah__over');
+    nav_item1.style.opacity='1'
+    nav_item1.style.transform = 'translateX(0)';
+    nav_item1.style.transition = '0.5s all';
+    h_box_right.style.transform = 'translateX(0)'
+    h_box_right.style.transition = '0.5s all';
   })
 
 </script>
