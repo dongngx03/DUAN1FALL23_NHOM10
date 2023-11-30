@@ -266,6 +266,10 @@ for (let i = 0; i < chose_pv.length; i++) {
                 pv_id.push(productVariant_id[j].value) // id sản phẩm biến thể 
             }
         }
+        console.log(quantities);
+        console.log(prices);
+        console.log(totalPriceNew);
+        console.log(p_name);
 
         price_sum.textContent = numberFormat(sumAll(totalPriceNew)) + ' Đ'; // hiển thị ta tổng tiền ở phần tổng tiền 
     });

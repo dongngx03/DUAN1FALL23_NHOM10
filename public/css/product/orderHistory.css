@@ -54,7 +54,7 @@
 .box2{
     overflow: auto;
     width: 90%;
-    height: 70vh;
+    height: 100vh;
 }
 .box2::-webkit-scrollbar{
     width: 5px;

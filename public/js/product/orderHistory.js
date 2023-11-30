@@ -50,7 +50,8 @@ for (let i = 0; i < navItems.length; i++) {
                             <span class="text-danger">Tổng Giá: ${numberFormat(dataItem.ot_amout)} đ</span>
                         </div>
                         <div class="col-md-3 d-flex justify-content-center">
-                            <button class="btn btn-outline-secondary">Xem Chi Tiết</button>
+                            <a href="?act=orderhistorydetail&&ot_id=${dataItem.ot_id}" class="btn btn-outline-secondary">Xem Chi Tiết</a>
+                            
                         </div>
                         
                     `
@@ -66,5 +67,6 @@ for (let i = 0; i < navItems.length; i++) {
 function numberFormat(number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
+
 
 

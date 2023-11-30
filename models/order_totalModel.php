@@ -12,7 +12,8 @@
 
     // lấy thông tin của 1 đơn hàng lớn 
     function getOneOrrder_total($ot_id) {
-        $quuery = "SELECT * FROM order_totals WHERE ot_id = :ot_id ";
+        $quuery = "SELECT * FROM order_totals join handles on order_totals.handle_id = handles.handle_id
+                 WHERE ot_id = :ot_id ";
         $stmt = connect()->prepare($quuery);
         $stmt->bindParam(':ot_id', $ot_id);
         $stmt->execute();

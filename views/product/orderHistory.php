@@ -76,7 +76,7 @@
                         <span class="text-danger"><?php echo number_format($value['ot_amout']). 'đ' ?></span>
                     </div>
                     <div class="col-md-3 d-flex justify-content-center">
-                        <button class="btn btn-outline-secondary">Xem Chi Tiết</button>
+                        <a href="?act=orderhistorydetail&&ot_id=<?php echo $value['ot_id'] ?>" class="btn btn-outline-secondary">Xem Chi Tiết</a>
                     </div> 
                </div>
                <hr>
