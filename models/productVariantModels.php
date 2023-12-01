@@ -58,4 +58,21 @@
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
+
+    // số lượng của sản phaamrm biến thể 
+    function getQuantityPv($pv_id) {
+        $query = "SELECT quantity from productvariants where pv_id = '$pv_id'";
+        $stmt = connect()->prepare($query);
+        $stmt->execute();
+
+        $data = $stmt->fetch();
+        return $data;
+    }
+
+    // cập nhật số lượng cho sản phẩm biến thể 
+    function updateQuantityPv($pv_id, $quantity) {
+        $query = "UPDATE productvariants SET quantity = '$quantity' where pv_id = '$pv_id'";
+        $stmt = connect()->prepare($query);
+        $stmt->execute();
+    }
 ?>

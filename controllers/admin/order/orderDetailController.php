@@ -18,9 +18,9 @@
         handleOrder_total($ot_id, 2);
         header('location: ?admin=orderwaitting');
      }
-     if(isset($_GET['huy'])) {
-        handleOrder_total($ot_id, 4);
-        header('location: ?admin=orderwaitting');
+     if(isset($_GET['thanhcong'])) {
+        handleOrder_total($ot_id, 3);
+        header('location: ?admin=orderthanhcong');
      }
 
 

@@ -38,26 +38,54 @@ for (let i = 0; i < colorBtn.length; i++) {
                         <td>${dataItem.size_name}</td>
                         <td>${dataItem.quantity} chiếc</td>
                         <td class="">
-                            <a class="btn btn-danger delete" href="">Xóa</a>
-                            <a class="btn btn-primary update" href="">Thêm số lượng</a>
-                            <input type="hidden" class="pv_id" value="${dataItem.pv_id}">
-                            <input type="number" class="quantity">
+                            <div class="d-flex flex-column">
+                                <a class=" text-danger delete" href="">Xóa</a>
+                                <a class=" update" href="">Thêm số lượng</a>
+                                <input type="hidden" class="pv_id" value="${dataItem.pv_id}">
+                                <input type="number" class="quantity">
+                            <div/>
                         </td>
                     `
+                    
+                    const deleteButton = newItem.querySelector('.delete');
+                    const updateButton = newItem.querySelector('.update');
+                    const pvIdInput = newItem.querySelector('.pv_id');
+                    const quantityInput = newItem.querySelector('.quantity');
+
+                    deleteButton.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        Swal.fire({
+                            icon: 'warning',
+                            title: `Bạn muốn  xóa Sản Phẩm Biến Thể này?`,
+                            showCancelButton: true,
+                            confirmButtonText: 'Ok',
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                const url = `?admin=productdetail&&product_id=${productId}&&pv_id=${pvIdInput.value}`;
+                                window.location.href = url;
+                            }
+                        });
+                    });
+                    updateButton.addEventListener('click', (e) => {
+                        const quantity = quantityInput.value;
+                        e.preventDefault();
+                        Swal.fire({
+                            icon: 'warning',
+                            title: `Bạn muốn thêm số lượng là: ${quantity} cho sản phẩm này?`,
+                            showCancelButton: true,
+                            confirmButtonText: 'Ok',
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                const url = `?admin=productdetail&&product_id=${productId}&&pv_id=${pvIdInput.value}&&soluong=${quantity}`;
+                                window.location.href = url;
+                            }
+                        });
+                    });
+
                     variantList.appendChild(newItem);
                    
                 })
-                const deletePv = document.querySelectorAll('.delete');
-                const pv_id = document.querySelectorAll('.pv_id')
-                console.log(deletePv);
-                for (let i = 0; i < deletePv.length; i++) {
-                    deletePv[i].addEventListener('click', (e) => {
-                        e.preventDefault();
-                        // thực hiện xóa trong này 
-                        
-                    })
-                    
-                }
+                
 
 
                 

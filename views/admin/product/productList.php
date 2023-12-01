@@ -35,7 +35,7 @@
                             <a class="btn  btn-primary" href="?admin=productdetail&&product_id=<?php echo $value['product_id'] ?>">Detail</a>
                             <a class="btn  btn-success" href="?admin=addproductvariant&&product_id=<?php echo $value['product_id'] ?>">Add Product Variant </a>
                             <a class="btn  btn-danger deleteP" href="">Delete </a>
-                            <a class="btn btn-secondary" href="?admin=updateproduct">Update</a>
+                            <a class="btn btn-secondary" href="?admin=updateproduct&&p_id=<?php echo $value['product_id'] ?>">Update</a>
                             <!-- input chứ p_id -->
                             <input class="product_id" type="hidden" value="<?php echo $value['product_id'] ?>">
                         </td>

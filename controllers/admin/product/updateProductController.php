@@ -8,7 +8,16 @@
     // kết nối với bảng img
     include'./models/imgModel.php';
 
-   
+    
+    // Lấy thong tin sản phẩm in về 
+    if(isset($_GET['p_id'])) {
+        $data = getProductId($_GET['p_id']);
+        
+    }
+
+    $brand = readTable('brands');
+
+    $type = readTable('types');
     
     // echo "<pre>"; 
     // print_r($dataProduct);
