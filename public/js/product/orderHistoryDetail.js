@@ -83,6 +83,21 @@ const nhanhangthanhcong = (e) => {
 // cũng phải check đàng hoàng 
 danhanduochang != null ? danhanduochang.addEventListener('click', nhanhangthanhcong) : ""
 
+// phần phản hồi 
+const phanhoi = document.querySelectorAll('.phanhoi');
+const pv_id = document.querySelectorAll('.pv_id')
+
+if(phanhoi != null) {
+    for (let i = 0; i < phanhoi.length; i++) {
+        phanhoi[i].addEventListener('click', (e) => {
+            e.preventDefault(); 
+            window.location.href = `?act=feedback&&pv_id=${pv_id[i].value}`;
+            
+        })
+    
+    }
+}
+
 
 
 

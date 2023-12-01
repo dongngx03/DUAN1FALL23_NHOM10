@@ -94,11 +94,11 @@
                             </td>
                             <td>
                                 <div>
-                                    <input type="hidden" id="pv_id" value="<?php echo $value['pv_id'] ?>">
+                                    <input type="hidden" class="pv_id" value="<?php echo $value['pv_id'] ?>">
                                     <?php 
                                         if($handle_id === '3') {
                                             echo '
-                                            <a id="phanhoi" href="" class="btn btn-primary">Phản Hồi Về Sản Phẩm </a>
+                                            <a  href="" class="btn btn-primary phanhoi">Phản Hồi Về Sản Phẩm </a>
                                              ';
                                         }
                                     ?>

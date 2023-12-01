@@ -23,10 +23,10 @@
         <div class="h-nav">
             <a href="?act=home" class="h-logo"><img src="public/imgs/home/Planet.svg" alt="" ></a>
             <ul>
-                <li><a href="?act=product">Products</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Deal Hot</a></li>
-                <li><a href="#">News</a></li>
+                <li><a href="?act=product">Sản Phẩm </a></li>
+                <li><a href="#">Liện Hệ</a></li>
+                <li><a href="#">Giá Hot</a></li>
+                <li><a href="#">Tin Tức</a></li>
             </ul>    
         </div>
     </header>

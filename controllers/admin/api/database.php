@@ -28,7 +28,7 @@ function connect() {
 
  // lấy các size nào có trong 1 màu của 1 sản phẩm 
  function getSizeId($p_id, $color_id) {
-    $query = "SELECT sizes.size_id as size_id , GROUP_CONCAT(DISTINCT size_name) as size_name, quantity, product_name, color_name
+    $query = "SELECT sizes.size_id as size_id , GROUP_CONCAT(DISTINCT size_name) as size_name, quantity, product_name, color_name, productvariants.pv_id
             FROM products join productvariants on products.product_id = productvariants.product_id
                             join colors on productvariants.color_id = colors.color_id
                             join sizes on productvariants.size_id = sizes.size_id

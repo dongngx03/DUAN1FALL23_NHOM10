@@ -14,8 +14,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="?admin=addproduct">Thêm Mới Sản Phẩm </a></li>
             <li><a class="dropdown-item" href="?admin=productlist">Quản lý sản phẩm (Giày) </a></li>
-            <li><a class="dropdown-item" href="?admin=seahproduct">Tìm kiếm sản phẩm </a></li>
-           
+            <li><a class="dropdown-item" href="?admin=productlist">Quản lý sản phẩm (Dép) </a></li>
           </ul>
         </li>
         <!-- hết sản phẩm  -->
@@ -45,6 +44,17 @@
           </ul>
         </li>
         <!-- hết danh sách bình luận   -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Thống Kê
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="?admin="> Đơn Hàng </a></li>
+            <li><a class="dropdown-item" href="?admin="> Sản Phẩm </a></li>
+            <li><a class="dropdown-item" href="?admin="> Người Dùng </a></li>
+          </ul>
+        </li>
+        <!-- hết thống kê   -->
        
       
       </ul>

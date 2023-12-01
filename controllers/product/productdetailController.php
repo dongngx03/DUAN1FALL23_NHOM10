@@ -9,6 +9,8 @@
     include'./models/imgModel.php';
     // kết nối với bảng cart
     include'./models/cartModel.php';
+    // kết nối với bảng feedback
+    include'./models/feedbackModel.php';
 
     // lấy session p_id
     isset($_SESSION['p_id'])? $p_id = $_SESSION['p_id'] : '';
@@ -19,11 +21,13 @@
     
     $dataProduct = getProductId($p_id);
 
-    
+    // lấy hêt phản hồi của 1 sản phẩm 
+    $dataFeedBack = getFeedBackforProduct($p_id);
+
 
     
     // echo "<pre>";
-    // print_r($_SESSION);
+    // print_r($dataFeedBack);
     // echo "<pre>";
     
 ?>

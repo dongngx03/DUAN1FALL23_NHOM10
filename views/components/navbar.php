@@ -3,13 +3,13 @@
             <ul id="nav_item1">
                 <li><a href="?act=product1">Giày</a></li>
                 <li><a href="">Giép</a></li>
-                <li><a href="">Lịch Sử Đơn Hàng </a></li>
+                <li><a href="?act=orderhistory">Đơn hàng</a></li>
                
             </ul>
             <div class="h-box-right">
                 <div class="h-search">
                     <button class="h-btn-search"><i class="fa-brands fa-sistrix"></i>
-                    <input id="inputseah" class="h-ip-search" type="search" placeholder="search"></button>
+                    <input id="inputseah" class="h-ip-search" type="search" placeholder="Tìm Kiếm..."></button>
                 </div>
                 <!-- thẻ user phân quyền  -->
                 <a 

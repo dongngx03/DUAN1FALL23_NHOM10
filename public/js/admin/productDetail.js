@@ -26,25 +26,40 @@ for (let i = 0; i < colorBtn.length; i++) {
             console.log(data);
 
             const variantList = document.getElementById('variant_list');
+            variantList.innerHTML = "";
 
             if(data.length>0) {
-                variantList.innerHTML = `
-                    ${data.map((dataItem,index) => {
-                        return `
-                            <tr>
-                                <td>${index++}</td>
-                                <td>${dataItem.product_name}</td>
-                                <td>${dataItem.color_name}</td>
-                                <td>${dataItem.size_name}</td>
-                                <td>${dataItem.quantity} chiếc</td>
-                                <td class="">
-                                    <a class="btn btn-danger" href="">Xóa</a>
-                                    <a class="btn btn-primary" href="">Thêm số lượng</a>
-                                </td>
-                            <tr>
-                        `
-                    }).join("")}
-                `
+                data.map((dataItem, index) => {
+                    const newItem = document.createElement('tr');
+                    newItem.innerHTML = `
+                        <td>${index++}</td>
+                        <td>${dataItem.product_name}</td>
+                        <td>${dataItem.color_name}</td>
+                        <td>${dataItem.size_name}</td>
+                        <td>${dataItem.quantity} chiếc</td>
+                        <td class="">
+                            <a class="btn btn-danger delete" href="">Xóa</a>
+                            <a class="btn btn-primary update" href="">Thêm số lượng</a>
+                            <input type="hidden" class="pv_id" value="${dataItem.pv_id}">
+                            <input type="number" class="quantity">
+                        </td>
+                    `
+                    variantList.appendChild(newItem);
+                   
+                })
+                const deletePv = document.querySelectorAll('.delete');
+                const pv_id = document.querySelectorAll('.pv_id')
+                console.log(deletePv);
+                for (let i = 0; i < deletePv.length; i++) {
+                    deletePv[i].addEventListener('click', (e) => {
+                        e.preventDefault();
+                        // thực hiện xóa trong này 
+                        
+                    })
+                    
+                }
+
+
                 
             }
         } catch (error) {
@@ -88,4 +103,14 @@ for (let i = 0; i < colorBtn.length; i++) {
 
     });
     
+}
+
+const deletePv = document.querySelectorAll('.delete');
+console.log(deletePv);
+
+
+for (let i = 0; i < deletePv.length; i++) {
+    deletePv[i].addEventListener('click',(e) => {
+        e.preventDefault();
+    })
 }

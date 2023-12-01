@@ -27,8 +27,26 @@
     }
 
    // lấy ra sản phẩm có loại là gì đó 
-   function getProductFromType($type_id) {
-        $query = "SELECT * FROM products where type_id = '$type_id' ";
+   function getProductFromType($type_id, $product_status = 0) {
+        $query = "SELECT * FROM products where type_id = '$type_id' and product_status = '$product_status' ";
+        $stmt = connect()->prepare($query);
+        $stmt->execute();
+        $data = $stmt->fetchAll();
+        return $data;
+   }
+
+   // xóa sản phẩm mình muốn 
+   function deleteProduct($product_id, $product_status) {
+        $query = "UPDATE products SET product_status = :product_status WHERE product_id = :product_id";
+        $stmt = connect()->prepare($query);
+        $stmt->bindParam(':product_status', $product_status);
+        $stmt->bindParam(':product_id', $product_id);
+        $stmt->execute();
+   }
+
+   // lấy thông tin tất cả sản phẩm 
+   function getAllProduct() {
+        $query = 'SELECT * FROM products where product_status = 0 ';
         $stmt = connect()->prepare($query);
         $stmt->execute();
         $data = $stmt->fetchAll();

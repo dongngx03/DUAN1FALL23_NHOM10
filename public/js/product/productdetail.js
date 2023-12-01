@@ -367,6 +367,69 @@ const addCart = document.getElementById('add_Cart');
   });
 
  
+  // đánh giá 
+const btn_star = document.querySelectorAll('.btn-star')
+for (let i = 0; i < btn_star.length; i++) {
+   btn_star[i].addEventListener('click', (e) => {
+    e.preventDefault();
+        btn_star[i].style.border = '0.5px solid red';
+        btn_star[i].style.color = ' red';
+   })
+   btn_star[i].addEventListener('blur', (e) => {
+        e.preventDefault();
+        btn_star[i].style.border = '0.5px solid #cccccc';
+        btn_star[i].style.color = ' black';
+   })
+
+ 
+}
+
+const user__star = document.querySelectorAll('.user__star');
+const star_id = document.querySelectorAll('.star_id');
+
+for (let i = 0; i < user__star.length; i++) {
+    const star = star_id[i].value
+    switch (star) {
+        case '1':
+            user__star[i].innerHTML= `
+            <i class="fa-solid fa-star"></i>
+            `
+            break;
+        case '2':
+            user__star[i].innerHTML= `
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            `
+            break;
+        case '3':
+            user__star[i].innerHTML= `
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            `
+            break;
+        case '4':
+            user__star[i].innerHTML= `
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            `
+            break;
+        case '5':
+            user__star[i].innerHTML= `
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            `
+            break;
+    
+       
+    }
+    
+}
 
  
 

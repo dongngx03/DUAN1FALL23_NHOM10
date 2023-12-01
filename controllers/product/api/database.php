@@ -32,7 +32,7 @@ function connect() {
             FROM products join productvariants on products.product_id = productvariants.product_id
                             join colors on productvariants.color_id = colors.color_id
                             join sizes on productvariants.size_id = sizes.size_id
-            WHERE products.product_id = '$p_id' and colors.color_id = '$color_id'
+            WHERE products.product_id = '$p_id' and colors.color_id = '$color_id' and quantity > 0
             group by size_name
     ";
     $stmt = connect()->prepare($query);

@@ -5,7 +5,7 @@
      include'./models/productModel.php';
 
      // lấy tất cả dữ liệu cảu bảng product
-     $dataProduct = readTable('products');
+     $dataProduct = getAllProduct();
 
      //sử lý khi người dùng ấn xem chi tiết 
      if(isset($_GET['detail'])) {

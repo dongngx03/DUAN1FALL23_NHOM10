@@ -139,52 +139,78 @@
 
        </div>
 
-       <div class="row pt-2 px-4">
-            <div class="py-3 ">
-                <span class="h4 fw-normal"> Bình luận từ người dùng  </span>
+       <div class="row d-flex justify-content-center mt-4 shadow-sm rounded">
+            <div class="col-md-10 bg-light py-3 d-flex flex-column shadow-sm rounded my-4">
+                <span class="h4 px-2 mt-2 fw-bold">Phản hồi Sản Phẩm </span>
+
+                <!--  -->
+                <div class="star bg-white p-4 shadow-sm rounded-none">
+                    <button class="btn-star">
+                        <span>Tất Cả</span>
+                    </button>
+                    <button class="btn-star">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                       
+                    </button>
+                    <button class="btn-star">
+                       
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </button>
+                    <button class="btn-star">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </button>
+                    <button class="btn-star">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </button>
+                    <button class="btn-star">
+                        <i class="fa-regular fa-star"></i>
+                    </button>
+                </div>
+                <!--  -->
+
+                <div class="content mt-3">
+                    <?php if(!empty($dataFeedBack)) foreach($dataFeedBack as $value): ?>
+                    <div class="feedback mt-2  bg-white p-4 shadow-sm rounded-none">
+                        <div class="feedback__user">
+                            <img src="<?php echo $value['user_img'] ?>" alt="">
+                            <div class="user_infor">
+                                <span><?php echo $value['user_name'] ?></span>
+                                <div class="user__star">
+                                    <input type="hidden" class="star_id" value="<?php echo $value['star_id'] ?>">
+                                    <!-- <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i> -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="feedback__content px-5 mt-2">
+                            <span class="text-secondary"><?php echo $value['fb_date'] ?></span>
+                            <span>Color: <?php echo $value['color_name'] ?></span>
+                            <span>Size: <?php echo $value['size_name'] ?></span>
+                            <span><?php echo $value['fb_content'] ?></span>
+                            <img src="public/imgs/feedback/<?php echo $value['fb_img'] ?>" alt="">
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
+           
+                    
+                </div>
             </div>
        </div>
 
-       <!-- phần cmt và sản phẩm liên quan  -->
-       <div class="row pt-5 px-4">
-           <div class="span py-3">
-                <span class="h4 fw-normal"> Có Thể Bạn cũng thích </span>
-
-           </div>
-
-           <div class="row px-3">
-                <div class="d_product-list">
-                    <div class="d_product-list-item">
-                        <a class="list-item d-grid gap-1" href="">
-                            <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/53f44f04-f9a1-439e-82bd-1fabea198a2a/court-vision-low-next-nature-shoes-N2fFHb.png" alt="">
-                            <strong><span class="h5 fw-bold">Nike air force 1</span></strong>
-                            <span>Men shose</span>
-                            <strong><span>1.000.000đ</span></strong>
-                        </a>
-                        <a class="list-item d-grid gap-1" href="">
-                            <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/53f44f04-f9a1-439e-82bd-1fabea198a2a/court-vision-low-next-nature-shoes-N2fFHb.png" alt="">
-                            <strong><span class="h5 fw-bold">Nike air force 1</span></strong>
-                            <span>Men shose</span>
-                            <strong><span>1.000.000đ</span></strong>
-                        </a>
-                        <a class="list-item d-grid gap-1" href="">
-                            <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/53f44f04-f9a1-439e-82bd-1fabea198a2a/court-vision-low-next-nature-shoes-N2fFHb.png" alt="">
-                            <strong><span class="h5 fw-bold">Nike air force 1</span></strong>
-                            <span>Men shose</span>
-                            <strong><span>1.000.000đ</span></strong>
-                        </a>
-                        <a class="list-item d-grid gap-1" href="">
-                            <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/53f44f04-f9a1-439e-82bd-1fabea198a2a/court-vision-low-next-nature-shoes-N2fFHb.png" alt="">
-                            <strong><span class="h5 fw-bold">Nike air force 1</span></strong>
-                            <span>Men shose</span>
-                            <strong><span>1.000.000đ</span></strong>
-                        </a>
-                      
-                    </div>
-                </div>
-           </div>
-       </div>
-       
 
        
 </div>

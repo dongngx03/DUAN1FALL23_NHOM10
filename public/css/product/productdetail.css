@@ -270,3 +270,55 @@
     height: auto;
     object-fit: cover;
 }
+
+/* phần phản hồi  */
+.star{
+    display: flex;
+    gap: 1rem;
+   
+}
+.star button{
+    background: #fff;
+    border:0.5px solid #cccccc ;
+    border-radius: 0.1em ;
+    width: 10em;
+    height: 3em;
+}
+.feedback__user{
+    display: flex;
+    gap: 0.5em;
+}
+.feedback__user img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.feedback__content{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    
+}
+.feedback__content img{
+    width: 6em;
+    height: auto;
+
+}
+.content{
+    width: 100%;
+    overflow: auto;
+    height: 70vh;
+}
+.content::-webkit-scrollbar{
+    width: 5px;
+}
+
+/*  */
+.new_star{
+    background: #FFFBF8;
+    border:0.5px solid red ;
+    border-radius: 0.1em ;
+    width: 10em;
+    height: 3em;
+    color: red;
+}

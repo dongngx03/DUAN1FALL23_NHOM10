@@ -43,6 +43,9 @@ if(isset($_GET['admin']) && $_GET['admin']!= null && isset($_SESSION['role_id'])
         case 'orderhuy':
             include'./views/admin/order/orderHuy.php';
             break;
+        case 'updateproduct':
+            include'./views/admin/product/updateProduct.php';
+            break;
         default:
             include'./views/404/404.php';
             break;
@@ -95,6 +98,9 @@ if (isset($_GET['act']) && $_GET['act']!= null) {
             break;
         case 'orderhistorydetail':
             include_once './views/product/orderHistorydetail.php';
+            break;
+        case 'feedback':
+            include_once './views/order/feedBack.php';
             break;
 
         // trường hợp không hợp lệ
