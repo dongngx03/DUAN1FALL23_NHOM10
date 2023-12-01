@@ -46,6 +46,15 @@ if(isset($_GET['admin']) && $_GET['admin']!= null && isset($_SESSION['role_id'])
         case 'updateproduct':
             include'./views/admin/product/updateProduct.php';
             break;
+        case 'feedbacklist':
+            include'./views/admin/feedback/feedbackList.php';
+            break;
+        case 'feedbacklist1':
+            include'./views/admin/feedback/feedbackList1.php';
+            break;
+        case 'feedbacklist2':
+            include'./views/admin/feedback/feedbackList2.php';
+            break;
         default:
             include'./views/404/404.php';
             break;

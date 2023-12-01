@@ -25,8 +25,9 @@
             Phản Hồi
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Phản Hồi Chờ Duyệt</a></li>
-            <li><a class="dropdown-item" href="#">Phản Hồi Không Duyệt</a></li>
+            <li><a class="dropdown-item" href="?admin=feedbacklist">Phản Hồi Chờ Duyệt</a></li>
+            <li><a class="dropdown-item" href="?admin=feedbacklist1">Phản Hồi Đã Duyệt</a></li>
+            <li><a class="dropdown-item" href="?admin=feedbacklist2">Phản Hồi Đã Ẩn</a></li>
           </ul>
         </li>
         <!-- hết danh sách bình luận   -->
