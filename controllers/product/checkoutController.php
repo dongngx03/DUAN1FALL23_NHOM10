@@ -80,7 +80,7 @@ if(isset($_GET['buy'])) {
       
     }
    
-   header('location: ?act=product');
+   header('location: ?act=orderhistory');
 }
 
 
