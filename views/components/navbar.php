@@ -3,7 +3,7 @@
             <ul id="nav_item1">
                 <li><a href="?act=product1">Giày</a></li>
                 <li><a href="">Giép</a></li>
-                <li><a href="?act=orderhistory">Đơn hàng</a></li>
+               
                
             </ul>
             <div class="h-box-right">

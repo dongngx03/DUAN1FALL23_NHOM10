@@ -53,4 +53,20 @@
         return $data;
    }
 
+   // cập nhật sản phẩm khi trừ cập nhật ảnh 
+   function updateAllNotImg($p_id, $p_name, $p_price, $p_desc, $brand_id, $type_id) {
+        $query = "UPDATE products SET product_name = '$p_name', product_price = '$p_price', product_desc = '$p_desc', brand_id = '$brand_id', type_id='$type_id' where product_id = '$p_id'";
+        $stmt = connect()->prepare($query);
+        $stmt->execute();
+
+   }
+
+   // cập nhật sản phẩm 
+   function updateAllAddImg($p_id, $p_name, $p_price, $p_desc,$img_avatar, $brand_id, $type_id) {
+    $query = "UPDATE products SET product_name = '$p_name', product_price = '$p_price', product_desc = '$p_desc', brand_id = '$brand_id', type_id='$type_id', img_avatar='$img_avatar' where product_id = '$p_id'";
+    $stmt = connect()->prepare($query);
+    $stmt->execute();
+
+}
+
 ?>

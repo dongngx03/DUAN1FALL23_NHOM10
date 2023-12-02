@@ -23,20 +23,20 @@
                     <input type="text" class="form-control" name="p_name" value="<?php echo $value['product_name'] ?>">
                     <!--  -->
                     <span class="text-danger ">
-                        
+                        <?php echo(isset($err['p_name'])? $err['p_name']:'') ?>
                     </span>
                 </div>
                 <!-- price -->
                 <div class="mb-3">
                     <strong><label for="" class="form-label">Price </label></strong>
                     <input type="number" class="form-control"  name="p_price" value="<?php echo $value['product_price'] ?>">
-                    <span class="text-danger "></span>
+                    <span class="text-danger "><?php echo(isset($err['p_price'])? $err['p_price']:'') ?></span>
                 </div>
                 <!-- desc -->
                 <div class="mb-3">
                     <strong><label for="" class="form-label">Description</label></strong>
-                    <textarea class="form-control" id="" rows="3" name="p_desc" value="<?php echo $value['product_desc'] ?>"></textarea>
-                    <span class="text-danger "></span>
+                    <input type="text" class="form-control" name="p_desc" value="<?php echo $value['product_desc'] ?>">
+                    <span class="text-danger "><?php echo(isset($err['p_desc'])? $err['p_desc']:'') ?></span>
                 </div>
                 <!-- brand -->
                 <div class="mb-3">
@@ -60,8 +60,6 @@
                         <option value="<?php echo $value['type_id'] ?>"><?php echo $value['type_name'] ?></option>
                         <?php endforeach; ?>
                       
-                      
-                       
                     </select>
                 </div>
                 <!-- img avatar -->
@@ -72,7 +70,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <button type="submit" class="btn btn-dark w-100" name="addProduct">Update</button>
+                    <button type="submit" class="btn btn-dark w-100" name="updateProduct">Update</button>
                 </div>
             </form>
             <?php endforeach; ?>
