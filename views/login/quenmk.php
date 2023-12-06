@@ -1,3 +1,4 @@
+<?php include'./controllers/login/quenmkController.php' ?>
 <!-- code -->
 <style>
     <?php include_once'public/css/login/quenmk.css' ?>
@@ -24,12 +25,18 @@
                             </div>
                             
                             <div class="form-ip px-4">
-                                <input type="email" placeholder="Email">
-                                <span class="error"> </span>
+                                <input type="email" placeholder="Email" name="email">
+                                <span class="error">
+                                    <?php 
+                                        echo(isset($err['email'])? $err['email']: "");
+                                        echo(isset($err['loi'])? $err['loi']: "");
+                                        echo(isset($pw['pw'])? "Mật Khẩu là: ". $pw['pw']: "");
+                                    ?>
+                                </span>
                             </div>
 
                             <div class="form-ip px-4">
-                                <button class="btn btn-dark">Tìm kiếm </button>
+                                <button type="submit" name="quenmk" class="btn btn-dark">Tìm kiếm </button>
                             </div>
                             <div class="mid-item px-4 d-flex justify-content-center">
                                 <p>----------  H</p>
