@@ -2,7 +2,7 @@
 // session 
 session_start();
 ob_start();
-
+//1
 // phần web 
 include_once './views/components/header.php';
 
