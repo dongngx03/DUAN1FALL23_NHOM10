@@ -17,6 +17,9 @@
     <style>
         <?php include_once'public/css/index.css' ?>
     </style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body>
     <header class="bg-light">
@@ -30,5 +33,7 @@
             </ul>    
         </div>
     </header>
+
+
       
     

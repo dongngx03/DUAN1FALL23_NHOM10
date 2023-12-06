@@ -62,13 +62,13 @@
                     <tr>
                         <th colspan="5">
                            <?php 
-                                if($handle_id === '1') {
+                                if($handle_id == '1') {
                                     echo'
                                         <div class="d-flex">
                                             <a id="chapnhan" class="btn btn-danger" href="?admin=orderdetail&&ot_id='.$ot_id.'&&chapnhan">Chấp Nhận Đơn</a>
                                         </div>
                                     ';
-                                }else if($handle_id === '2') {
+                                }else if($handle_id == '2') {
                                     echo'
                                     <div class="d-flex">
                                         <a id="thanhcong" class="btn btn-success" href="?admin=orderdetail&&ot_id='.$ot_id.'&&thanhcong">Đã Nhận Được Hàng </a>
