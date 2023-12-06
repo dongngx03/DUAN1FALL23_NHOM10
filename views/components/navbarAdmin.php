@@ -50,9 +50,9 @@
             Thống Kê
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="?admin="> Đơn Hàng </a></li>
-            <li><a class="dropdown-item" href="?admin="> Sản Phẩm </a></li>
-            <li><a class="dropdown-item" href="?admin="> Người Dùng </a></li>
+            <li><a class="dropdown-item" href="?admin=thongkefeedback"> Phản Hồi </a></li>
+            <li><a class="dropdown-item" href="?admin=thongkeproduct"> Sản Phẩm </a></li>
+            <li><a class="dropdown-item" href="?admin=thongkeuser"> Người Dùng </a></li>
           </ul>
         </li>
         <!-- hết thống kê   -->

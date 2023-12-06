@@ -55,6 +55,15 @@ if(isset($_GET['admin']) && $_GET['admin']!= null && isset($_SESSION['role_id'])
         case 'feedbacklist2':
             include'./views/admin/feedback/feedbackList2.php';
             break;
+        case 'thongkeproduct':
+            include'./views/admin/thongke/thongkeproduct.php';
+            break;
+        case 'thongkeuser':
+            include'./views/admin/thongke/thongkeuser.php';
+            break;
+        case 'thongkefeedback':
+            include'./views/admin/thongke/thongkefeedback.php';
+            break;
         default:
             include'./views/404/404.php';
             break;
