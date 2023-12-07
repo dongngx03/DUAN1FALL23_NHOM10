@@ -3,10 +3,12 @@
     include'./views/components/navbarAdmin.php';
 ?>
 
+<div class="container">
 <h5 class="py-3">THỐNG KÊ SỐ NGƯỜI DÙNG ĐÃ MUA HÀNG THÀNH CÔNG</h5>
 
 <!-- <canvas id="userChart" style="width: 600px; height: 300px;"></canvas> -->
 <canvas id="userChart" style="width: 50vw; height: 200px; aspect-ratio: unset !important;"></canvas>
+</div>
 
 <script>
     var ctx = document.getElementById('userChart').getContext('2d');

@@ -3,22 +3,153 @@
 <?php 
     include'./views/components/navbarAdmin.php';
 ?>
-<div class="row2">
-    <div class="row2 font_title">
-        <h5 class="py-3">BIỂU ĐỒ SỐ LƯỢNG SẢN PHẨM TRONG DANH MỤC</h5>
+<div class="container">
+    <div class="row font_title">
+        <h3 class="py-3">Sản Phẩm</h3>
     </div>
-    <div class="row2 form_content ">
-        <div id="myChart" style="width:100%; width:800px; height:500px; align-items: center">
+    <div class="row py-2 ">
+       <div class="col-md-6">
+            <h5 class="py-3">BIỂU ĐỒ SỐ LƯỢNG SẢN PHẨM TRONG DANH MỤC</h5>
+            <div id="myChart" style="width:100%; align-items: center"></div>
+       </div>
+       <div class="col-md-6">
+            <h5 class="py-3">SỐ LIỆU CỤ THỂ</h5>
+            <table class="table table-bordered border-secondary">
+                <thead class="bg-danger text-white">
+                    <tr>
+                        <th scope="col">Danh mục</th>
+                        <th scope="col">Số lượng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
+                         foreach ($dsthongke as $thongke) {
+                            extract($thongke);
+                            echo '
+                            <tr>
+                                <th scope="col">'.$type_name.'</th>
+                                <th scope="col">'.$soluong.' Sản Phẩm</th>
+                            </tr>
+                            ';
+                        }
+                    ?>
+                </tbody>
+            </table>
+       </div>
+    </div>
+
+        
+    <div class="row py-5">
+        <div class="col-md-6">
+            <h5 class="py-3">BIỂU ĐỒ THỐNG KÊ TRẠNG THÁI ĐƠN HÀNG</h5>
+            <canvas id="orderStatusChart" style="width: 600px; height: 200px;"></canvas>
         </div>
 
-        <script>
+        <div class="col-md-6">
+            <h5 class="py-3">SỐ LIỆU CỤ THỂ</h5>
+            <table class="table table-bordered border-secondary">
+                <thead class="bg-danger text-white">
+                    <tr>
+                        <th scope="col">STT</th>
+                        <th scope="col">Trạng Thái</th>
+                        <th scope="col">Số lượng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($productCountData as $key => $value): ?>
+                    <tr>
+                        <th scope="row"><?php echo $key+1 ?></th>
+                        <td><?php echo $value['handle_name'] ?></td>
+                        <td><?php echo $value['product_count'] ?></td>
+                    </tr>
+                    <?php endforeach; ?>
+                
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    
+
+    <div class="row">
+        <h5 class="py-3">THỐNG KÊ HOẠT ĐỘNG SẢN PHẨM </h5>
+        <div class="col-md-4">
+            <h6 class="mt-3">Sản Phẩm Bán Chạy Nhất </h6>
+            <table class="table table-bordered border-secondary">
+                <thead class="bg-danger text-white">
+                    <tr>
+                        
+                        <th scope="col">Stt</th>
+                        <th scope="col">Id Sản Phẩm Biến Thể</th>
+                        <th scope="col">Số lượng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   <?php if(!empty($countBuy)) foreach($countBuy as $key => $value): ?>
+                    <tr>
+                        <th scope="row"><?php echo $key+1 ?></th>
+                        <td><?php echo $value['pv_id'] ?></td>
+                        <td><?php echo $value['countPV'] ?></td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-4">
+            <h6 class="mt-3">Sản Phẩm Yêu Thích Nhất </h6>
+            <table class="table table-bordered border-secondary">
+                <thead class="bg-danger text-white">
+                    <tr>
+                        
+                        <th scope="col">Stt</th>
+                        <th scope="col">Id Sản Phẩm Biến Thể</th>
+                        <th scope="col">Số lượng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   <?php if(!empty($countBuy)) foreach($countBuy as $key => $value): ?>
+                    <tr>
+                        <th scope="row"><?php echo $key+1 ?></th>
+                        <td><?php echo $value['pv_id'] ?></td>
+                        <td><?php echo $value['countPV'] ?></td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-4">
+            <h6 class="mt-3">Sản Phẩm còn hàng dưới 5 </h6>
+            <table class="table table-bordered border-secondary">
+                <thead class="bg-danger text-white">
+                    <tr>
+                        
+                        <th scope="col">Stt</th>
+                        <th scope="col">Id Sản Phẩm Biến Thể</th>
+                        <th scope="col">Số lượng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   <?php if(!empty($countBuy)) foreach($countBuy as $key => $value): ?>
+                    <tr>
+                        <th scope="row"><?php echo $key+1 ?></th>
+                        <td><?php echo $value['pv_id'] ?></td>
+                        <td><?php echo $value['countPV'] ?></td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
             google.charts.load('current', {
                 'packages': ['corechart']
             });
             google.charts.setOnLoadCallback(drawChart);
 
             function drawChart() {
-
                 // Set Data
                 const data = google.visualization.arrayToDataTable([
                     ['Danh mục', 'Số lượng'],
@@ -41,10 +172,6 @@
 
             }
         </script>
-        <h5 class="py-3">BIỂU ĐỒ THỐNG KÊ TRẠNG THÁI ĐƠN HÀNG</h5>
-
-
-<canvas id="orderStatusChart" style="width: 600px; height: 200px;"></canvas>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
@@ -62,7 +189,7 @@
     var chartData = {
         labels: labels,
         datasets: [{
-            label: 'Product Count',
+            label: 'Đếm Các Trạng Thái Đơn Hàng',
             data: values,
             backgroundColor: 'rgba(75, 192, 192, 0.2)',
             borderColor: 'rgba(75, 192, 192, 1)',
@@ -85,5 +212,3 @@
         options: options
     });
 </script>
-    </div>
-</div>

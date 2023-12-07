@@ -75,4 +75,18 @@
         $stmt = connect()->prepare($query);
         $stmt->execute();
     }
+
+    // đếm xem có sản phẩm nào được mua nhiều nhất 
+    function countPvBuy() {
+        $query = "SELECT pv.pv_id, ot_id,COUNT(pv.pv_id) as countPV FROM order_items join productVariants as pv on order_items.pv_id = pv.pv_id
+                WHERE ot_id > 0
+                GROUP BY pv.pv_id
+                order by COUNT(pv.pv_id) desc
+                limit 5
+        ";
+         $stmt = connect()->prepare($query);
+         $stmt->execute();
+         $data = $stmt->fetchAll();
+         return $data;
+    }
 ?>
