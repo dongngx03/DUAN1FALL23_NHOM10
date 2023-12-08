@@ -252,6 +252,7 @@ const addCart = document.getElementById('add_Cart');
         console.log(data);
         // gửi thông báo đến thẻ chứa thông báo bên trên nút thêm giỏ hàng 
         const mess = document.getElementById('mess_cart');
+       
         // phân loại thông báo 
         switch (data) {
             // trường hợp không đăng nhập 
@@ -295,7 +296,6 @@ const addCart = document.getElementById('add_Cart');
                 mess.innerHTML=`Sản Phẩm Đã Có Trong Giỏ Hàng `;
                 break;
             
-           
         }
        
     } catch (error) {

@@ -79,7 +79,6 @@
                             <strong><span><?php echo $value['product_name'] ?></span></strong>
                             <span class="text-secondary">Color: <i class="fa-solid fa-circle color_type"></i> <span class="color_item"><?php echo $value['color_name'] ?></span></span>
                             <span class="text-secondary text-decoration-underline ">Size: <?php echo $value['size_name'] ?></span>
-
                         </div>
                     </div>
                 </div>

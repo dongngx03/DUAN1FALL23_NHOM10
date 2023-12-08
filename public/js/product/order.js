@@ -37,6 +37,19 @@ const totalPrice = document.querySelectorAll('.total_price')
 const price_real = document.querySelectorAll('.price_real');
 const cart_id = document.querySelectorAll('.cart_id');
 
+for (let i = 0; i < quantity.length; i++) {
+    quantity[i].addEventListener('blur', () => {
+        const value = parseInt(quantity[i].value)
+        if(value <= 0) {
+            quantity[i].value = 1
+        }else if(value > parseInt(priceProduct[i].textContent)) {
+            quantity[i].value = parseInt(priceProduct[i].textContent)
+        }
+        
+    })
+    
+}
+
 function numberFormat(number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
