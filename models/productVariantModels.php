@@ -89,4 +89,17 @@
          $data = $stmt->fetchAll();
          return $data;
     }
+
+    // function coutPvBuy1() {
+    //     $query = "SELECT pv_id, count(pv_id) FROM order_items
+    //             where ot_id > 0
+    //             group by pv_id
+    //             order by count(pv_id) desc
+    //             limit 5
+    //     ";
+    //     $stmt = connect()->prepare($query);
+    //     $stmt->execute();
+    //     $data = $stmt->fetchAll();
+    //     return $data;
+    // }
 ?>
