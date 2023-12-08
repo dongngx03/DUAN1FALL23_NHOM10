@@ -64,6 +64,9 @@ if(isset($_GET['admin']) && $_GET['admin']!= null && isset($_SESSION['role_id'])
         case 'thongkefeedback':
             include'./views/admin/thongke/thongkefeedback.php';
             break;
+        case 'user':
+            include'./views/admin/user/user.php';
+            break;
         default:
             include'./views/404/404.php';
             break;

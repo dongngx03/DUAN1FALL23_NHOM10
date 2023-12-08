@@ -84,17 +84,17 @@ formCheckInput.forEach(e => {
                         </div>
                     
                         <div class="item_name">
-                            <strong><span>${dataItem.product_name}</span></strong>
+                            <strong><span class="fs-5">${dataItem.product_name}</span></strong>
                         </div>
                         <div class="item_desc">
                             <span class="text-secondary ">Woman/Men's Shose</span>
                         </div>
                        
                         <div class="item_price">
-                            <strong><span>${dataItem.product_price}</span></strong>
+                            <strong><span>${dataItem.product_price} đ</span></strong>
                         </div>
                         <div class="over">
-                            <a class="btn btn-dark" href="">chi tiết </a>
+                            <a class="btn btn-dark" href="?act=product&&detail=${dataItem.product_id}">chi tiết </a>
                             <a class="btn btn-outline-dark" href="">mua </a>
                         </div>
 

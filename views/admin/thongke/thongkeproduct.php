@@ -74,14 +74,16 @@
 
     <div class="row">
         <h5 class="py-3">THỐNG KÊ HOẠT ĐỘNG SẢN PHẨM </h5>
-        <div class="col-md-4">
+        <div class="col-md-12">
             <h6 class="mt-3">Sản Phẩm Bán Chạy Nhất </h6>
             <table class="table table-bordered border-secondary">
                 <thead class="bg-danger text-white">
                     <tr>
                         
                         <th scope="col">Stt</th>
+                        <th scope="col">Tên Sản Phẩm</th>
                         <th scope="col">Id Sản Phẩm Biến Thể</th>
+                        <th scope="col">Ảnh </th>
                         <th scope="col">Số lượng</th>
                     </tr>
                 </thead>
@@ -89,57 +91,18 @@
                    <?php if(!empty($countBuy)) foreach($countBuy as $key => $value): ?>
                     <tr>
                         <th scope="row"><?php echo $key+1 ?></th>
+                        <td><?php echo $value['product_name'] ?></td>
                         <td><?php echo $value['pv_id'] ?></td>
-                        <td><?php echo $value['countPV'] ?></td>
+                        <td>
+                            <img style="width:100px" src="public/imgs/product/<?php echo $value['img_avatar'] ?>" alt="">
+                        </td>
+                        <td><?php echo $value['countPV'] ?> Chiếc</td>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
-        <div class="col-md-4">
-            <h6 class="mt-3">Sản Phẩm Yêu Thích Nhất </h6>
-            <table class="table table-bordered border-secondary">
-                <thead class="bg-danger text-white">
-                    <tr>
-                        
-                        <th scope="col">Stt</th>
-                        <th scope="col">Id Sản Phẩm Biến Thể</th>
-                        <th scope="col">Số lượng</th>
-                    </tr>
-                </thead>
-                <tbody>
-                   <?php if(!empty($countBuy)) foreach($countBuy as $key => $value): ?>
-                    <tr>
-                        <th scope="row"><?php echo $key+1 ?></th>
-                        <td><?php echo $value['pv_id'] ?></td>
-                        <td><?php echo $value['countPV'] ?></td>
-                    </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-md-4">
-            <h6 class="mt-3">Sản Phẩm còn hàng dưới 5 </h6>
-            <table class="table table-bordered border-secondary">
-                <thead class="bg-danger text-white">
-                    <tr>
-                        
-                        <th scope="col">Stt</th>
-                        <th scope="col">Id Sản Phẩm Biến Thể</th>
-                        <th scope="col">Số lượng</th>
-                    </tr>
-                </thead>
-                <tbody>
-                   <?php if(!empty($countBuy)) foreach($countBuy as $key => $value): ?>
-                    <tr>
-                        <th scope="row"><?php echo $key+1 ?></th>
-                        <td><?php echo $value['pv_id'] ?></td>
-                        <td><?php echo $value['countPV'] ?></td>
-                    </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
+       
     </div>
 </div>
 

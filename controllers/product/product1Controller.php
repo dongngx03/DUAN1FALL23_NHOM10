@@ -12,4 +12,7 @@
     $dataBrand = readTable('brands');
     // lấy tất cả các loại 
     $dataType = readTable('types');
+
+    // lấy tất cả sản phẩm 
+    $dataProduct = readTable('products')
 ?>

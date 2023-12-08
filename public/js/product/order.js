@@ -25,7 +25,6 @@
 // }
 
 
-
 // xử lý tằng giảm số lượng 
 // lấy giá của sản phẩm 
 // số lượng 
@@ -40,6 +39,7 @@ const cart_id = document.querySelectorAll('.cart_id');
 for (let i = 0; i < quantity.length; i++) {
     quantity[i].addEventListener('blur', () => {
         const value = parseInt(quantity[i].value)
+        console.log(value);
         if(value <= 0) {
             quantity[i].value = 1
         }else if(value > parseInt(priceProduct[i].textContent)) {

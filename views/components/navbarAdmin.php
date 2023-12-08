@@ -57,6 +57,17 @@
           </ul>
         </li>
         <!-- hết thống kê   -->
+        <!-- hết danh sách bình luận   -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Người Dùng
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="?admin=user"> Danh Sách </a></li>
+           
+          </ul>
+        </li>
+        <!-- hết thống kê   -->
        
       
       </ul>

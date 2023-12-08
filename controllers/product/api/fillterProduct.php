@@ -14,7 +14,7 @@
         // đọc dữ liệu của database 
         // $data = [$brand, $color, $price];
         // echo json_encode($data);
-        $query = "SELECT GROUP_CONCAT(DISTINCT p.product_id) as product_id, product_price, img_avatar
+        $query = "SELECT GROUP_CONCAT(DISTINCT p.product_id) as product_id, product_price, img_avatar, product_name
                 
                 FROM products as p join productvariants as pv on p.product_id = pv.product_id
                 ";

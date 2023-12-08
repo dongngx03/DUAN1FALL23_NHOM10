@@ -6,10 +6,10 @@
     <!-- nabar -->
     <?php include'./views/components/navbar.php' ?>
 
-    <div class="col-md-12">
+    <div class="col-md-12 mt-4">
         <div class="box1">
             <div class="shose-all d-grid">
-                <span class="h4 fw-bold text-dark ">Tất cả (105)</span>
+                <span class="h4 fw-bold text-dark ">Tất cả</span>
                 <span class="h5 text-dark">Phân loại sản phẩm </span>
             </div>
 
@@ -85,8 +85,27 @@
 
         <!-- phải  -->
         <div id="r_box" class="r_box bg-white gap-2">
-           
-           
+           <?php foreach($dataProduct as $value): ?>
+           <div class="item">
+                <div class="item_img">
+                    <img src="public/imgs/product/<?php echo $value['img_avatar'] ?>" alt="">
+                </div>
+            
+                <div class="item_name">
+                    <strong><span class="fs-5"><?php echo $value['product_name'] ?></span></strong>
+                </div>
+                <div class="item_desc">
+                    <span class="text-secondary ">Woman/Men's Shose</span>
+                </div>
+                
+                <div class="item_price">
+                    <strong><span><?php echo number_format($value['product_price']) ?> đ</span></strong>
+                </div>
+                <div class="over">
+                    <a class="btn btn-dark" href="?act=product&&detail=<?php echo $value['product_id'] ?>">chi tiết </a>
+                </div>
+           </div>
+           <?php endforeach; ?>
      
         </div>
     </div>
